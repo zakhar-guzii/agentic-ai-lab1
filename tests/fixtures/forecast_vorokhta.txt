@@ -1,0 +1,254 @@
+Current weather for Vorokhta:
+    Conditions:  overcast clouds 
+    Now:         7.37 metric
+    High:        7.37 metric
+    Low:         7.37 metric
+	Pressure:    995
+	Humidity:    94
+	FeelsLike:   4.32
+	Wind Speed:  4.96
+	Wind Degree:    237
+	Sunrise:     1794979990 Unixtime
+	Sunset:      1795012846 Unixtime
+Weather Forecast for Vorokhta:
+Date & Time: 2026-11-19 00:00:00 +0000 UTC
+Conditions:  Clouds overcast clouds
+Temp:        7.14
+High:        7.14
+Low:         6.69
+
+Date & Time: 2026-11-19 03:00:00 +0000 UTC
+Conditions:  Clouds overcast clouds
+Temp:        6.3
+High:        6.3
+Low:         5.77
+
+Date & Time: 2026-11-19 06:00:00 +0000 UTC
+Conditions:  Rain light rain
+Temp:        5.48
+High:        5.48
+Low:         5.48
+
+Date & Time: 2026-11-19 09:00:00 +0000 UTC
+Conditions:  Rain light rain
+Temp:        6.21
+High:        6.21
+Low:         6.21
+
+Date & Time: 2026-11-19 12:00:00 +0000 UTC
+Conditions:  Clouds overcast clouds
+Temp:        8.23
+High:        8.23
+Low:         8.23
+
+Date & Time: 2026-11-19 15:00:00 +0000 UTC
+Conditions:  Clouds overcast clouds
+Temp:        6.6
+High:        6.6
+Low:         6.6
+
+Date & Time: 2026-11-19 18:00:00 +0000 UTC
+Conditions:  Rain light rain
+Temp:        7.42
+High:        7.42
+Low:         7.42
+
+Date & Time: 2026-11-19 21:00:00 +0000 UTC
+Conditions:  Rain light rain
+Temp:        6.07
+High:        6.07
+Low:         6.07
+
+Date & Time: 2026-11-20 00:00:00 +0000 UTC
+Conditions:  Rain moderate rain
+Temp:        4.83
+High:        4.83
+Low:         4.83
+
+Date & Time: 2026-11-20 03:00:00 +0000 UTC
+Conditions:  Rain moderate rain
+Temp:        6.77
+High:        6.77
+Low:         6.77
+
+Date & Time: 2026-11-20 06:00:00 +0000 UTC
+Conditions:  Rain light rain
+Temp:        5.26
+High:        5.26
+Low:         5.26
+
+Date & Time: 2026-11-20 09:00:00 +0000 UTC
+Conditions:  Rain light rain
+Temp:        5.65
+High:        5.65
+Low:         5.65
+
+Date & Time: 2026-11-20 12:00:00 +0000 UTC
+Conditions:  Rain light rain
+Temp:        5.78
+High:        5.78
+Low:         5.78
+
+Date & Time: 2026-11-20 15:00:00 +0000 UTC
+Conditions:  Rain light rain
+Temp:        5.87
+High:        5.87
+Low:         5.87
+
+Date & Time: 2026-11-20 18:00:00 +0000 UTC
+Conditions:  Rain light rain
+Temp:        5.42
+High:        5.42
+Low:         5.42
+
+Date & Time: 2026-11-20 21:00:00 +0000 UTC
+Conditions:  Rain light rain
+Temp:        4.99
+High:        4.99
+Low:         4.99
+
+Date & Time: 2026-11-21 00:00:00 +0000 UTC
+Conditions:  Rain light rain
+Temp:        4.81
+High:        4.81
+Low:         4.81
+
+Date & Time: 2026-11-21 03:00:00 +0000 UTC
+Conditions:  Rain light rain
+Temp:        4.39
+High:        4.39
+Low:         4.39
+
+Date & Time: 2026-11-21 06:00:00 +0000 UTC
+Conditions:  Rain light rain
+Temp:        4.32
+High:        4.32
+Low:         4.32
+
+Date & Time: 2026-11-21 09:00:00 +0000 UTC
+Conditions:  Rain light rain
+Temp:        5.01
+High:        5.01
+Low:         5.01
+
+Date & Time: 2026-11-21 12:00:00 +0000 UTC
+Conditions:  Snow light snow
+Temp:        4.7
+High:        4.7
+Low:         4.7
+
+Date & Time: 2026-11-21 15:00:00 +0000 UTC
+Conditions:  Snow snow
+Temp:        2.29
+High:        2.29
+Low:         2.29
+
+Date & Time: 2026-11-21 18:00:00 +0000 UTC
+Conditions:  Snow light snow
+Temp:        -0.79
+High:        -0.79
+Low:         -0.79
+
+Date & Time: 2026-11-21 21:00:00 +0000 UTC
+Conditions:  Clear clear sky
+Temp:        -2.23
+High:        -2.23
+Low:         -2.23
+
+Date & Time: 2026-11-22 00:00:00 +0000 UTC
+Conditions:  Clouds scattered clouds
+Temp:        -2.41
+High:        -2.41
+Low:         -2.41
+
+Date & Time: 2026-11-22 03:00:00 +0000 UTC
+Conditions:  Clouds broken clouds
+Temp:        -1.67
+High:        -1.67
+Low:         -1.67
+
+Date & Time: 2026-11-22 06:00:00 +0000 UTC
+Conditions:  Clouds overcast clouds
+Temp:        -0.67
+High:        -0.67
+Low:         -0.67
+
+Date & Time: 2026-11-22 09:00:00 +0000 UTC
+Conditions:  Clouds overcast clouds
+Temp:        0.04
+High:        0.04
+Low:         0.04
+
+Date & Time: 2026-11-22 12:00:00 +0000 UTC
+Conditions:  Snow light snow
+Temp:        0.16
+High:        0.16
+Low:         0.16
+
+Date & Time: 2026-11-22 15:00:00 +0000 UTC
+Conditions:  Snow light snow
+Temp:        0.65
+High:        0.65
+Low:         0.65
+
+Date & Time: 2026-11-22 18:00:00 +0000 UTC
+Conditions:  Clouds overcast clouds
+Temp:        0.54
+High:        0.54
+Low:         0.54
+
+Date & Time: 2026-11-22 21:00:00 +0000 UTC
+Conditions:  Clouds overcast clouds
+Temp:        0.44
+High:        0.44
+Low:         0.44
+
+Date & Time: 2026-11-23 00:00:00 +0000 UTC
+Conditions:  Snow light snow
+Temp:        0.7
+High:        0.7
+Low:         0.7
+
+Date & Time: 2026-11-23 03:00:00 +0000 UTC
+Conditions:  Snow light snow
+Temp:        0.24
+High:        0.24
+Low:         0.24
+
+Date & Time: 2026-11-23 06:00:00 +0000 UTC
+Conditions:  Snow light snow
+Temp:        -0.18
+High:        -0.18
+Low:         -0.18
+
+Date & Time: 2026-11-23 09:00:00 +0000 UTC
+Conditions:  Snow snow
+Temp:        -0.13
+High:        -0.13
+Low:         -0.13
+
+Date & Time: 2026-11-23 12:00:00 +0000 UTC
+Conditions:  Snow snow
+Temp:        -0.5
+High:        -0.5
+Low:         -0.5
+
+Date & Time: 2026-11-23 15:00:00 +0000 UTC
+Conditions:  Snow light snow
+Temp:        -2.66
+High:        -2.66
+Low:         -2.66
+
+Date & Time: 2026-11-23 18:00:00 +0000 UTC
+Conditions:  Clouds overcast clouds
+Temp:        -4.18
+High:        -4.18
+Low:         -4.18
+
+Date & Time: 2026-11-23 21:00:00 +0000 UTC
+Conditions:  Clouds overcast clouds
+Temp:        -3.94
+High:        -3.94
+Low:         -3.94
+
+

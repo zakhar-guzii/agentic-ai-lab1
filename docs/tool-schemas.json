@@ -1,0 +1,2324 @@
+{
+  "find_place": {
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Substring of the place name, nominative case, e.g. 'Говерла' or 'Hoverla'."
+        },
+        "kind": {
+          "anyOf": [
+            {
+              "enum": [
+                "peak",
+                "junction",
+                "hut",
+                "camp_site",
+                "village"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Only places of this kind."
+        },
+        "min_ele_m": {
+          "anyOf": [
+            {
+              "maximum": 3000,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Minimum elevation in metres, inclusive."
+        },
+        "max_ele_m": {
+          "anyOf": [
+            {
+              "maximum": 3000,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Maximum elevation in metres, inclusive."
+        },
+        "limit": {
+          "default": 10,
+          "description": "Maximum number of candidates.",
+          "maximum": 20,
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "outputSchema": {
+      "properties": {
+        "candidates": {
+          "description": "Best matches first: by match_score, then elevation (desc), then node_id.",
+          "items": {
+            "properties": {
+              "node_id": {
+                "description": "Graph node id to pass to planning tools.",
+                "type": "string"
+              },
+              "name": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Primary OSM name; null for an unnamed trail junction."
+              },
+              "kind": {
+                "enum": [
+                  "peak",
+                  "junction",
+                  "hut",
+                  "camp_site",
+                  "village"
+                ],
+                "type": "string"
+              },
+              "lat": {
+                "type": "number"
+              },
+              "lon": {
+                "type": "number"
+              },
+              "ele_m": {
+                "description": "Elevation in metres (SRTM).",
+                "type": "integer"
+              },
+              "can_overnight": {
+                "description": "True for huts, camp sites and villages.",
+                "type": "boolean"
+              },
+              "match_score": {
+                "description": "1.0 exact name match (or no name filter), 0.8 name prefix, 0.5 substring.",
+                "type": "number"
+              }
+            },
+            "required": [
+              "node_id",
+              "name",
+              "kind",
+              "lat",
+              "lon",
+              "ele_m",
+              "can_overnight",
+              "match_score"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Why the list is empty (filters applied and name rules); null when candidates exist."
+        }
+      },
+      "required": [
+        "candidates",
+        "reason"
+      ],
+      "type": "object"
+    }
+  },
+  "plan_hike": {
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "start_node_id": {
+          "description": "Start node_id from find_place.",
+          "maxLength": 100,
+          "minLength": 1,
+          "type": "string"
+        },
+        "days": {
+          "description": "Exact number of hiking days.",
+          "maximum": 5,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "start_date": {
+          "description": "ISO date of day 1, 2000-01-01..2099-12-27; past dates are allowed.",
+          "format": "date",
+          "type": "string"
+        },
+        "end_node_id": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "End node_id, only if the user names where to finish (never a peak); equal to start for a loop; omit for the nearest village."
+        },
+        "must_visit": {
+          "default": [],
+          "description": "0-3 distinct node_ids to pass through; not the start or end.",
+          "items": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 3,
+          "type": "array"
+        },
+        "fitness": {
+          "default": "medium",
+          "description": "Hiker fitness: day norm 6 / 8 / 10 h, pace factor 1.25 / 1.0 / 0.85.",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "type": "string"
+        },
+        "overnight_mode": {
+          "default": "hut",
+          "description": "hut: nights at huts or villages; tent: also at camp sites.",
+          "enum": [
+            "hut",
+            "tent"
+          ],
+          "type": "string"
+        },
+        "day_constraints": {
+          "default": [],
+          "description": "Per-day segment bans; repeats are removed. Day must be within the hike.",
+          "items": {
+            "properties": {
+              "day": {
+                "description": "Hike day, 1-based; must not exceed the number of days.",
+                "maximum": 5,
+                "minimum": 1,
+                "type": "integer"
+              },
+              "forbid": {
+                "description": "Segments this day must avoid: above_treeline (all above ~1500 m, includes exposed ridges) or exposed_ridge (open ridge only).",
+                "enum": [
+                  "above_treeline",
+                  "exposed_ridge"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "day",
+              "forbid"
+            ],
+            "type": "object"
+          },
+          "maxItems": 10,
+          "type": "array"
+        }
+      },
+      "required": [
+        "start_node_id",
+        "days",
+        "start_date"
+      ],
+      "type": "object"
+    },
+    "outputSchema": {
+      "properties": {
+        "status": {
+          "enum": [
+            "ok",
+            "infeasible"
+          ],
+          "type": "string"
+        },
+        "plan": {
+          "anyOf": [
+            {
+              "properties": {
+                "plan_id": {
+                  "description": "p_ + 10 hex of the plan content hash; same content, same id.",
+                  "type": "string"
+                },
+                "dataset_version": {
+                  "type": "string"
+                },
+                "start_date": {
+                  "type": "string"
+                },
+                "days": {
+                  "type": "integer"
+                },
+                "fitness": {
+                  "enum": [
+                    "low",
+                    "medium",
+                    "high"
+                  ],
+                  "type": "string"
+                },
+                "overnight_mode": {
+                  "enum": [
+                    "hut",
+                    "tent"
+                  ],
+                  "type": "string"
+                },
+                "applied_day_constraints": {
+                  "description": "Normalized: no repeats, by day, then forbid.",
+                  "items": {
+                    "properties": {
+                      "day": {
+                        "description": "Hike day, 1-based; must not exceed the number of days.",
+                        "maximum": 5,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "forbid": {
+                        "description": "Segments this day must avoid: above_treeline (all above ~1500 m, includes exposed ridges) or exposed_ridge (open ridge only).",
+                        "enum": [
+                          "above_treeline",
+                          "exposed_ridge"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "day",
+                      "forbid"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "stages": {
+                  "description": "One stage per day.",
+                  "items": {
+                    "properties": {
+                      "day": {
+                        "type": "integer"
+                      },
+                      "date": {
+                        "description": "ISO date of this day.",
+                        "type": "string"
+                      },
+                      "start_node_id": {
+                        "type": "string"
+                      },
+                      "start_name": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "Null for an unnamed trail junction."
+                      },
+                      "start_label": {
+                        "description": "Human label of the node: its name, or 'unnamed <kind> near <nearest named node>, <elevation> m'. Use it instead of node ids when talking to the user.",
+                        "type": "string"
+                      },
+                      "end_node_id": {
+                        "type": "string"
+                      },
+                      "end_name": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "Null for an unnamed trail junction."
+                      },
+                      "end_label": {
+                        "description": "Human label of the node: its name, or 'unnamed <kind> near <nearest named node>, <elevation> m'. Use it instead of node ids when talking to the user.",
+                        "type": "string"
+                      },
+                      "path_node_ids": {
+                        "description": "Every node of the day in walking order.",
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "segment_ids": {
+                        "description": "Trail segments of the day in walking order.",
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "km": {
+                        "description": "Distance, 3 decimals.",
+                        "type": "number"
+                      },
+                      "ascent_m": {
+                        "description": "Total ascent in the walking direction, metres.",
+                        "type": "integer"
+                      },
+                      "descent_m": {
+                        "description": "Total descent in the walking direction, metres.",
+                        "type": "integer"
+                      },
+                      "est_hours": {
+                        "description": "Walking time (sum of per-segment minutes) / 60, 2 decimals.",
+                        "type": "number"
+                      },
+                      "limit_hours": {
+                        "description": "Day limit: min(fitness norm, daylight minus 1 h), 2 decimals.",
+                        "type": "number"
+                      },
+                      "limit_kind": {
+                        "description": "Which of the two set limit_hours.",
+                        "enum": [
+                          "fitness",
+                          "daylight"
+                        ],
+                        "type": "string"
+                      },
+                      "max_ele_m": {
+                        "description": "Highest point of the day's segments, metres.",
+                        "type": "integer"
+                      },
+                      "above_treeline": {
+                        "description": "True if any segment of the day is above the treeline.",
+                        "type": "boolean"
+                      },
+                      "exposed_ridge": {
+                        "description": "True if any segment of the day is on an exposed ridge.",
+                        "type": "boolean"
+                      },
+                      "overnight_node_id": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "Where the night is spent; null on the last day."
+                      },
+                      "forecast_city": {
+                        "description": "Weather forecast city of the day's highest node.",
+                        "type": "string"
+                      },
+                      "forecast_city_ele_m": {
+                        "type": "integer"
+                      },
+                      "forecast_city_km": {
+                        "type": "number"
+                      },
+                      "check_window": {
+                        "properties": {
+                          "from_utc": {
+                            "description": "Sunrise at the day's start node, UTC, rounded down to the minute.",
+                            "type": "string"
+                          },
+                          "to_utc": {
+                            "description": "Sunset at the day's start node, UTC, rounded up to the minute.",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "from_utc",
+                          "to_utc"
+                        ],
+                        "type": "object",
+                        "description": "Daylight window to check the weather for; not a schedule."
+                      }
+                    },
+                    "required": [
+                      "day",
+                      "date",
+                      "start_node_id",
+                      "start_name",
+                      "start_label",
+                      "end_node_id",
+                      "end_name",
+                      "end_label",
+                      "path_node_ids",
+                      "segment_ids",
+                      "km",
+                      "ascent_m",
+                      "descent_m",
+                      "est_hours",
+                      "limit_hours",
+                      "limit_kind",
+                      "max_ele_m",
+                      "above_treeline",
+                      "exposed_ridge",
+                      "overnight_node_id",
+                      "forecast_city",
+                      "forecast_city_ele_m",
+                      "forecast_city_km",
+                      "check_window"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "totals": {
+                  "properties": {
+                    "km": {
+                      "type": "number"
+                    },
+                    "ascent_m": {
+                      "type": "integer"
+                    },
+                    "descent_m": {
+                      "type": "integer"
+                    },
+                    "est_hours": {
+                      "description": "Sum of all days' minutes / 60, 2 decimals.",
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "km",
+                    "ascent_m",
+                    "descent_m",
+                    "est_hours"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "plan_id",
+                "dataset_version",
+                "start_date",
+                "days",
+                "fitness",
+                "overnight_mode",
+                "applied_day_constraints",
+                "stages",
+                "totals"
+              ],
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Present when status='ok'."
+        },
+        "day_waypoints": {
+          "anyOf": [
+            {
+              "items": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Per day: start, the must_visit nodes chosen that day in walking order, end. Pass to validate_hike_plan to reproduce the same plan. Present when status='ok'."
+        },
+        "warnings": {
+          "anyOf": [
+            {
+              "items": {
+                "properties": {
+                  "code": {
+                    "enum": [
+                      "REPEATED_SEGMENTS",
+                      "DETOUR"
+                    ],
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "segment_ids": {
+                    "description": "REPEATED_SEGMENTS: segments walked more than once; DETOUR: empty.",
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "days": {
+                    "description": "REPEATED_SEGMENTS: days on which those segments are walked; DETOUR: days with constraints.",
+                    "items": {
+                      "type": "integer"
+                    },
+                    "type": "array"
+                  },
+                  "baseline_plan_id": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "description": "DETOUR only: plan_id of the same request without day_constraints."
+                  },
+                  "baseline_est_hours": {
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "description": "DETOUR only: walking hours of that plan."
+                  },
+                  "baseline_km": {
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "description": "DETOUR only: distance of that plan."
+                  }
+                },
+                "required": [
+                  "code",
+                  "message",
+                  "segment_ids",
+                  "days"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Hints that do not affect validity. Present when status='ok'."
+        },
+        "finish": {
+          "anyOf": [
+            {
+              "properties": {
+                "node_id": {
+                  "type": "string"
+                },
+                "label": {
+                  "description": "Human label of the node: its name, or 'unnamed <kind> near <nearest named node>, <elevation> m'. Use it instead of node ids when talking to the user.",
+                  "type": "string"
+                },
+                "reason": {
+                  "description": "requested: end_node_id was given; nearest_village: end_node_id omitted, the village with the shortest whole hike; loop: end_node_id omitted, must_visit given and no village fits, back to the start.",
+                  "enum": [
+                    "requested",
+                    "nearest_village",
+                    "loop"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "node_id",
+                "label",
+                "reason"
+              ],
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Where the hike ends and why. Present when status='ok'; tell the user."
+        },
+        "reason_code": {
+          "anyOf": [
+            {
+              "enum": [
+                "NO_ROUTE",
+                "BLOCKED_BY_CONSTRAINTS",
+                "NEEDS_MORE_DAYS",
+                "TOO_MANY_DAYS",
+                "NO_FEASIBLE_PLAN"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Why there is no plan. Present when status='infeasible'."
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Explanation for the model. Present when status='infeasible'."
+        },
+        "feasible_days": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Day counts 1-5 for which the same request has a plan. Present when status='infeasible'."
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "type": "object"
+    }
+  },
+  "validate_hike_plan": {
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "day_waypoints": {
+          "description": "One list per day (1-5 days) of 2-8 node_ids in walking order; a day must start where the previous one ended.",
+          "items": {
+            "items": {
+              "maxLength": 100,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 8,
+            "minItems": 2,
+            "type": "array"
+          },
+          "maxItems": 5,
+          "minItems": 1,
+          "type": "array"
+        },
+        "start_date": {
+          "description": "ISO date of day 1, 2000-01-01..2099-12-27; past dates are allowed.",
+          "format": "date",
+          "type": "string"
+        },
+        "fitness": {
+          "default": "medium",
+          "description": "Hiker fitness: day norm 6 / 8 / 10 h, pace factor 1.25 / 1.0 / 0.85.",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "type": "string"
+        },
+        "overnight_mode": {
+          "default": "hut",
+          "description": "hut: nights at huts or villages; tent: also at camp sites.",
+          "enum": [
+            "hut",
+            "tent"
+          ],
+          "type": "string"
+        },
+        "day_constraints": {
+          "default": [],
+          "description": "Same as in plan_hike; pass the plan's applied_day_constraints to re-check a plan that was built with them.",
+          "items": {
+            "properties": {
+              "day": {
+                "description": "Hike day, 1-based; must not exceed the number of days.",
+                "maximum": 5,
+                "minimum": 1,
+                "type": "integer"
+              },
+              "forbid": {
+                "description": "Segments this day must avoid: above_treeline (all above ~1500 m, includes exposed ridges) or exposed_ridge (open ridge only).",
+                "enum": [
+                  "above_treeline",
+                  "exposed_ridge"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "day",
+              "forbid"
+            ],
+            "type": "object"
+          },
+          "maxItems": 10,
+          "type": "array"
+        }
+      },
+      "required": [
+        "day_waypoints",
+        "start_date"
+      ],
+      "type": "object"
+    },
+    "outputSchema": {
+      "properties": {
+        "valid": {
+          "type": "boolean"
+        },
+        "violations": {
+          "description": "By day, then in rule order.",
+          "items": {
+            "properties": {
+              "day": {
+                "type": "integer"
+              },
+              "rule_id": {
+                "enum": [
+                  "R-CONN",
+                  "R-CONTINUITY",
+                  "R-DAY-LIMIT",
+                  "R-OVERNIGHT",
+                  "R-MOVE"
+                ],
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              },
+              "actual": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  }
+                ],
+                "description": "R-CONN: 'from->to'; R-CONTINUITY: first node of the day; R-DAY-LIMIT: hours; R-OVERNIGHT: kind of the end node; R-MOVE: km."
+              },
+              "limit": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "R-CONN: null; R-CONTINUITY: last node of the previous day; R-DAY-LIMIT: limit hours; R-OVERNIGHT: allowed kinds joined by '|'; R-MOVE: 0."
+              }
+            },
+            "required": [
+              "day",
+              "rule_id",
+              "message",
+              "actual",
+              "limit"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "computed_stages": {
+          "description": "Stages with real hours for every day that could be routed, also when invalid.",
+          "items": {
+            "properties": {
+              "day": {
+                "type": "integer"
+              },
+              "date": {
+                "description": "ISO date of this day.",
+                "type": "string"
+              },
+              "start_node_id": {
+                "type": "string"
+              },
+              "start_name": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Null for an unnamed trail junction."
+              },
+              "start_label": {
+                "description": "Human label of the node: its name, or 'unnamed <kind> near <nearest named node>, <elevation> m'. Use it instead of node ids when talking to the user.",
+                "type": "string"
+              },
+              "end_node_id": {
+                "type": "string"
+              },
+              "end_name": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Null for an unnamed trail junction."
+              },
+              "end_label": {
+                "description": "Human label of the node: its name, or 'unnamed <kind> near <nearest named node>, <elevation> m'. Use it instead of node ids when talking to the user.",
+                "type": "string"
+              },
+              "path_node_ids": {
+                "description": "Every node of the day in walking order.",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "segment_ids": {
+                "description": "Trail segments of the day in walking order.",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "km": {
+                "description": "Distance, 3 decimals.",
+                "type": "number"
+              },
+              "ascent_m": {
+                "description": "Total ascent in the walking direction, metres.",
+                "type": "integer"
+              },
+              "descent_m": {
+                "description": "Total descent in the walking direction, metres.",
+                "type": "integer"
+              },
+              "est_hours": {
+                "description": "Walking time (sum of per-segment minutes) / 60, 2 decimals.",
+                "type": "number"
+              },
+              "limit_hours": {
+                "description": "Day limit: min(fitness norm, daylight minus 1 h), 2 decimals.",
+                "type": "number"
+              },
+              "limit_kind": {
+                "description": "Which of the two set limit_hours.",
+                "enum": [
+                  "fitness",
+                  "daylight"
+                ],
+                "type": "string"
+              },
+              "max_ele_m": {
+                "description": "Highest point of the day's segments, metres.",
+                "type": "integer"
+              },
+              "above_treeline": {
+                "description": "True if any segment of the day is above the treeline.",
+                "type": "boolean"
+              },
+              "exposed_ridge": {
+                "description": "True if any segment of the day is on an exposed ridge.",
+                "type": "boolean"
+              },
+              "overnight_node_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Where the night is spent; null on the last day."
+              },
+              "forecast_city": {
+                "description": "Weather forecast city of the day's highest node.",
+                "type": "string"
+              },
+              "forecast_city_ele_m": {
+                "type": "integer"
+              },
+              "forecast_city_km": {
+                "type": "number"
+              },
+              "check_window": {
+                "properties": {
+                  "from_utc": {
+                    "description": "Sunrise at the day's start node, UTC, rounded down to the minute.",
+                    "type": "string"
+                  },
+                  "to_utc": {
+                    "description": "Sunset at the day's start node, UTC, rounded up to the minute.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "from_utc",
+                  "to_utc"
+                ],
+                "type": "object",
+                "description": "Daylight window to check the weather for; not a schedule."
+              }
+            },
+            "required": [
+              "day",
+              "date",
+              "start_node_id",
+              "start_name",
+              "start_label",
+              "end_node_id",
+              "end_name",
+              "end_label",
+              "path_node_ids",
+              "segment_ids",
+              "km",
+              "ascent_m",
+              "descent_m",
+              "est_hours",
+              "limit_hours",
+              "limit_kind",
+              "max_ele_m",
+              "above_treeline",
+              "exposed_ridge",
+              "overnight_node_id",
+              "forecast_city",
+              "forecast_city_ele_m",
+              "forecast_city_km",
+              "check_window"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "warnings": {
+          "items": {
+            "properties": {
+              "code": {
+                "enum": [
+                  "REPEATED_SEGMENTS",
+                  "DETOUR"
+                ],
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              },
+              "segment_ids": {
+                "description": "REPEATED_SEGMENTS: segments walked more than once; DETOUR: empty.",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "days": {
+                "description": "REPEATED_SEGMENTS: days on which those segments are walked; DETOUR: days with constraints.",
+                "items": {
+                  "type": "integer"
+                },
+                "type": "array"
+              },
+              "baseline_plan_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "DETOUR only: plan_id of the same request without day_constraints."
+              },
+              "baseline_est_hours": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "DETOUR only: walking hours of that plan."
+              },
+              "baseline_km": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "DETOUR only: distance of that plan."
+              }
+            },
+            "required": [
+              "code",
+              "message",
+              "segment_ids",
+              "days"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "plan": {
+          "anyOf": [
+            {
+              "properties": {
+                "plan_id": {
+                  "description": "p_ + 10 hex of the plan content hash; same content, same id.",
+                  "type": "string"
+                },
+                "dataset_version": {
+                  "type": "string"
+                },
+                "start_date": {
+                  "type": "string"
+                },
+                "days": {
+                  "type": "integer"
+                },
+                "fitness": {
+                  "enum": [
+                    "low",
+                    "medium",
+                    "high"
+                  ],
+                  "type": "string"
+                },
+                "overnight_mode": {
+                  "enum": [
+                    "hut",
+                    "tent"
+                  ],
+                  "type": "string"
+                },
+                "applied_day_constraints": {
+                  "description": "Normalized: no repeats, by day, then forbid.",
+                  "items": {
+                    "properties": {
+                      "day": {
+                        "description": "Hike day, 1-based; must not exceed the number of days.",
+                        "maximum": 5,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "forbid": {
+                        "description": "Segments this day must avoid: above_treeline (all above ~1500 m, includes exposed ridges) or exposed_ridge (open ridge only).",
+                        "enum": [
+                          "above_treeline",
+                          "exposed_ridge"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "day",
+                      "forbid"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "stages": {
+                  "description": "One stage per day.",
+                  "items": {
+                    "properties": {
+                      "day": {
+                        "type": "integer"
+                      },
+                      "date": {
+                        "description": "ISO date of this day.",
+                        "type": "string"
+                      },
+                      "start_node_id": {
+                        "type": "string"
+                      },
+                      "start_name": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "Null for an unnamed trail junction."
+                      },
+                      "start_label": {
+                        "description": "Human label of the node: its name, or 'unnamed <kind> near <nearest named node>, <elevation> m'. Use it instead of node ids when talking to the user.",
+                        "type": "string"
+                      },
+                      "end_node_id": {
+                        "type": "string"
+                      },
+                      "end_name": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "Null for an unnamed trail junction."
+                      },
+                      "end_label": {
+                        "description": "Human label of the node: its name, or 'unnamed <kind> near <nearest named node>, <elevation> m'. Use it instead of node ids when talking to the user.",
+                        "type": "string"
+                      },
+                      "path_node_ids": {
+                        "description": "Every node of the day in walking order.",
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "segment_ids": {
+                        "description": "Trail segments of the day in walking order.",
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "km": {
+                        "description": "Distance, 3 decimals.",
+                        "type": "number"
+                      },
+                      "ascent_m": {
+                        "description": "Total ascent in the walking direction, metres.",
+                        "type": "integer"
+                      },
+                      "descent_m": {
+                        "description": "Total descent in the walking direction, metres.",
+                        "type": "integer"
+                      },
+                      "est_hours": {
+                        "description": "Walking time (sum of per-segment minutes) / 60, 2 decimals.",
+                        "type": "number"
+                      },
+                      "limit_hours": {
+                        "description": "Day limit: min(fitness norm, daylight minus 1 h), 2 decimals.",
+                        "type": "number"
+                      },
+                      "limit_kind": {
+                        "description": "Which of the two set limit_hours.",
+                        "enum": [
+                          "fitness",
+                          "daylight"
+                        ],
+                        "type": "string"
+                      },
+                      "max_ele_m": {
+                        "description": "Highest point of the day's segments, metres.",
+                        "type": "integer"
+                      },
+                      "above_treeline": {
+                        "description": "True if any segment of the day is above the treeline.",
+                        "type": "boolean"
+                      },
+                      "exposed_ridge": {
+                        "description": "True if any segment of the day is on an exposed ridge.",
+                        "type": "boolean"
+                      },
+                      "overnight_node_id": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "Where the night is spent; null on the last day."
+                      },
+                      "forecast_city": {
+                        "description": "Weather forecast city of the day's highest node.",
+                        "type": "string"
+                      },
+                      "forecast_city_ele_m": {
+                        "type": "integer"
+                      },
+                      "forecast_city_km": {
+                        "type": "number"
+                      },
+                      "check_window": {
+                        "properties": {
+                          "from_utc": {
+                            "description": "Sunrise at the day's start node, UTC, rounded down to the minute.",
+                            "type": "string"
+                          },
+                          "to_utc": {
+                            "description": "Sunset at the day's start node, UTC, rounded up to the minute.",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "from_utc",
+                          "to_utc"
+                        ],
+                        "type": "object",
+                        "description": "Daylight window to check the weather for; not a schedule."
+                      }
+                    },
+                    "required": [
+                      "day",
+                      "date",
+                      "start_node_id",
+                      "start_name",
+                      "start_label",
+                      "end_node_id",
+                      "end_name",
+                      "end_label",
+                      "path_node_ids",
+                      "segment_ids",
+                      "km",
+                      "ascent_m",
+                      "descent_m",
+                      "est_hours",
+                      "limit_hours",
+                      "limit_kind",
+                      "max_ele_m",
+                      "above_treeline",
+                      "exposed_ridge",
+                      "overnight_node_id",
+                      "forecast_city",
+                      "forecast_city_ele_m",
+                      "forecast_city_km",
+                      "check_window"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "totals": {
+                  "properties": {
+                    "km": {
+                      "type": "number"
+                    },
+                    "ascent_m": {
+                      "type": "integer"
+                    },
+                    "descent_m": {
+                      "type": "integer"
+                    },
+                    "est_hours": {
+                      "description": "Sum of all days' minutes / 60, 2 decimals.",
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "km",
+                    "ascent_m",
+                    "descent_m",
+                    "est_hours"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "plan_id",
+                "dataset_version",
+                "start_date",
+                "days",
+                "fitness",
+                "overnight_mode",
+                "applied_day_constraints",
+                "stages",
+                "totals"
+              ],
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Present only when valid=true."
+        }
+      },
+      "required": [
+        "valid",
+        "violations",
+        "computed_stages",
+        "warnings"
+      ],
+      "type": "object"
+    }
+  },
+  "check_weather_warnings": {
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "plan_id": {
+          "description": "plan_id from plan_hike or validate_hike_plan.",
+          "type": "string"
+        },
+        "forecast_slots": {
+          "description": "0-240 forecast slots of the plan's forecast cities; each city + time_utc once.",
+          "items": {
+            "properties": {
+              "city": {
+                "description": "The city string the forecast was requested for; must equal a forecast_city of the plan.",
+                "minLength": 1,
+                "type": "string"
+              },
+              "time_utc": {
+                "description": "Slot start on the 3-hour UTC grid: YYYY-MM-DDTHH:00:00Z, HH in 00, 03, ..., 21.",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T(00|03|06|09|12|15|18|21):00:00Z$",
+                "type": "string"
+              },
+              "condition": {
+                "description": "OpenWeatherMap main group of the slot, or Unknown if it could not be recognised.",
+                "enum": [
+                  "Thunderstorm",
+                  "Drizzle",
+                  "Rain",
+                  "Snow",
+                  "Mist",
+                  "Smoke",
+                  "Haze",
+                  "Dust",
+                  "Fog",
+                  "Sand",
+                  "Ash",
+                  "Squall",
+                  "Tornado",
+                  "Clear",
+                  "Clouds",
+                  "Unknown"
+                ],
+                "type": "string"
+              },
+              "temp_c": {
+                "anyOf": [
+                  {
+                    "maximum": 60,
+                    "minimum": -60,
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Temperature in the forecast city, °C; null if unknown."
+              }
+            },
+            "required": [
+              "city",
+              "time_utc",
+              "condition",
+              "temp_c"
+            ],
+            "type": "object"
+          },
+          "maxItems": 240,
+          "type": "array"
+        }
+      },
+      "required": [
+        "plan_id",
+        "forecast_slots"
+      ],
+      "type": "object"
+    },
+    "outputSchema": {
+      "properties": {
+        "plan_id": {
+          "type": "string"
+        },
+        "overall": {
+          "description": "Highest day severity.",
+          "enum": [
+            "none",
+            "warning",
+            "unknown",
+            "critical"
+          ],
+          "type": "string"
+        },
+        "days": {
+          "items": {
+            "properties": {
+              "day": {
+                "type": "integer"
+              },
+              "date": {
+                "type": "string"
+              },
+              "forecast_city": {
+                "type": "string"
+              },
+              "coverage": {
+                "description": "How many required 3-hour slots of the check window have a recognised condition and temp_c.",
+                "enum": [
+                  "full",
+                  "partial",
+                  "none"
+                ],
+                "type": "string"
+              },
+              "missing_slots_utc": {
+                "description": "Required slots that are not covered, by time.",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "severity": {
+                "description": "Highest finding severity: critical > unknown > warning > none.",
+                "enum": [
+                  "none",
+                  "warning",
+                  "unknown",
+                  "critical"
+                ],
+                "type": "string"
+              },
+              "findings": {
+                "items": {
+                  "properties": {
+                    "rule_id": {
+                      "enum": [
+                        "W-STORM",
+                        "W-SNOW",
+                        "W-STORM-LOW",
+                        "W-SNOW-LOW",
+                        "W-RAIN",
+                        "W-FOG",
+                        "W-COLD",
+                        "W-NODATA"
+                      ],
+                      "type": "string"
+                    },
+                    "severity": {
+                      "enum": [
+                        "warning",
+                        "unknown",
+                        "critical"
+                      ],
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "evidence_slots": {
+                      "description": "Slots that triggered the rule, by time; W-COLD: the coldest; W-NODATA: none.",
+                      "items": {
+                        "properties": {
+                          "city": {
+                            "description": "The city string the forecast was requested for; must equal a forecast_city of the plan.",
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "time_utc": {
+                            "description": "Slot start on the 3-hour UTC grid: YYYY-MM-DDTHH:00:00Z, HH in 00, 03, ..., 21.",
+                            "pattern": "^\\d{4}-\\d{2}-\\d{2}T(00|03|06|09|12|15|18|21):00:00Z$",
+                            "type": "string"
+                          },
+                          "condition": {
+                            "description": "OpenWeatherMap main group of the slot, or Unknown if it could not be recognised.",
+                            "enum": [
+                              "Thunderstorm",
+                              "Drizzle",
+                              "Rain",
+                              "Snow",
+                              "Mist",
+                              "Smoke",
+                              "Haze",
+                              "Dust",
+                              "Fog",
+                              "Sand",
+                              "Ash",
+                              "Squall",
+                              "Tornado",
+                              "Clear",
+                              "Clouds",
+                              "Unknown"
+                            ],
+                            "type": "string"
+                          },
+                          "temp_c": {
+                            "anyOf": [
+                              {
+                                "maximum": 60,
+                                "minimum": -60,
+                                "type": "number"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ],
+                            "description": "Temperature in the forecast city, °C; null if unknown."
+                          },
+                          "adjusted_temp_c": {
+                            "anyOf": [
+                              {
+                                "type": "number"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ],
+                            "description": "temp_c corrected to the day's highest point (6.5 °C per km), 0.1 °C; null if temp_c is null."
+                          }
+                        },
+                        "required": [
+                          "city",
+                          "time_utc",
+                          "condition",
+                          "temp_c",
+                          "adjusted_temp_c"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "adjusted_temp_c": {
+                      "anyOf": [
+                        {
+                          "type": "number"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "description": "W-COLD only: the lowest corrected temperature; else null."
+                    },
+                    "suggested_constraint": {
+                      "anyOf": [
+                        {
+                          "properties": {
+                            "day": {
+                              "description": "Hike day, 1-based; must not exceed the number of days.",
+                              "maximum": 5,
+                              "minimum": 1,
+                              "type": "integer"
+                            },
+                            "forbid": {
+                              "description": "Segments this day must avoid: above_treeline (all above ~1500 m, includes exposed ridges) or exposed_ridge (open ridge only).",
+                              "enum": [
+                                "above_treeline",
+                                "exposed_ridge"
+                              ],
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "day",
+                            "forbid"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "description": "W-STORM and W-SNOW: a day_constraints item for plan_hike; else null."
+                    }
+                  },
+                  "required": [
+                    "rule_id",
+                    "severity",
+                    "message",
+                    "evidence_slots",
+                    "adjusted_temp_c",
+                    "suggested_constraint"
+                  ],
+                  "type": "object"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "day",
+              "date",
+              "forecast_city",
+              "coverage",
+              "missing_slots_utc",
+              "severity",
+              "findings"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "suggested_constraints": {
+          "description": "All suggested constraints without repeats, by day, then forbid.",
+          "items": {
+            "properties": {
+              "day": {
+                "description": "Hike day, 1-based; must not exceed the number of days.",
+                "maximum": 5,
+                "minimum": 1,
+                "type": "integer"
+              },
+              "forbid": {
+                "description": "Segments this day must avoid: above_treeline (all above ~1500 m, includes exposed ridges) or exposed_ridge (open ridge only).",
+                "enum": [
+                  "above_treeline",
+                  "exposed_ridge"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "day",
+              "forbid"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "forecast_used": {
+          "description": "Every slot that fell into some day's check window, once, by time_utc, then city.",
+          "items": {
+            "properties": {
+              "city": {
+                "description": "The city string the forecast was requested for; must equal a forecast_city of the plan.",
+                "minLength": 1,
+                "type": "string"
+              },
+              "time_utc": {
+                "description": "Slot start on the 3-hour UTC grid: YYYY-MM-DDTHH:00:00Z, HH in 00, 03, ..., 21.",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T(00|03|06|09|12|15|18|21):00:00Z$",
+                "type": "string"
+              },
+              "condition": {
+                "description": "OpenWeatherMap main group of the slot, or Unknown if it could not be recognised.",
+                "enum": [
+                  "Thunderstorm",
+                  "Drizzle",
+                  "Rain",
+                  "Snow",
+                  "Mist",
+                  "Smoke",
+                  "Haze",
+                  "Dust",
+                  "Fog",
+                  "Sand",
+                  "Ash",
+                  "Squall",
+                  "Tornado",
+                  "Clear",
+                  "Clouds",
+                  "Unknown"
+                ],
+                "type": "string"
+              },
+              "temp_c": {
+                "anyOf": [
+                  {
+                    "maximum": 60,
+                    "minimum": -60,
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Temperature in the forecast city, °C; null if unknown."
+              }
+            },
+            "required": [
+              "city",
+              "time_utc",
+              "condition",
+              "temp_c"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "notes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "plan_id",
+        "overall",
+        "days",
+        "suggested_constraints",
+        "forecast_used",
+        "notes"
+      ],
+      "type": "object"
+    }
+  },
+  "export_plan": {
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "plan_id": {
+          "description": "plan_id from plan_hike or validate_hike_plan.",
+          "pattern": "^p_[0-9a-f]{10}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "plan_id"
+      ],
+      "type": "object"
+    },
+    "outputSchema": {
+      "properties": {
+        "type": {
+          "const": "FeatureCollection",
+          "type": "string"
+        },
+        "plan_id": {
+          "type": "string"
+        },
+        "plan": {
+          "properties": {
+            "plan_id": {
+              "description": "p_ + 10 hex of the plan content hash; same content, same id.",
+              "type": "string"
+            },
+            "dataset_version": {
+              "type": "string"
+            },
+            "start_date": {
+              "type": "string"
+            },
+            "days": {
+              "type": "integer"
+            },
+            "fitness": {
+              "enum": [
+                "low",
+                "medium",
+                "high"
+              ],
+              "type": "string"
+            },
+            "overnight_mode": {
+              "enum": [
+                "hut",
+                "tent"
+              ],
+              "type": "string"
+            },
+            "applied_day_constraints": {
+              "description": "Normalized: no repeats, by day, then forbid.",
+              "items": {
+                "properties": {
+                  "day": {
+                    "description": "Hike day, 1-based; must not exceed the number of days.",
+                    "maximum": 5,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "forbid": {
+                    "description": "Segments this day must avoid: above_treeline (all above ~1500 m, includes exposed ridges) or exposed_ridge (open ridge only).",
+                    "enum": [
+                      "above_treeline",
+                      "exposed_ridge"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "day",
+                  "forbid"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "stages": {
+              "description": "One stage per day.",
+              "items": {
+                "properties": {
+                  "day": {
+                    "type": "integer"
+                  },
+                  "date": {
+                    "description": "ISO date of this day.",
+                    "type": "string"
+                  },
+                  "start_node_id": {
+                    "type": "string"
+                  },
+                  "start_name": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "description": "Null for an unnamed trail junction."
+                  },
+                  "start_label": {
+                    "description": "Human label of the node: its name, or 'unnamed <kind> near <nearest named node>, <elevation> m'. Use it instead of node ids when talking to the user.",
+                    "type": "string"
+                  },
+                  "end_node_id": {
+                    "type": "string"
+                  },
+                  "end_name": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "description": "Null for an unnamed trail junction."
+                  },
+                  "end_label": {
+                    "description": "Human label of the node: its name, or 'unnamed <kind> near <nearest named node>, <elevation> m'. Use it instead of node ids when talking to the user.",
+                    "type": "string"
+                  },
+                  "path_node_ids": {
+                    "description": "Every node of the day in walking order.",
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "segment_ids": {
+                    "description": "Trail segments of the day in walking order.",
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "km": {
+                    "description": "Distance, 3 decimals.",
+                    "type": "number"
+                  },
+                  "ascent_m": {
+                    "description": "Total ascent in the walking direction, metres.",
+                    "type": "integer"
+                  },
+                  "descent_m": {
+                    "description": "Total descent in the walking direction, metres.",
+                    "type": "integer"
+                  },
+                  "est_hours": {
+                    "description": "Walking time (sum of per-segment minutes) / 60, 2 decimals.",
+                    "type": "number"
+                  },
+                  "limit_hours": {
+                    "description": "Day limit: min(fitness norm, daylight minus 1 h), 2 decimals.",
+                    "type": "number"
+                  },
+                  "limit_kind": {
+                    "description": "Which of the two set limit_hours.",
+                    "enum": [
+                      "fitness",
+                      "daylight"
+                    ],
+                    "type": "string"
+                  },
+                  "max_ele_m": {
+                    "description": "Highest point of the day's segments, metres.",
+                    "type": "integer"
+                  },
+                  "above_treeline": {
+                    "description": "True if any segment of the day is above the treeline.",
+                    "type": "boolean"
+                  },
+                  "exposed_ridge": {
+                    "description": "True if any segment of the day is on an exposed ridge.",
+                    "type": "boolean"
+                  },
+                  "overnight_node_id": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "description": "Where the night is spent; null on the last day."
+                  },
+                  "forecast_city": {
+                    "description": "Weather forecast city of the day's highest node.",
+                    "type": "string"
+                  },
+                  "forecast_city_ele_m": {
+                    "type": "integer"
+                  },
+                  "forecast_city_km": {
+                    "type": "number"
+                  },
+                  "check_window": {
+                    "properties": {
+                      "from_utc": {
+                        "description": "Sunrise at the day's start node, UTC, rounded down to the minute.",
+                        "type": "string"
+                      },
+                      "to_utc": {
+                        "description": "Sunset at the day's start node, UTC, rounded up to the minute.",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "from_utc",
+                      "to_utc"
+                    ],
+                    "type": "object",
+                    "description": "Daylight window to check the weather for; not a schedule."
+                  }
+                },
+                "required": [
+                  "day",
+                  "date",
+                  "start_node_id",
+                  "start_name",
+                  "start_label",
+                  "end_node_id",
+                  "end_name",
+                  "end_label",
+                  "path_node_ids",
+                  "segment_ids",
+                  "km",
+                  "ascent_m",
+                  "descent_m",
+                  "est_hours",
+                  "limit_hours",
+                  "limit_kind",
+                  "max_ele_m",
+                  "above_treeline",
+                  "exposed_ridge",
+                  "overnight_node_id",
+                  "forecast_city",
+                  "forecast_city_ele_m",
+                  "forecast_city_km",
+                  "check_window"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "totals": {
+              "properties": {
+                "km": {
+                  "type": "number"
+                },
+                "ascent_m": {
+                  "type": "integer"
+                },
+                "descent_m": {
+                  "type": "integer"
+                },
+                "est_hours": {
+                  "description": "Sum of all days' minutes / 60, 2 decimals.",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "km",
+                "ascent_m",
+                "descent_m",
+                "est_hours"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "plan_id",
+            "dataset_version",
+            "start_date",
+            "days",
+            "fitness",
+            "overnight_mode",
+            "applied_day_constraints",
+            "stages",
+            "totals"
+          ],
+          "type": "object",
+          "description": "The stored plan itself."
+        },
+        "features": {
+          "description": "start point, then per day its line and (except the last day) its overnight point, then finish.",
+          "items": {
+            "anyOf": [
+              {
+                "properties": {
+                  "type": {
+                    "const": "Feature",
+                    "type": "string"
+                  },
+                  "geometry": {
+                    "properties": {
+                      "type": {
+                        "const": "Point",
+                        "type": "string"
+                      },
+                      "coordinates": {
+                        "description": "[longitude, latitude, elevation_m].",
+                        "items": {
+                          "type": "number"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "coordinates"
+                    ],
+                    "type": "object"
+                  },
+                  "properties": {
+                    "properties": {
+                      "role": {
+                        "enum": [
+                          "start",
+                          "overnight",
+                          "finish"
+                        ],
+                        "type": "string"
+                      },
+                      "node_id": {
+                        "type": "string"
+                      },
+                      "label": {
+                        "description": "Human label of the node: its name, or 'unnamed <kind> near <nearest named node>, <elevation> m'. Use it instead of node ids when talking to the user.",
+                        "type": "string"
+                      },
+                      "name": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "near_name": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "For an unnamed node: the nearest named node used in its label."
+                      },
+                      "kind": {
+                        "enum": [
+                          "peak",
+                          "junction",
+                          "hut",
+                          "camp_site",
+                          "village"
+                        ],
+                        "type": "string"
+                      },
+                      "ele_m": {
+                        "type": "integer"
+                      },
+                      "day": {
+                        "anyOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "overnight: the day after which the night is spent; otherwise null."
+                      }
+                    },
+                    "required": [
+                      "role",
+                      "node_id",
+                      "label",
+                      "name",
+                      "near_name",
+                      "kind",
+                      "ele_m",
+                      "day"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "type",
+                  "geometry",
+                  "properties"
+                ],
+                "type": "object"
+              },
+              {
+                "properties": {
+                  "type": {
+                    "const": "Feature",
+                    "type": "string"
+                  },
+                  "geometry": {
+                    "properties": {
+                      "type": {
+                        "const": "LineString",
+                        "type": "string"
+                      },
+                      "coordinates": {
+                        "description": "[longitude, latitude, elevation_m] of every node of the day.",
+                        "items": {
+                          "items": {
+                            "type": "number"
+                          },
+                          "type": "array"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "coordinates"
+                    ],
+                    "type": "object"
+                  },
+                  "properties": {
+                    "properties": {
+                      "role": {
+                        "const": "day",
+                        "type": "string"
+                      },
+                      "day": {
+                        "type": "integer"
+                      },
+                      "date": {
+                        "type": "string"
+                      },
+                      "km": {
+                        "type": "number"
+                      },
+                      "ascent_m": {
+                        "type": "integer"
+                      },
+                      "descent_m": {
+                        "type": "integer"
+                      },
+                      "est_hours": {
+                        "type": "number"
+                      },
+                      "start_node_id": {
+                        "type": "string"
+                      },
+                      "end_node_id": {
+                        "type": "string"
+                      },
+                      "start_label": {
+                        "type": "string"
+                      },
+                      "end_label": {
+                        "type": "string"
+                      },
+                      "above_treeline": {
+                        "type": "boolean"
+                      },
+                      "exposed_ridge": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "role",
+                      "day",
+                      "date",
+                      "km",
+                      "ascent_m",
+                      "descent_m",
+                      "est_hours",
+                      "start_node_id",
+                      "end_node_id",
+                      "start_label",
+                      "end_label",
+                      "above_treeline",
+                      "exposed_ridge"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "type",
+                  "geometry",
+                  "properties"
+                ],
+                "type": "object"
+              }
+            ]
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "type",
+        "plan_id",
+        "plan",
+        "features"
+      ],
+      "type": "object"
+    }
+  }
+}

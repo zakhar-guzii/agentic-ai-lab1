@@ -1,0 +1,12 @@
+/docs/AgenticAI_Lab1.md
+/docs/lecture_materials
+
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.pytest_cache/
+.ruff_cache/
+
+# map files written by carpathian-agent (--out)
+/plans/

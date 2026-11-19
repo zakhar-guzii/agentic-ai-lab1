@@ -1,0 +1,37 @@
+[project]
+name = "agentic-ai-lab1"
+version = "0.1.0"
+description = "Hike planner agent for the Chornohora range: custom trails MCP server plus Weather MCP"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastmcp>=3.4,<4",
+    "httpx>=0.28,<0.29",
+    "langchain-core>=1.6,<2",
+    "langchain-mcp-adapters>=0.3.2,<0.4",
+    "langchain-openai>=1.6,<2",
+    "langgraph>=1.2,<2",
+    "pydantic>=2.11,<3",
+    "python-dotenv>=1.1,<2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
+
+[project.scripts]
+carpathian-trails = "carpathian_planner.trails.server:main"
+carpathian-weather-probe = "carpathian_planner.weather_client:main"
+carpathian-agent = "carpathian_planner.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/carpathian_planner"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["scripts"]

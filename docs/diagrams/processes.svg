@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 670" width="1000" height="670" font-family="system-ui, -apple-system, 'Noto Sans', 'Segoe UI', sans-serif">
+  <style>
+    .card { fill: #EEF3FC; stroke: #2F55B5; stroke-width: 1.2; }
+    .ext { fill: #F1F2F4; stroke: #9CA3AF; stroke-width: 1.2; }
+    .extd { fill: #F5F5F5; stroke: #9CA3AF; stroke-width: 1.2; stroke-dasharray: 5 4; }
+    .outer { fill: #fff; stroke: #1F2937; stroke-width: 1.4; }
+    .inner { fill: #F7F9FE; stroke: #2F55B5; stroke-width: 1.2; stroke-dasharray: 6 4; }
+    .title { font-size: 14px; font-weight: 700; fill: #111827; }
+    .ct { font-size: 13px; font-weight: 700; fill: #0F1B3D; }
+    .t { font-size: 11.5px; fill: #374151; }
+    .k { font-size: 11.5px; fill: #111827; }
+    .ref { font-size: 11px; font-style: italic; fill: #2F55B5; }
+    .lbl { font-size: 11px; fill: #1E3A8A; }
+    .note { font-size: 11px; fill: #4B5563; }
+    .mono { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 11px; }
+    .arr { stroke: #1E2A5A; stroke-width: 1.4; fill: none; marker-end: url(#a); }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1E2A5A"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="670" fill="#fff"/>
+
+  <!-- laptop -->
+  <rect class="outer" x="20" y="20" width="960" height="456" rx="6"/>
+  <text class="title" x="36" y="44">Ноутбук — localhost</text>
+  <rect class="inner" x="36" y="58" width="928" height="402" rx="6"/>
+  <text class="ct" x="52" y="82">Три процеси і файл датасету</text>
+  <text class="ref" x="948" y="82" text-anchor="end">Сервер trails під час роботи не звертається до мережі.</text>
+
+  <!-- agent -->
+  <rect class="card" x="52" y="100" width="250" height="150" rx="6"/>
+  <text class="ct" x="66" y="122">Агент</text>
+  <text class="t" x="66" y="144">CLI, журнал викликів, карта й GPX</text>
+  <text class="t" x="66" y="162">граф LangGraph</text>
+  <text class="t" x="66" y="180">клієнт Weather MCP і адаптер</text>
+  <text class="k" x="66" y="206">Мережа: HTTPS → OpenRouter</text>
+  <text class="ref" x="66" y="230">carpathian-agent "&lt;запит&gt;"</text>
+
+  <!-- trails -->
+  <rect class="card" x="372" y="100" width="250" height="150" rx="6"/>
+  <text class="ct" x="386" y="122">Сервер trails (власний)</text>
+  <text class="t" x="386" y="144">FastMCP, п'ять інструментів</text>
+  <text class="t" x="386" y="162">планування, правила, експорт</text>
+  <text class="t" x="386" y="180"><tspan class="mono">127.0.0.1:8765/mcp</tspan></text>
+  <text class="k" x="386" y="206">Транспорт: streamable HTTP</text>
+  <text class="ref" x="386" y="230">carpathian-trails [--port N]</text>
+
+  <!-- dataset -->
+  <rect class="card" x="692" y="100" width="250" height="150" rx="6"/>
+  <text class="ct" x="706" y="122">Датасет</text>
+  <text class="t" x="706" y="144"><tspan class="mono">data/chornohora.json</tspan></text>
+  <text class="t" x="706" y="162">граф стежок Чорногори</text>
+  <text class="t" x="706" y="180">файл у репозиторії, без мережі</text>
+  <text class="k" x="706" y="206">Читається на старті trails</text>
+  <text class="ref" x="706" y="230">походження: data/SOURCE.md</text>
+
+  <!-- weather mcp -->
+  <rect class="ext" x="372" y="290" width="250" height="150" rx="6"/>
+  <text class="ct" x="386" y="312">Weather MCP (готовий)</text>
+  <text class="t" x="386" y="334"><tspan class="mono">mschneider82/mcp-openweather</tspan></text>
+  <text class="t" x="386" y="352">Docker, коміт <tspan class="mono">e032683</tspan></text>
+  <text class="t" x="386" y="370">інструмент <tspan class="mono">weather(city)</tspan></text>
+  <text class="k" x="386" y="396">Транспорт: stdio</text>
+  <text class="ref" x="386" y="420">запуск: WEATHER_MCP_COMMAND</text>
+
+  <!-- arrows -->
+  <path class="arr" d="M302,160 H372"/>
+  <text class="lbl" x="312" y="152">MCP</text>
+  <path class="arr" d="M692,160 H622"/>
+  <text class="lbl" x="636" y="152">дані</text>
+  <path class="arr" d="M177,250 V365 H372"/>
+  <text class="lbl" x="190" y="357">MCP, stdio</text>
+
+  <!-- outside -->
+  <text class="title" x="20" y="508">Поза ноутбуком — мережеві сервіси</text>
+  <rect class="extd" x="20" y="522" width="470" height="80" rx="6"/>
+  <text class="ct" x="36" y="546">OpenRouter</text>
+  <text class="t" x="36" y="568">модель агента (<tspan class="mono">MODEL</tspan>), HTTPS</text>
+  <text class="ref" x="36" y="588">ключ: OPENROUTER_API_KEY</text>
+  <rect class="extd" x="510" y="522" width="470" height="80" rx="6"/>
+  <text class="ct" x="526" y="546">OpenWeatherMap</text>
+  <text class="t" x="526" y="568">прогноз для Weather MCP, HTTPS, 2 запити на виклик</text>
+  <text class="ref" x="526" y="588">ключ: OWM_API_KEY</text>
+
+  <text class="note" x="20" y="630">Синім — наш код і дані; сірим — чужі компоненти. Ключі лише в .env, який ігнорує git.</text>
+  <text class="note" x="20" y="648">Датасет збирає один раз окремий скрипт (OSM Overpass + OpenTopoData); під час роботи ці джерела не потрібні.</text>
+</svg>

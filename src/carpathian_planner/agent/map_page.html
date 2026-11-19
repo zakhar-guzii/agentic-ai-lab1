@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Похід Чорногорою</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+  :root {
+    --bg: #f6f5f1; --card: #ffffff; --ink: #1d2320; --muted: #5d6762; --line: #dfe2dd;
+    --accent: #2f6b4f; --ok: #2f7d4f; --warn: #a86b00; --bad: #b3261e; --unknown: #5b6470;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141816; --card: #1d2320; --ink: #e8ece9; --muted: #a3ada7; --line: #303834;
+      --accent: #7cc4a0; --ok: #6fcf97; --warn: #f2b54a; --bad: #ff8a80; --unknown: #a7b0bb;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px; }
+  h1 { font-size: 1.6rem; margin: 0 0 4px; }
+  .summary { color: var(--muted); margin: 0 0 16px; }
+  .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 16px; }
+  .tabs button { font: inherit; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line);
+                 background: var(--card); color: var(--ink); cursor: pointer; }
+  .tabs button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  .tabs small { display: block; font-size: .8rem; opacity: .85; }
+  #map { height: 420px; border-radius: 12px; border: 1px solid var(--line); background: var(--card); }
+  #map .offline { padding: 24px; color: var(--muted); }
+  .bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+  .gpx { font: inherit; padding: 10px 16px; border-radius: 10px; border: 0; background: var(--accent);
+         color: var(--bg); cursor: pointer; font-weight: 600; }
+  .day { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px;
+         margin: 0 0 12px; border-left: 6px solid var(--day); }
+  .day h2 { font-size: 1.05rem; margin: 0 0 2px; }
+  .route { margin: 0; }
+  .stats { color: var(--muted); margin: 2px 0 8px; font-size: .95rem; }
+  .badge { display: inline-block; font-size: .85rem; font-weight: 600; padding: 2px 10px; border-radius: 999px;
+           border: 1px solid currentColor; }
+  .badge.ok { color: var(--ok); } .badge.warn { color: var(--warn); }
+  .badge.bad { color: var(--bad); } .badge.unknown { color: var(--unknown); }
+  .weather ul { margin: 8px 0 0; padding-left: 20px; }
+  .weather li { margin: 4px 0; }
+  .weather .ev { color: var(--muted); font-size: .9rem; display: block; }
+  .note { color: var(--muted); font-size: .9rem; margin: 6px 0 0; }
+  footer { color: var(--muted); font-size: .85rem; margin-top: 24px; }
+  @media (max-width: 600px) { #map { height: 300px; } h1 { font-size: 1.3rem; } }
+</style>
+</head>
+<body>
+<main>
+  <h1 id="route"></h1>
+  <p class="summary" id="summary"></p>
+  <div class="tabs" id="tabs" hidden></div>
+  <div id="map"></div>
+  <div class="bar">
+    <strong id="variant-title"></strong>
+    <button class="gpx" id="gpx" type="button">Завантажити GPX</button>
+  </div>
+  <section id="days"></section>
+  <footer>
+    <p id="wind"></p>
+    <p>Лінія на карті з'єднує вузли стежок прямими й може зрізати серпантини; км і години взято з плану.
+       Дані стежок: © учасники OpenStreetMap (ODbL). Карта: © OpenTopoMap (CC-BY-SA).</p>
+  </footer>
+</main>
+<script type="application/json" id="data">/*__PAGE_DATA__*/</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function () {
+  const DATA = JSON.parse(document.getElementById("data").textContent);
+  const COLORS = ["#d1495b", "#2e86ab", "#e09f3e", "#3b8b5a", "#7b4fa3"];
+  const ROLE = { start: "Старт", overnight: "Ночівля", finish: "Фініш" };
+  const $ = (id) => document.getElementById(id);
+  const el = (tag, cls, text) => {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  };
+
+  let map = null, layer = null;
+  if (window.L) {
+    map = L.map("map", { scrollWheelZoom: false });
+    L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
+      maxZoom: 17,
+      attribution: "© OpenStreetMap contributors, SRTM | © OpenTopoMap (CC-BY-SA)",
+    }).addTo(map);
+    layer = L.layerGroup().addTo(map);
+  } else {
+    $("map").appendChild(el("p", "offline", "Карта потребує інтернету. Маршрут по днях — нижче, GPX можна завантажити."));
+  }
+
+  function drawMap(v) {
+    if (!map) return;
+    layer.clearLayers();
+    const bounds = [];
+    v.lines.forEach((line) => {
+      const color = COLORS[(line.day - 1) % COLORS.length];
+      L.polyline(line.coords, { color, weight: 5, opacity: 0.9 }).bindTooltip("День " + line.day).addTo(layer);
+      bounds.push(...line.coords);
+    });
+    v.points.forEach((p) => {
+      const title = ROLE[p.role] + (p.role === "overnight" ? " після дня " + p.day : "") + ": " + p.label;
+      L.circleMarker([p.lat, p.lon], { radius: 7, color: "#1d2320", weight: 2, fillColor: "#ffffff", fillOpacity: 1 })
+        .bindTooltip(title).addTo(layer);
+    });
+    if (bounds.length) map.fitBounds(bounds, { padding: [24, 24] });
+  }
+
+  function drawDays(v) {
+    const box = $("days");
+    box.replaceChildren();
+    v.days.forEach((d) => {
+      const card = el("article", "day");
+      card.style.setProperty("--day", COLORS[(d.day - 1) % COLORS.length]);
+      card.appendChild(el("h2", null, "День " + d.day + " · " + d.date));
+      card.appendChild(el("p", "route", d.from + " → " + d.to));
+      card.appendChild(el("p", "stats", d.stats + (d.ridge ? " · відкритий хребет" : "")));
+      const w = el("div", "weather");
+      w.appendChild(el("span", "badge " + d.weather.level_class, "Погода: " + d.weather.level));
+      if (d.weather.items.length) {
+        const ul = el("ul");
+        d.weather.items.forEach((it) => {
+          const li = el("li", null, it.text);
+          it.evidence.forEach((ev) => li.appendChild(el("span", "ev", ev)));
+          ul.appendChild(li);
+        });
+        w.appendChild(ul);
+      }
+      if (d.weather.note) w.appendChild(el("p", "note", d.weather.note));
+      card.appendChild(w);
+      box.appendChild(card);
+    });
+  }
+
+  function show(i) {
+    const v = DATA.variants[i];
+    $("route").textContent = v.route;
+    $("summary").textContent = v.summary;
+    $("variant-title").textContent = DATA.variants.length > 1 ? v.title : "";
+    document.querySelectorAll("#tabs button").forEach((b, j) => b.setAttribute("aria-pressed", String(j === i)));
+    $("gpx").onclick = () => {
+      const url = URL.createObjectURL(new Blob([v.gpx], { type: "application/gpx+xml" }));
+      const a = Object.assign(document.createElement("a"), { href: url, download: v.gpx_name });
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    };
+    drawMap(v);
+    drawDays(v);
+  }
+
+  if (DATA.variants.length > 1) {
+    const tabs = $("tabs");
+    tabs.hidden = false;
+    DATA.variants.forEach((v, i) => {
+      const b = el("button", null, v.title);
+      b.type = "button";
+      b.appendChild(el("small", null, v.summary));
+      b.onclick = () => show(i);
+      tabs.appendChild(b);
+    });
+  }
+  $("wind").textContent = DATA.wind_note;
+  document.title = DATA.variants[DATA.variants.length - 1].route;
+  show(DATA.variants.length - 1);
+})();
+</script>
+</body>
+</html>

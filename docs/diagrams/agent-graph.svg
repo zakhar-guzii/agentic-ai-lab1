@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600" font-family="system-ui, -apple-system, 'Noto Sans', 'Segoe UI', sans-serif">
+  <style>
+    .card { fill: #EEF3FC; stroke: #2F55B5; stroke-width: 1.2; }
+    .ct { font-size: 13px; font-weight: 700; fill: #0F1B3D; }
+    .t { font-size: 11.5px; fill: #374151; }
+    .ref { font-size: 11px; font-style: italic; fill: #2F55B5; }
+    .lbl { font-size: 11px; fill: #1E3A8A; }
+    .red { font-size: 10px; font-weight: 700; fill: #C62828; letter-spacing: 0.5px; }
+    .note { font-size: 11px; fill: #4B5563; text-anchor: middle; }
+    .mono { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 11px; }
+    .arr { stroke: #1E2A5A; stroke-width: 1.4; fill: none; marker-end: url(#a); }
+    .dash { stroke-dasharray: 5 4; }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1E2A5A"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="600" fill="#fff"/>
+
+  <!-- start / end at planner -->
+  <path class="arr" d="M30,88 H180"/>
+  <text class="lbl" x="40" y="80">запит</text>
+  <path class="arr" d="M180,132 H30"/>
+  <text class="lbl" x="34" y="150">текст без виклику</text>
+  <text class="lbl" x="34" y="165">= відповідь</text>
+
+  <!-- planner -->
+  <rect class="card" x="180" y="50" width="280" height="110" rx="6"/>
+  <text class="ct" x="194" y="72">planner (LLM)</text>
+  <text class="t" x="194" y="94">інструменти trails:</text>
+  <text class="t" x="194" y="112"><tspan class="mono">find_place</tspan>, <tspan class="mono">plan_hike</tspan>,</text>
+  <text class="t" x="194" y="130"><tspan class="mono">validate_hike_plan</tspan></text>
+  <text class="ref" x="194" y="150">погодних інструментів не бачить</text>
+
+  <!-- planner_tools -->
+  <rect class="card" x="640" y="50" width="280" height="110" rx="6"/>
+  <text class="ct" x="654" y="72">planner_tools (код)</text>
+  <text class="t" x="654" y="94">виконує перший виклик ходу;</text>
+  <text class="t" x="654" y="112">решта викликів → помилка</text>
+  <text class="ref" x="654" y="150">MCP → trails</text>
+
+  <path class="arr" d="M460,88 H640"/>
+  <text class="lbl" x="472" y="80">виклик інструмента</text>
+  <path class="arr" d="M640,132 H460"/>
+  <text class="lbl" x="472" y="124">плану немає, ходів planner &lt; 20</text>
+
+  <!-- planner_tools -> weather_check -->
+  <path class="arr" d="M780,160 V260"/>
+  <text class="lbl" x="770" y="198" text-anchor="end">дав план (ok / valid=true)</text>
+  <text class="red" x="770" y="214" text-anchor="end">ЗАВЖДИ, БЕЗ УЧАСТІ МОДЕЛІ</text>
+
+  <!-- weather_check -->
+  <rect class="card" x="640" y="260" width="280" height="90" rx="6"/>
+  <text class="ct" x="654" y="282">weather_check (код, без LLM)</text>
+  <text class="t" x="654" y="302">Weather MCP → адаптер → слоти →</text>
+  <text class="t" x="654" y="320"><tspan class="mono">trails.check_weather_warnings</tspan></text>
+  <text class="ref" x="654" y="340">прогноз міста — раз за запуск</text>
+
+  <!-- weather_check -> planner -->
+  <path class="arr" d="M640,305 H320 V160"/>
+  <text class="lbl" x="336" y="297">є <tspan class="mono">critical</tspan>, перевірок &lt; 4, ходів planner &lt; 20</text>
+  <text class="red" x="480" y="328" text-anchor="middle">≤ 3 ПЕРЕПЛАНУВАННЯ</text>
+  <text class="red" x="480" y="343" text-anchor="middle">≤ 20 ХОДІВ PLANNER + 1 ФІНАЛЬНИЙ</text>
+
+  <!-- weather_check -> finalize -->
+  <path class="arr" d="M780,350 V450"/>
+  <text class="lbl" x="790" y="384">інакше: немає critical,</text>
+  <text class="lbl" x="790" y="399">4 перевірки або 20 ходів planner</text>
+
+  <!-- planner_tools -> finalize (turn limit) -->
+  <path class="arr dash" d="M920,105 H970 V490 H920"/>
+  <text class="lbl" x="984" y="300" text-anchor="middle" transform="rotate(90 984 300)">плану немає, 20 ходів planner вичерпано</text>
+
+  <!-- finalize -->
+  <rect class="card" x="640" y="450" width="280" height="80" rx="6"/>
+  <text class="ct" x="654" y="472">finalize (LLM)</text>
+  <text class="t" x="654" y="492">фінальний виклик без інструментів</text>
+  <text class="ref" x="654" y="514">рекомендує лише перевірені плани</text>
+
+  <path class="arr" d="M640,490 H500"/>
+  <text class="lbl" x="510" y="482">відповідь</text>
+
+  <text class="note" x="500" y="562">Відповідь друкує CLI; з -v код додає блок «Weather check». Після відповіді CLI записує карту й GPX через export_plan.</text>
+  <text class="note" x="500" y="580">Пунктир — вичерпано 20 ходів planner; далі лише один фінальний виклик. Перевірений plan_id удруге не перевіряється, але спроба зараховується.</text>
+</svg>
