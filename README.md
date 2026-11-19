@@ -1,31 +1,31 @@
-# Планувальник походів Чорногорою
+# Chornohora Hike Planner
 
-Агент, який планує похід масивом Чорногора (Українські Карпати) на 1–5 днів і перевіряє план за актуальним прогнозом погоди. Він має два MCP-з'єднання: власний сервер `trails` (граф стежок із локального датасету) і готовий сервер Weather MCP (`mschneider82/mcp-openweather`, прогноз OpenWeatherMap).
+An agent that plans a 1–5 day hike in the Chornohora range (Ukrainian Carpathians) and checks the plan against the current weather forecast. It has two MCP connections: its own `trails` server (a trail graph built from a local dataset) and the off-the-shelf Weather MCP server (`mschneider82/mcp-openweather`, OpenWeatherMap forecast).
 
-## Що потрібно
+## Requirements
 
-- Python 3.12 і [`uv`](https://docs.astral.sh/uv/);
-- Docker — для Weather MCP;
-- ключ [OpenRouter](https://openrouter.ai/) — для моделі агента;
-- ключ [OpenWeatherMap](https://openweathermap.org/api) (безкоштовний план). Новий ключ активується до 2 годин, тому отримайте його заздалегідь і перевірте командою `carpathian-weather-probe` (нижче).
+- Python 3.12 and [`uv`](https://docs.astral.sh/uv/);
+- Docker, for Weather MCP;
+- an [OpenRouter](https://openrouter.ai/) key, for the agent's model;
+- an [OpenWeatherMap](https://openweathermap.org/api) key (free plan). A new key can take up to 2 hours to activate, so get it in advance and check it with `carpathian-weather-probe` (below).
 
-## Встановлення
+## Installation
 
 ```bash
 uv sync
 ```
 
-## Налаштування
+## Configuration
 
 ```bash
 cp .env.example .env
 ```
 
-У `.env` впишіть `OPENROUTER_API_KEY` і `OWM_API_KEY`. Решта рядків уже містить робочі типові значення; змінюйте їх лише за потреби. Файл `.env` git ігнорує.
+In `.env`, fill in `OPENROUTER_API_KEY` and `OWM_API_KEY`. The other lines already hold working defaults; change them only if needed. Git ignores `.env`.
 
 ## Weather MCP
 
-Сервер збирається з фіксованого коміту, поза теками цього репозиторію:
+The server is built from a pinned commit, outside this repository's folders:
 
 ```bash
 git clone https://github.com/mschneider82/mcp-openweather.git ../mcp-openweather
@@ -35,61 +35,61 @@ docker build -t mcp-weather .
 cd -
 ```
 
-Агент сам запускає його як дочірній процес командою з `WEATHER_MCP_COMMAND` (типово `docker run -i --rm --pull=never -e OWM_API_KEY mcp-weather`). Скільки чекати відповіді, задає `WEATHER_TIMEOUT_S` (типово 20 с). Процес отримує лише `OWM_API_KEY`, `DOCKER_*` і базові змінні (`HOME`, `PATH`); якщо серверу потрібна ще якась, задайте її в команді: `WEATHER_MCP_COMMAND=env NAME=value …`.
+The agent starts it itself as a child process using the command in `WEATHER_MCP_COMMAND` (default `docker run -i --rm --pull=never -e OWM_API_KEY mcp-weather`). `WEATHER_TIMEOUT_S` sets how long to wait for an answer (default 20 s). The process receives only `OWM_API_KEY`, `DOCKER_*` and basic variables (`HOME`, `PATH`); if the server needs anything else, set it in the command: `WEATHER_MCP_COMMAND=env NAME=value …`.
 
-Без Docker: зберіть бінарник (`go build -o mcp-weather`, потрібен Go ≥ 1.24) і вкажіть у `.env` `WEATHER_MCP_COMMAND=<повний шлях до mcp-weather>`.
+Without Docker: build the binary (`go build -o mcp-weather`, requires Go ≥ 1.24) and set `WEATHER_MCP_COMMAND=<full path to mcp-weather>` in `.env`.
 
-Перевірка (один виклик Weather MCP; друкує статус і слоти прогнозу):
+Check (one Weather MCP call; prints the status and forecast slots):
 
 ```bash
 uv run carpathian-weather-probe "Yasinia,UA"
 ```
 
-## Сервер `trails`
+## `trails` server
 
-Запуск (окремий термінал; типова адреса `http://127.0.0.1:8765/mcp`):
+Start it (in a separate terminal; default address `http://127.0.0.1:8765/mcp`):
 
 ```bash
-uv run carpathian-trails            # або: uv run carpathian-trails --port 8766
+uv run carpathian-trails            # or: uv run carpathian-trails --port 8766
 ```
 
-Перевірка окремим MCP-клієнтом:
+Check it with a standalone MCP client:
 
 ```bash
 uv run fastmcp list http://127.0.0.1:8765/mcp --input-schema --output-schema
 uv run fastmcp call http://127.0.0.1:8765/mcp find_place --input-json '{"name": "Говерла"}'
 ```
 
-## Агент
+## Agent
 
-Спершу запустіть `carpathian-trails` (вище), потім в іншому терміналі:
+Start `carpathian-trails` first (above), then in another terminal:
 
 ```bash
 uv run carpathian-agent --list-tools
 uv run carpathian-agent "Похід із Заросляка на Піп Іван на чотири дні з наметом"
-uv run carpathian-agent -v "Похід із Заросляка на Піп Іван на чотири дні з наметом"   # з журналом викликів і блоком перевірки погоди
+uv run carpathian-agent -v "Похід із Заросляка на Піп Іван на чотири дні з наметом"   # with the call log and the weather check block
 ```
 
-Після відповіді агент записує карту плану в теку `plans/` (інша тека — `--out <тека>`) і друкує шляхи:
+(The example request: "A four-day hike with a tent from Zaroslyak to Pip Ivan".)
 
-- `plans/<plan_id>.html` — відкрийте в браузері (для карти потрібен інтернет);
-- `plans/<plan_id>.gpx` — імпортуйте в Mapy.com, OsmAnd чи інший навігатор.
+After answering, the agent writes a map of the plan to the `plans/` folder (another folder: `--out <folder>`) and prints the paths:
 
-`-vv` додає до журналу повні результати інструментів.
+- `plans/<plan_id>.html`: open it in a browser
+- `plans/<plan_id>.gpx`: import it into Mapy.com, OsmAnd or another navigation app.
 
-Агент читає з `.env` `OPENROUTER_API_KEY`, `MODEL` (типово `openrouter:anthropic/claude-haiku-5.5`), `TRAILS_MCP_URL` (типово `http://127.0.0.1:8765/mcp`), а для Weather MCP — `OWM_API_KEY`, `WEATHER_MCP_COMMAND` і `WEATHER_TIMEOUT_S` (розділ «Weather MCP» вище).
+`-vv` adds the full tool results to the log.
 
-## Тести
+The agent reads from `.env`: `OPENROUTER_API_KEY`, `MODEL` (default `openrouter:anthropic/claude-haiku-5.5`), `TRAILS_MCP_URL` (default `http://127.0.0.1:8765/mcp`), and, for Weather MCP, `OWM_API_KEY`, `WEATHER_MCP_COMMAND` and `WEATHER_TIMEOUT_S` (see "Weather MCP" above).
+
+## Tests
 
 ```bash
 uv run pytest
 ```
 
-Тести не потребують мережі, ключів і Docker.
+## Documents
 
-## Документи
-
-- [`docs/design.md`](docs/design.md) — архітектура, обмеження й обґрунтування (розділ 6 — де що для здачі);
-- [`docs/contracts.md`](docs/contracts.md) — контракти інструментів обох серверів; точні схеми — [`docs/tool-schemas.json`](docs/tool-schemas.json);
-- [`docs/defense.md`](docs/defense.md) — сценарій захисту з готовими командами;
-- [`data/DATASET_CARD.md`](data/DATASET_CARD.md) — походження датасету й як його перезібрати.
+- [`docs/design.md`](docs/design.md): architecture, constraints and rationale (section 6 maps where each submission item is);
+- [`docs/contracts.md`](docs/contracts.md): tool contracts for both servers; exact schemas in [`docs/tool-schemas.json`](docs/tool-schemas.json);
+- [`docs/defense.md`](docs/defense.md): the defense walkthrough with ready-to-run commands;
+- [`data/DATASET_CARD.md`](data/DATASET_CARD.md): where the dataset comes from and how to rebuild it.
