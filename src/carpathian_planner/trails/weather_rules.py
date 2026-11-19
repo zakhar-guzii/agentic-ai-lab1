@@ -94,40 +94,37 @@ def _coverage(window: dict[str, str], selected: list[dict[str, Any]]) -> tuple[s
 
 def _findings(stage: dict[str, Any], evidence: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Findings W-STORM, W-SNOW, W-STORM-LOW, W-SNOW-LOW, W-RAIN, W-FOG, W-COLD, in exactly this order."""
-    day, ridge = stage["day"], stage["exposed_ridge"]
+    day, ridge, high = stage["day"], stage["exposed_ridge"], stage["above_treeline"]
     storm = [e for e in evidence if e["condition"] in STORM_CONDITIONS]
     snow = [e for e in evidence if is_snow_at_altitude(e, e["adjusted_temp_c"])]
     rain = [e for e in evidence if e["condition"] in WET_CONDITIONS and e not in snow]
     fog = [e for e in evidence if e["condition"] in LOW_VISIBILITY_CONDITIONS]
-    high, low = [], []  # restricted criticals and their -LOW variants: this keeps the rule order
-    if storm:
-        if stage["above_treeline"]:
-            high.append(_finding(
-                "W-STORM", "critical",
-                f"Thunderstorm risk on day {day}, which goes above the treeline: {_times(storm)}.",
-                storm, constraint={"day": day, "forbid": "above_treeline"},
-            ))  # fmt: skip
-        else:
-            low.append(_finding(
-                "W-STORM-LOW", "warning",
-                f"Thunderstorm risk on day {day}; the route stays below the treeline: {_times(storm)}.", storm,
-            ))  # fmt: skip
-    if snow:
-        if ridge:
-            high.append(_finding(
-                "W-SNOW", "critical",
-                f"Snow at the day's highest point ({stage['max_ele_m']} m) on day {day}, which crosses an exposed "
-                f"ridge: {_times(snow)}.",
-                snow, constraint={"day": day, "forbid": "exposed_ridge"},
-            ))  # fmt: skip
-        else:
-            low.append(_finding(
-                "W-SNOW-LOW", "warning",
-                f"Snow at the day's highest point ({stage['max_ele_m']} m) on day {day}; no exposed ridge: "
-                f"{_times(snow)}.",
-                snow,
-            ))  # fmt: skip
-    findings = high + low
+    findings = []
+    if storm and high:
+        findings.append(_finding(
+            "W-STORM", "critical",
+            f"Thunderstorm risk on day {day}, which goes above the treeline: {_times(storm)}.",
+            storm, constraint={"day": day, "forbid": "above_treeline"},
+        ))  # fmt: skip
+    if snow and ridge:
+        findings.append(_finding(
+            "W-SNOW", "critical",
+            f"Snow at the day's highest point ({stage['max_ele_m']} m) on day {day}, which crosses an exposed "
+            f"ridge: {_times(snow)}.",
+            snow, constraint={"day": day, "forbid": "exposed_ridge"},
+        ))  # fmt: skip
+    if storm and not high:
+        findings.append(_finding(
+            "W-STORM-LOW", "warning",
+            f"Thunderstorm risk on day {day}; the route stays below the treeline: {_times(storm)}.", storm,
+        ))  # fmt: skip
+    if snow and not ridge:
+        findings.append(_finding(
+            "W-SNOW-LOW", "warning",
+            f"Snow at the day's highest point ({stage['max_ele_m']} m) on day {day}; no exposed ridge: "
+            f"{_times(snow)}.",
+            snow,
+        ))  # fmt: skip
     if ridge and rain:
         findings.append(_finding("W-RAIN", "warning", f"Rain on the exposed ridge on day {day}: {_times(rain)}.", rain))
     if ridge and fog:
