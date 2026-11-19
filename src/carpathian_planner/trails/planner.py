@@ -38,49 +38,62 @@ class _Label(NamedTuple):
 
 
 class _Search:
-    """DP over days: layer d holds states (overnight node, mask of visited must_visit) with one label each."""
+    """DP over days: layer d holds states (overnight node, mask of visited must_visit) with one label each.
 
-    def __init__(self, graph, start, finishes, must, overnight, limits, forbids, max_days):
-        self.graph, self.must = graph, must
+    After `run`, `finals[D]` is the best plan of exactly D days that ends at one of the finishes with every
+    must_visit passed.
+    """
+
+    def __init__(self, graph, must, overnight, limits, forbids):
+        self.graph, self.must, self.overnight = graph, must, overnight
         self.limits, self.forbids = limits, forbids  # forbids[d - 1] is the forbid of day d
         self.full = (1 << len(must)) - 1
-        self.layers: list[dict[tuple[str, int], _Label]] = [{(start, 0): _Label(0, 0, None, (start,))}]
-        self.finals: dict[int, _Label] = {}  # D → best plan for D days (from layer D−1 to any of the finishes)
+        self.layers: list[dict[tuple[str, int], _Label]] = []
+        self.finals: dict[int, _Label] = {}
+
+    def run(self, start: str, finishes, max_days: int) -> "_Search":
+        self.layers = [{(start, 0): _Label(0, 0, None, (start,))}]
         for d in range(1, max_days + 1):
             nxt: dict[tuple[str, int], _Label] = {}
             for key, label in self.layers[-1].items():
                 if d < max_days:
-                    for v, wps, mins, mask in self._days(key, d, overnight):
+                    for v, wps, mins, mask in self._days(key, d, self.overnight):
                         self._offer(nxt, (v, mask), label, key, wps, mins, d)
                 for v, wps, mins, mask in self._days(key, d, finishes):
                     if mask == self.full:
                         self._offer(self.finals, d, label, key, wps, mins, d)
             self.layers.append(nxt)
+        return self
+
+    def _through(self, u: str, visited: int, order, forbid) -> tuple[int, int, int] | None:
+        """Walk from `u` through the must_visit points in `order`: (minutes, meters, mask), or None if a leg is missing."""
+        mins, meters, mask = 0, 0, visited
+        for a, b in itertools.pairwise((u, *order)):
+            r = self.graph.reach(a, b, forbid)
+            if r is None:
+                return None
+            mins, meters, mask = mins + r.minutes, meters + r.meters, mask | r.mask
+        return mins, meters, mask
 
     def _days(self, key, d, ends):
-        """Allowed days from state `key`: every ordered subset of unvisited must_visit and every end."""
+        """Allowed days from state `key`: through every ordered subset of unvisited must_visit, then to any end."""
         u, visited = key
         forbid, limit = self.forbids[d - 1], self.limits(d, u)
         rest = [p for p in self.must if not visited & self.graph.marked[p]]
         for k in range(len(rest) + 1):
             for order in itertools.permutations(rest, k):
-                mins, meters, mask, cur = 0, 0, visited, u
-                for p in order:
-                    r = self.graph.reach(cur, p, forbid)
-                    if r is None:
-                        break
-                    mins, meters, mask, cur = mins + r.minutes, meters + r.meters, mask | r.mask, p
-                else:
-                    if not fits_limit(mins, limit):
+                walked = self._through(u, visited, order, forbid)
+                if walked is None or not fits_limit(walked[0], limit):
+                    continue
+                mins, meters, mask = walked
+                tree = self.graph.tree(order[-1] if order else u, forbid)
+                for v in ends:
+                    r = tree.get(v)
+                    if r is None or v in order:
                         continue
-                    tree = self.graph.tree(cur, forbid)
-                    for v in ends:
-                        r = tree.get(v)
-                        if r is None or v in order:
-                            continue
-                        total = mins + r.minutes
-                        if fits_limit(total, limit) and moves((meters + r.meters) / 1000):
-                            yield v, (u, *order, v), total, mask | r.mask
+                    total = mins + r.minutes
+                    if fits_limit(total, limit) and moves((meters + r.meters) / 1000):
+                        yield v, (u, *order, v), total, mask | r.mask
 
     def _offer(self, table, key, prev_label, prev_key, wps, mins, d):
         new = _Label(prev_label.total + mins, max(prev_label.longest, mins), prev_key, wps)
@@ -150,28 +163,24 @@ def plan_hike(
         n = nodes[u]
         return day_limit(start + datetime.timedelta(days=d - 1), n.lat, n.lon, fitness).minutes
 
-    # Dijkstra radius is the largest day limit of the request: no leg of a day is longer than the whole day (D3).
-    bound = max([limits(1, start_node_id)] + [limits(d, u) for d in range(2, MAX_DAYS + 1) for u in overnight])
-    graph = Graph(dataset.nodes, dataset.segments, fitness, bound=bound, marked=must)
+    # Dijkstra radius (D3): no leg of a day is longer than the whole day, so the largest day limit of the request
+    # bounds every search. Day 1 starts at the start node, later days at some overnight node.
+    day_limits = [limits(1, start_node_id)] + [limits(d, u) for d in range(2, MAX_DAYS + 1) for u in overnight]
+    graph = Graph(dataset.nodes, dataset.segments, fitness, bound=max(day_limits), marked=must)
 
     component = graph.component(start_node_id)
     if not {finish, *must} <= component:
         return _infeasible(
             "NO_ROUTE", "Start, end and must_visit nodes are not connected by trails in the dataset.", []
         )
-    if end_node_id is not None:
-        options = [("requested", [finish])]
-    else:  # design D2: the nearest village by whole-hike time, else (only with must_visit) a loop back to the start
-        villages = [n.id for n in dataset.nodes if n.kind == "village" and n.id in component
-                    and n.id != start_node_id and n.id not in must]  # fmt: skip
-        if not must and not villages:
-            return _infeasible(
-                "NO_ROUTE",
-                "No village is connected to the start by trails, and without must_visit there is nothing to "
-                "walk to: pass a place in must_visit or name end_node_id.",
-                [],
-            )
-        options = [("nearest_village", villages)] + ([("loop", [start_node_id])] if must else [])
+    options = _finish_options(dataset, component, start_node_id, end_node_id, must)
+    if not any(ends for _, ends in options):
+        return _infeasible(
+            "NO_ROUTE",
+            "No village is connected to the start by trails, and without must_visit there is nothing to "
+            "walk to: pass a place in must_visit or name end_node_id.",
+            [],
+        )
 
     def solve(forbids: list[str | None], max_days: int):
         """The first option with a `days`-day plan as (search, reason), and the union of feasible days."""
@@ -179,7 +188,7 @@ def plan_hike(
         for reason, ends in options:
             if not ends:
                 continue
-            search = _Search(graph, start_node_id, ends, must, overnight, limits, forbids, max_days)
+            search = _Search(graph, must, overnight, limits, forbids).run(start_node_id, ends, max_days)
             feasible |= search.finals.keys()
             if days in search.finals:
                 found = (search, reason)
@@ -202,7 +211,8 @@ def plan_hike(
 
     search, reason = found
     day_waypoints, ev = build(search, forbids)
-    plan = make_plan(dataset.dataset_version, start, fitness, overnight_mode, applied, ev.stages, ev.minutes)
+    make = functools.partial(make_plan, dataset.dataset_version, start, fitness, overnight_mode)
+    plan = make(applied, ev.stages, ev.minutes)
     end = nodes[day_waypoints[-1][-1]]
     result = {
         "status": "ok",
@@ -211,16 +221,31 @@ def plan_hike(
         "warnings": repeated_segment_warnings(ev.stages),
         "finish": {"node_id": end.id, "label": node_label(end, nodes), "reason": reason},
     }
-    if applied:  # design D4: compare with the same request without day_constraints
-        base, _ = solve([None] * days, days)
-        if base is not None:
-            base_ev = build(base[0], [None] * days)[1]
-            if sum(ev.minutes) >= DETOUR_RATIO * sum(base_ev.minutes):
-                baseline = make_plan(dataset.dataset_version, start, fitness, overnight_mode, [],
-                                     base_ev.stages, base_ev.minutes)  # fmt: skip
-                result["warnings"].append(detour_warning(plan, baseline, applied))
-                result["baseline_plan"] = baseline  # the server stores it; not part of the response
+    if not applied:
+        return result
+
+    # DETOUR (design D4): compare with the best plan for the same request without day_constraints.
+    base, _ = solve([None] * days, days)
+    if base is None:
+        return result
+    _, base_ev = build(base[0], [None] * days)
+    if sum(ev.minutes) >= DETOUR_RATIO * sum(base_ev.minutes):
+        baseline = make([], base_ev.stages, base_ev.minutes)
+        result["warnings"].append(detour_warning(plan, baseline, applied))
+        result["baseline_plan"] = baseline  # the server stores it; not part of the response
     return result
+
+
+def _finish_options(dataset: Dataset, component: set[str], start: str, end: str | None, must: list[str]):
+    """Where the hike may end, as (reason, candidate ends) in order of preference (design D2).
+
+    A named end is the only option. Otherwise the nearest village by whole-hike time, and, only with
+    must_visit, a loop back to the start when no village fits. Every option empty means no route."""
+    if end is not None:
+        return [("requested", [end])]
+    villages = [n.id for n in dataset.nodes
+                if n.kind == "village" and n.id in component and n.id != start and n.id not in must]  # fmt: skip
+    return [("nearest_village", villages)] + ([("loop", [start])] if must else [])
 
 
 def _check_must_visit(must: list[str], start: str, end: str | None) -> None:
