@@ -1,9 +1,7 @@
-"""MCP level of the trails server via in-memory fastmcp.Client(mcp): schemas, error codes, network, date."""
+"""MCP level of the trails server via in-memory fastmcp.Client(mcp): schemas, error codes, network."""
 
 import asyncio
-import datetime
 import socket
-import time
 
 import jsonschema
 import pydantic
@@ -175,26 +173,4 @@ def test_no_outgoing_connections_on_real_dataset(monkeypatch):
     assert not r.is_error, text(r)
     assert r.structured_content["candidates"]
     assert attempts == []
-
-
-def freeze_clock(monkeypatch, day):
-    fixed = datetime.datetime.combine(day, datetime.time(12, 0))
-
-    class FakeDatetime(datetime.datetime):
-        @classmethod
-        def now(cls, tz=None):
-            return fixed if tz is None else fixed.replace(tzinfo=tz)
-
-        @classmethod
-        def today(cls):
-            return fixed
-
-    class FakeDate(datetime.date):
-        @classmethod
-        def today(cls):
-            return day
-
-    monkeypatch.setattr(datetime, "datetime", FakeDatetime)
-    monkeypatch.setattr(datetime, "date", FakeDate)
-    monkeypatch.setattr(time, "time", lambda: fixed.timestamp())
 

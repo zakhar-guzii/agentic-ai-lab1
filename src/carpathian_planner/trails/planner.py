@@ -6,7 +6,7 @@ import itertools
 from typing import Any, NamedTuple
 
 from carpathian_planner.trails.dataset import Dataset, DomainError
-from carpathian_planner.trails.hike_time import FITNESS_FACTOR, day_limit
+from carpathian_planner.trails.hike_time import FITNESS_FACTOR, FITNESS_NORM_MINUTES, day_limit
 from carpathian_planner.trails.plan_rules import (
     DETOUR_RATIO,
     MAX_DAYS,
@@ -53,14 +53,16 @@ class _Search:
 
     def run(self, start: str, finishes, max_days: int) -> "_Search":
         self.layers = [{(start, 0): _Label(0, 0, None, (start,))}]
+        overnight_set, finish_set = set(self.overnight), set(finishes)
+        both = list(dict.fromkeys([*self.overnight, *finishes]))  # overnight first: same offer order as before
         for d in range(1, max_days + 1):
             nxt: dict[tuple[str, int], _Label] = {}
+            ends = both if d < max_days else finishes  # the last day ends at a finish only
             for key, label in self.layers[-1].items():
-                if d < max_days:
-                    for v, wps, mins, mask in self._days(key, d, self.overnight):
+                for v, wps, mins, mask in self._days(key, d, ends):
+                    if d < max_days and v in overnight_set:
                         self._offer(nxt, (v, mask), label, key, wps, mins, d)
-                for v, wps, mins, mask in self._days(key, d, finishes):
-                    if mask == self.full:
+                    if v in finish_set and mask == self.full:
                         self._offer(self.finals, d, label, key, wps, mins, d)
             self.layers.append(nxt)
         return self
@@ -163,10 +165,9 @@ def plan_hike(
         n = nodes[u]
         return day_limit(start + datetime.timedelta(days=d - 1), n.lat, n.lon, fitness).minutes
 
-    # Dijkstra radius (D3): no leg of a day is longer than the whole day, so the largest day limit of the request
-    # bounds every search. Day 1 starts at the start node, later days at some overnight node.
-    day_limits = [limits(1, start_node_id)] + [limits(d, u) for d in range(2, MAX_DAYS + 1) for u in overnight]
-    graph = Graph(dataset.nodes, dataset.segments, fitness, bound=max(day_limits), marked=must)
+    # Dijkstra radius (D3): no leg of a day is longer than the whole day, and a day limit is
+    # min(fitness norm, daylight − 1 h), never above the norm.
+    graph = Graph(dataset.nodes, dataset.segments, fitness, bound=FITNESS_NORM_MINUTES[fitness], marked=must)
 
     component = graph.component(start_node_id)
     if not {finish, *must} <= component:

@@ -212,7 +212,10 @@ def check_plan(
         def add(rule_id: str, message: str, actual, limit) -> None:
             violations.append({"day": day, "rule_id": rule_id, "message": message, "actual": actual, "limit": limit})
 
-        broken = [(a, b) for a, b in itertools.pairwise(wps) if graph.path(a, b, forbid) is None]
+        route = join_legs(graph, wps, forbid)
+        broken = [] if route is not None else [
+            (a, b) for a, b in itertools.pairwise(wps) if graph.path(a, b, forbid) is None
+        ]  # fmt: skip
         for a, b in broken:
             why = f" without {forbid} segments" if forbid else ""
             add("R-CONN", f"No trail path from {a} to {b}{why}.", f"{a}->{b}", None)
@@ -222,7 +225,6 @@ def check_plan(
             add("R-CONTINUITY", f"Day {day} starts at {wps[0]}, but day {i} ended at {prev}.", wps[0], prev)
 
         stage = None
-        route = None if broken else join_legs(graph, wps, forbid)
         if route is not None:
             stage, mins, limit_minutes = build_stage(graph, route, day, start_date + datetime.timedelta(days=i), last)
             stages.append(stage)
@@ -250,7 +252,8 @@ def repeated_segment_warnings(stages: list[dict[str, Any]]) -> list[dict[str, An
     repeated = [sid for sid, n in counts.items() if n > 1 and not (n == 2 and sid in spurs)]
     if not repeated:
         return []
-    days = sorted({s["day"] for s in stages if set(s["segment_ids"]) & set(repeated)})
+    hit = set(repeated)
+    days = sorted({s["day"] for s in stages if set(s["segment_ids"]) & hit})
     return [
         {
             "code": "REPEATED_SEGMENTS",
