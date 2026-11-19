@@ -54,7 +54,7 @@
   <text class="t" x="706" y="162">граф стежок Чорногори</text>
   <text class="t" x="706" y="180">файл у репозиторії, без мережі</text>
   <text class="k" x="706" y="206">Читається на старті trails</text>
-  <text class="ref" x="706" y="230">походження: data/SOURCE.md</text>
+  <text class="ref" x="706" y="230">походження: data/DATASET_CARD.md</text>
 
   <!-- weather mcp -->
   <rect class="ext" x="372" y="290" width="250" height="150" rx="6"/>

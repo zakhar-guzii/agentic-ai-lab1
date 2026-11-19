@@ -92,4 +92,4 @@ uv run pytest
 - [`docs/design.md`](docs/design.md) — архітектура, обмеження й обґрунтування (розділ 6 — де що для здачі);
 - [`docs/contracts.md`](docs/contracts.md) — контракти інструментів обох серверів; точні схеми — [`docs/tool-schemas.json`](docs/tool-schemas.json);
 - [`docs/defense.md`](docs/defense.md) — сценарій захисту з готовими командами;
-- [`data/SOURCE.md`](data/SOURCE.md) — походження датасету й як його перезібрати.
+- [`data/DATASET_CARD.md`](data/DATASET_CARD.md) — походження датасету й як його перезібрати.

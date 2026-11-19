@@ -1,10 +1,7 @@
-"""One-off build of the offline trail graph for the Chornohora massif (spec `trail-dataset`, design D3–D8).
+"""One-off build of the offline trail graph for the Chornohora massif .
 
 Sources: OpenStreetMap via the Overpass API (marked `route=hiking` routes and points of interest)
-and OpenTopoData (elevations, `srtm30m` dataset). Output: `data/chornohora.json` and `data/SOURCE.md`.
-
-    uv run python scripts/build_dataset.py --plan-only   # graph and elevation request plan, no files written
-    uv run python scripts/build_dataset.py               # full build with elevations
+and OpenTopoData (elevations, `srtm30m` dataset). Output: `data/chornohora.json` and `data/DATASET_CARD.md`.
 """
 
 from __future__ import annotations
@@ -25,8 +22,7 @@ import httpx
 
 # --- Build parameters --------------------------------------------------------
 
-# Bounding box of the massif (south, west, north, east). Blyznytsia (Svydovets, ~24.24° E)
-# and Syvulia (Gorgany, ~48.55° N) lie outside it.
+# Bounding box of the massif
 BBOX = (47.95, 24.27, 48.32, 24.80)
 
 MERGE_M = 1.0  # closer: the point merges into the line vertex (spec: merging coincident points)
@@ -57,12 +53,9 @@ rel["route"="hiking"]({_B});
 way(r)({_B});
 (._;>;);
 out body qt;"""
-# --- Manual decisions (made from the --plan-only output of 2026-11-16) --------------
+# --- Manual decisions 
 
-# Shelters where one can stay overnight: OSM id → why an overnight stay is possible there.
-# Only these objects get kind="hut", regardless of tags; all other candidates (amenity=shelter,
-# tourism=hotel|guest_house|chalet|alpine_hut|wilderness_hut) are discarded. The reasons come from the
-# object's own OSM tags and description; they have not been checked on site.
+# Shelters where one can stay overnight and working
 VERIFIED_HUTS: dict[str, str] = {
     "w144275342": "Vorokhta high-mountain training and sports base \"Zarosliak\" (official_name in OSM, "
                   "hotel building w144275343 next to it): the traditional overnight stop before climbing Hoverla",
@@ -94,19 +87,21 @@ MANUAL_LINKS: list[tuple[str, int, str]] = [
      "Lazeshchyna: village centre is 69 m from the marked route through the village; starting village for Hoverla climbs"),
 ]
 
-# Forecast cities (design D8): name in the Weather MCP query format, coordinates of the OSM place=town point
-# (Yasinia n337604455, Vorokhta n262290472, Verkhovyna n337657973, Rakhiv n316186974).
-# The script takes elevation from the same DEM. Order matters: on equal distance the earlier one wins.
-# Checked 2026-11-18 (weather-check task 3.2): every name gives `ok` in carpathian-weather-probe, and OWM
-# /data/2.5/forecast?q=<name> resolves it to the same town within 10 km of these coordinates:
-# Yasinia,UA -> 'Yasinia' 0.04 km; Vorokhta,UA -> 'Vorokhta' 0.91 km; Verkhovyna,UA -> 'Verkhovyna' 2.74 km;
-# Rakhiv,UA -> 'Rakhiv' 0.50 km.
+# Forecast cities: name as Weather MCP takes it, coordinates of the OSM place point.
+# Hoverla (village, south slope) brings the ridge within 15 km of a city; without it 79% of nodes ≥ 1500 m were farther.
 FORECAST_CITIES: list[tuple[str, float, float]] = [
     ("Yasinia,UA", 48.27228, 24.36119),
     ("Vorokhta,UA", 48.29298, 24.56358),
     ("Verkhovyna,UA", 48.15381, 24.82793),
     ("Rakhiv,UA", 48.05568, 24.20571),
+    ("Hoverla,UA", 48.07754, 24.44939),
 ]
+# Written to the card: how each name was checked against OpenWeatherMap.
+FORECAST_CITIES_CHECK = (
+    "each name gives `ok` in `carpathian-weather-probe`, and OWM `/data/2.5/forecast?q=<name>` resolves it to the same "
+    "town within 10 km of the table coordinates: Yasinia 0.04 km, Vorokhta 0.91 km, Verkhovyna 2.74 km, Rakhiv 0.50 km "
+    "(checked 2026-11-18); Hoverla < 0.01 km (checked 2026-11-19)"
+)
 
 
 
@@ -579,10 +574,16 @@ def print_plan(graph: Graph, points, comps) -> None:
             print(f"  {n['id']} {n['kind']} {n['name']!r}")
 
 
-def render_source_md(ds: dict, comps) -> str:
+def render_dataset_card(ds: dict, comps, graph: Graph) -> str:
     kinds = Counter(n["kind"] for n in ds["nodes"])
     trail_km = sum(s["km"] for s in ds["segments"] if not s["synthetic"])
     b = ds["bbox"]
+    ways = {w for s in ds["segments"] for w in s["osm_way_ids"]}
+    auto = sum(l["source"].startswith("automatic") for l in graph.links)
+    unverified = sum(d["reason"] == "hut candidate not in VERIFIED_HUTS" for d in graph.discarded)
+    by_city = defaultdict(list)
+    for n in ds["nodes"]:
+        by_city[n["forecast_city"]].append(n["forecast_city_km"])
     return "\n".join([
         "# Chornohora trail dataset",
         "",
@@ -594,6 +595,42 @@ def render_source_md(ds: dict, comps) -> str:
         f"- Elevations: {DEM_PROVIDER} `{DEM_DATASET}` (SRTM, ~30 m), segment profile sampled every {STEP_M} m",
         f"- Region (south, west, north, east): `{b['south']}, {b['west']}, {b['north']}, {b['east']}`",
         "",
+        "## How it was built",
+        "",
+        "The script merges three sources into one graph: trails from OSM, points of interest from OSM, "
+        "and elevations from a DEM. Steps, in order:",
+        "",
+        f"1. **Trails (Overpass query 1).** All `route=hiking` relations in the region, their lines and the line vertices. "
+        f"Lines are clipped to the region. Only marked routes are used: hikers follow the marking, and unmarked "
+        f"`highway=path|track` would add noise. This build uses {len(ways)} OSM lines.",
+        "2. **Points of interest (Overpass query 2).** Named peaks (`natural=peak`), possible shelters "
+        "(`tourism=alpine_hut|wilderness_hut|camp_site|chalet|guest_house|hotel`, `amenity=shelter`) "
+        "and settlements (`place=village|hamlet|town`).",
+        f"3. **Attaching points to trails.** Each point is compared with its nearest trail vertex: closer than {MERGE_M:.0f} m, "
+        f"the point becomes that vertex ({len(graph.merges)} merges); up to {SNAP_M:.0f} m, it becomes its own node joined "
+        f"by a straight synthetic edge ({auto} edges); farther, it is dropped ({len(graph.discarded) - unverified} points).",
+        f"4. **Manual decisions.** Only the {len(VERIFIED_HUTS)} objects in `VERIFIED_HUTS` become `hut`: the same tags "
+        f"mark picnic shelters and hotels that do not take hikers ({unverified} candidates dropped). The reasons come from "
+        "the objects' OSM tags and descriptions and were not checked on site. `MANUAL_LINKS` joins important points "
+        "lying farther than the threshold:",
+        "",
+        *[f"   - `{pid}` → vertex `n{v}`: {why}" for pid, v, why in MANUAL_LINKS],
+        "",
+        "5. **Segments.** Lines are cut at every node: junctions, line ends and attached points. "
+        "A segment's `km` is the length of its geometry. Connected components are kept, none is dropped.",
+        f"6. **Elevations.** Each segment is sampled every {STEP_M} m; {DEM_PROVIDER} `{DEM_DATASET}` gives the elevation "
+        f"of every sample. The profile gives `ascent_m`, `descent_m` and `max_ele_m`; `above_treeline` means "
+        f"`max_ele_m ≥ {TREELINE_M}`, `exposed_ridge` means `max_ele_m ≥ {RIDGE_M}`.",
+        "7. **Forecast city.** Each node gets the nearest city of the table below, in a straight line; "
+        "the weather check uses that city's forecast and corrects temperature for the elevation difference.",
+        "",
+        "| Forecast city | Elevation, m | Nodes | Farthest node, km |",
+        "|---|---|---|---|",
+        *[f"| {c['name']} | {c['ele_m']} | {len(by_city[c['name']])} | {max(by_city[c['name']], default=0):.1f} |"
+          for c in ds["forecast_cities"]],
+        "",
+        f"City names: {FORECAST_CITIES_CHECK}.",
+        "",
         "## Statistics",
         "",
         f"- Nodes: {len(ds['nodes'])} ({', '.join(f'{k} {kinds[k]}' for k in ('peak', 'junction', 'hut', 'camp_site', 'village'))})",
@@ -602,6 +639,14 @@ def render_source_md(ds: dict, comps) -> str:
         f"- Connected components: {len(comps)} (largest: {', '.join(str(len(c)) for c in comps[:5])} nodes)",
         f"- Trail length: {trail_km:.1f} km",
         f"- Forecast cities: {', '.join(c['name'] for c in ds['forecast_cities'])}",
+        "",
+        "## Limitations",
+        "",
+        "- Only marked OSM routes: the graph is as complete as OSM. A trail missing there is missing here.",
+        f"- The graph has {len(comps)} disconnected parts; no route is built between parts.",
+        "- `exposed_ridge` is an elevation threshold, not a terrain analysis.",
+        "- Huts are taken from OSM descriptions and not checked on site.",
+        "- SRTM (~30 m) smooths sharp ridges and peaks; elevations may differ from the map by tens of metres.",
         "",
         "## How to rebuild",
         "",
@@ -644,7 +689,7 @@ def main(argv=None, *, transport=None, sleep=time.sleep, out_dir: Path = DATA_DI
     out_dir.mkdir(parents=True, exist_ok=True)
     out = out_dir / "chornohora.json"
     out.write_text(json.dumps(ds, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    (out_dir / "SOURCE.md").write_text(render_source_md(ds, comps), encoding="utf-8")
+    (out_dir / "DATASET_CARD.md").write_text(render_dataset_card(ds, comps, graph), encoding="utf-8")
     print(f"Wrote {out} ({out.stat().st_size} bytes), dataset_version {ds['dataset_version']}")
     return 0
 

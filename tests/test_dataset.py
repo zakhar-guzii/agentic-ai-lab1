@@ -1,4 +1,4 @@
-"""Invariants of the committed data/chornohora.json and its statistics matching data/SOURCE.md (spec trail-dataset)."""
+"""Invariants of the committed data/chornohora.json and its statistics matching data/DATASET_CARD.md (spec trail-dataset)."""
 
 import hashlib
 import json
@@ -12,14 +12,14 @@ import build_dataset as bd
 
 DATA = Path(__file__).resolve().parents[1] / "data"
 DS = json.loads((DATA / "chornohora.json").read_text(encoding="utf-8"))
-SOURCE = (DATA / "SOURCE.md").read_text(encoding="utf-8")
+CARD = (DATA / "DATASET_CARD.md").read_text(encoding="utf-8")
 NODES = {n["id"]: n for n in DS["nodes"]}
 KINDS = {"peak", "junction", "hut", "camp_site", "village"}
 KEY_POINTS = {"Говерла": "peak", "Петрос": "peak", "Піп Іван Чорногірський": "peak", "Заросляк": "hut"}
 
 
 def source_number(label: str) -> int:
-    return int(re.search(rf"^\s*- {label}: (\d+)", SOURCE, re.M).group(1))
+    return int(re.search(rf"^\s*- {label}: (\d+)", CARD, re.M).group(1))
 
 
 def nodes_named(name: str, kind: str) -> list[dict]:
@@ -107,14 +107,14 @@ def test_dataset_version_recomputed():
     canon = json.dumps({k: DS[k] for k in ("forecast_cities", "nodes", "segments")},
                        sort_keys=True, ensure_ascii=False, separators=(",", ":"))
     assert v[-8:] == hashlib.sha256(canon.encode()).hexdigest()[:8]
-    assert v in SOURCE
+    assert v in CARD
 
 
 def test_counts_match_source_md():
     kinds = Counter(n["kind"] for n in DS["nodes"])
     assert source_number("Nodes") == len(DS["nodes"])
     for k in KINDS:
-        assert re.search(rf"[(,] ?{k} {kinds[k]}[,)]", SOURCE), k
+        assert re.search(rf"[(,] ?{k} {kinds[k]}[,)]", CARD), k
     assert source_number("Segments") == len(DS["segments"])
     assert source_number("Synthetic edges") == sum(s["synthetic"] for s in DS["segments"])
     assert source_number("Connected components") == len(set(components().values()))

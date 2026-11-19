@@ -1,6 +1,6 @@
 {
-  "dataset_version": "2026-11-16-da9da716",
-  "built_at": "2026-11-16",
+  "dataset_version": "2026-11-19-545411ea",
+  "built_at": "2026-11-19",
   "bbox": {
     "south": 47.95,
     "west": 24.27,
@@ -36,6 +36,12 @@
       "lat": 48.05568,
       "lon": 24.20571,
       "ele_m": 440
+    },
+    {
+      "name": "Hoverla,UA",
+      "lat": 48.07754,
+      "lon": 24.44939,
+      "ele_m": 671
     }
   ],
   "nodes": [
@@ -71,9 +77,9 @@
       "lat": 48.14536,
       "lon": 24.57045,
       "ele_m": 1368,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.7
     },
     {
       "id": "n10140465134",
@@ -263,9 +269,9 @@
       "lat": 48.16718,
       "lon": 24.43786,
       "ele_m": 1532,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.0
     },
     {
       "id": "n11055738306",
@@ -275,9 +281,9 @@
       "lat": 48.16571,
       "lon": 24.52943,
       "ele_m": 1334,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.5
     },
     {
       "id": "n11055747105",
@@ -287,9 +293,9 @@
       "lat": 48.16638,
       "lon": 24.53026,
       "ele_m": 1321,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.6
     },
     {
       "id": "n11055747106",
@@ -299,9 +305,9 @@
       "lat": 48.16099,
       "lon": 24.55371,
       "ele_m": 1141,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.1
     },
     {
       "id": "n11055747107",
@@ -311,9 +317,9 @@
       "lat": 48.14284,
       "lon": 24.54862,
       "ele_m": 1348,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.3
     },
     {
       "id": "n11056989341",
@@ -323,9 +329,9 @@
       "lat": 48.16865,
       "lon": 24.43627,
       "ele_m": 1528,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.2
     },
     {
       "id": "n1106018191",
@@ -335,9 +341,9 @@
       "lat": 48.02928,
       "lon": 24.51752,
       "ele_m": 787,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 23.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 7.4
     },
     {
       "id": "n1106018225",
@@ -347,9 +353,9 @@
       "lat": 48.02919,
       "lon": 24.51883,
       "ele_m": 800,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 23.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 7.5
     },
     {
       "id": "n1106018257",
@@ -359,9 +365,9 @@
       "lat": 48.04874,
       "lon": 24.49935,
       "ele_m": 710,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 21.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 4.9
     },
     {
       "id": "n1106018311",
@@ -371,9 +377,9 @@
       "lat": 48.0476,
       "lon": 24.50045,
       "ele_m": 718,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 21.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 5.0
     },
     {
       "id": "n11063539222",
@@ -398,9 +404,9 @@
       "lat": 48.1014,
       "lon": 24.56382,
       "ele_m": 1795,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.9
     },
     {
       "id": "n11122029757",
@@ -518,9 +524,9 @@
       "lat": 48.16006,
       "lon": 24.52205,
       "ele_m": 1428,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.6
     },
     {
       "id": "n11233769535",
@@ -530,9 +536,9 @@
       "lat": 48.15949,
       "lon": 24.51506,
       "ele_m": 1567,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.3
     },
     {
       "id": "n11262970956",
@@ -566,9 +572,9 @@
       "lat": 48.10199,
       "lon": 24.56247,
       "ele_m": 1793,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.8
     },
     {
       "id": "n11445319069",
@@ -578,9 +584,9 @@
       "lat": 48.16205,
       "lon": 24.50769,
       "ele_m": 1826,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.3
     },
     {
       "id": "n11445319070",
@@ -590,9 +596,9 @@
       "lat": 48.06215,
       "lon": 24.62137,
       "ele_m": 1816,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.9
     },
     {
       "id": "n11462168225",
@@ -626,9 +632,9 @@
       "lat": 48.16794,
       "lon": 24.42916,
       "ele_m": 1626,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.2
     },
     {
       "id": "n11508039952",
@@ -664,9 +670,9 @@
       "lat": 48.15478,
       "lon": 24.37119,
       "ele_m": 1573,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.4
     },
     {
       "id": "n11672321957",
@@ -712,9 +718,9 @@
       "lat": 48.14992,
       "lon": 24.56516,
       "ele_m": 1383,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.8
     },
     {
       "id": "n12110363555",
@@ -748,9 +754,9 @@
       "lat": 48.16033,
       "lon": 24.39173,
       "ele_m": 1579,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.2
     },
     {
       "id": "n12149984144",
@@ -760,9 +766,9 @@
       "lat": 48.16065,
       "lon": 24.3913,
       "ele_m": 1586,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.2
     },
     {
       "id": "n1239733959",
@@ -776,9 +782,9 @@
       "lat": 48.15033,
       "lon": 24.51054,
       "ele_m": 1893,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.3
     },
     {
       "id": "n1239733982",
@@ -806,9 +812,9 @@
       "lat": 48.12349,
       "lon": 24.53051,
       "ele_m": 1916,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 19.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 7.9
     },
     {
       "id": "n1239733989",
@@ -818,9 +824,9 @@
       "lat": 48.1443,
       "lon": 24.52357,
       "ele_m": 1806,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.2
     },
     {
       "id": "n1239734007",
@@ -833,9 +839,9 @@
       "lat": 48.07621,
       "lon": 24.6054,
       "ele_m": 1868,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.6
     },
     {
       "id": "n1239734008",
@@ -850,9 +856,9 @@
       "lat": 48.13529,
       "lon": 24.53147,
       "ele_m": 1834,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.9
     },
     {
       "id": "n1239853805",
@@ -898,9 +904,9 @@
       "lat": 48.15319,
       "lon": 24.34278,
       "ele_m": 1278,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.5
     },
     {
       "id": "n1276913177",
@@ -922,9 +928,9 @@
       "lat": 48.09616,
       "lon": 24.46472,
       "ele_m": 749,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 19.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 2.4
     },
     {
       "id": "n1280138496",
@@ -934,9 +940,9 @@
       "lat": 48.09977,
       "lon": 24.47106,
       "ele_m": 765,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 20.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 2.9
     },
     {
       "id": "n1280138497",
@@ -946,9 +952,9 @@
       "lat": 48.09961,
       "lon": 24.47126,
       "ele_m": 764,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 20.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 2.9
     },
     {
       "id": "n13146879659",
@@ -958,9 +964,9 @@
       "lat": 48.15861,
       "lon": 24.37833,
       "ele_m": 1646,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.4
     },
     {
       "id": "n13311002344",
@@ -984,9 +990,9 @@
       "lat": 48.06215,
       "lon": 24.62124,
       "ele_m": 1814,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.9
     },
     {
       "id": "n13521499666",
@@ -996,9 +1002,9 @@
       "lat": 48.03638,
       "lon": 24.65638,
       "ele_m": 1517,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 16.1
     },
     {
       "id": "n13521499673",
@@ -1008,9 +1014,9 @@
       "lat": 48.03576,
       "lon": 24.65755,
       "ele_m": 1507,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 16.2
     },
     {
       "id": "n13543468417",
@@ -1212,9 +1218,9 @@
       "lat": 48.14804,
       "lon": 24.5382,
       "ele_m": 1386,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.2
     },
     {
       "id": "n14253141558",
@@ -1224,9 +1230,9 @@
       "lat": 48.15249,
       "lon": 24.53755,
       "ele_m": 1381,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.6
     },
     {
       "id": "n1483268008",
@@ -1236,9 +1242,9 @@
       "lat": 48.1465,
       "lon": 24.51767,
       "ele_m": 1757,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.2
     },
     {
       "id": "n1483268014",
@@ -1248,9 +1254,9 @@
       "lat": 48.1228,
       "lon": 24.53952,
       "ele_m": 1738,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 19.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.4
     },
     {
       "id": "n1483363604",
@@ -1260,9 +1266,9 @@
       "lat": 48.06766,
       "lon": 24.62654,
       "ele_m": 1757,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 17.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.2
     },
     {
       "id": "n1483363636",
@@ -1272,9 +1278,9 @@
       "lat": 48.09527,
       "lon": 24.57695,
       "ele_m": 1923,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.7
     },
     {
       "id": "n1483363663",
@@ -1284,9 +1290,9 @@
       "lat": 48.10356,
       "lon": 24.56874,
       "ele_m": 1946,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.3
     },
     {
       "id": "n1483363723",
@@ -1296,9 +1302,9 @@
       "lat": 48.09106,
       "lon": 24.58406,
       "ele_m": 1898,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.1
     },
     {
       "id": "n1483363769",
@@ -1308,9 +1314,9 @@
       "lat": 48.06797,
       "lon": 24.62777,
       "ele_m": 1756,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 17.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.3
     },
     {
       "id": "n1483363785",
@@ -1320,9 +1326,9 @@
       "lat": 48.09083,
       "lon": 24.58887,
       "ele_m": 1900,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.5
     },
     {
       "id": "n1483363810",
@@ -1332,9 +1338,9 @@
       "lat": 48.12094,
       "lon": 24.54074,
       "ele_m": 1793,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 19.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.3
     },
     {
       "id": "n1483363818",
@@ -1344,9 +1350,9 @@
       "lat": 48.06685,
       "lon": 24.62494,
       "ele_m": 1776,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 17.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.1
     },
     {
       "id": "n1483405184",
@@ -1356,9 +1362,9 @@
       "lat": 47.99898,
       "lon": 24.67187,
       "ele_m": 902,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 18.7
     },
     {
       "id": "n1483405195",
@@ -1368,9 +1374,9 @@
       "lat": 47.99879,
       "lon": 24.67203,
       "ele_m": 902,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 18.7
     },
     {
       "id": "n1483405344",
@@ -1380,8 +1386,8 @@
       "lat": 47.99103,
       "lon": 24.6946,
       "ele_m": 865,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
       "forecast_city_km": 20.6
     },
     {
@@ -1428,9 +1434,9 @@
       "lat": 48.15968,
       "lon": 24.48576,
       "ele_m": 1728,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 15.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.5
     },
     {
       "id": "n1503731487",
@@ -1440,9 +1446,9 @@
       "lat": 48.03482,
       "lon": 24.65933,
       "ele_m": 1499,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 16.3
     },
     {
       "id": "n1503731620",
@@ -1452,9 +1458,9 @@
       "lat": 48.04671,
       "lon": 24.62818,
       "ele_m": 1997,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.7
     },
     {
       "id": "n1521199553",
@@ -1572,9 +1578,9 @@
       "lat": 48.17888,
       "lon": 24.48269,
       "ele_m": 1504,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.5
     },
     {
       "id": "n1622092048",
@@ -1584,9 +1590,9 @@
       "lat": 48.18399,
       "lon": 24.48373,
       "ele_m": 1393,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.1
     },
     {
       "id": "n1622092078",
@@ -1596,9 +1602,9 @@
       "lat": 48.18871,
       "lon": 24.48838,
       "ele_m": 1289,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 12.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.7
     },
     {
       "id": "n1622092082",
@@ -1608,9 +1614,9 @@
       "lat": 48.16208,
       "lon": 24.49063,
       "ele_m": 1829,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.9
     },
     {
       "id": "n1622092260",
@@ -1620,9 +1626,9 @@
       "lat": 48.18018,
       "lon": 24.48363,
       "ele_m": 1496,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.7
     },
     {
       "id": "n1622092272",
@@ -1632,9 +1638,9 @@
       "lat": 48.18195,
       "lon": 24.48245,
       "ele_m": 1461,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.9
     },
     {
       "id": "n1622092515",
@@ -1644,9 +1650,9 @@
       "lat": 48.17961,
       "lon": 24.48325,
       "ele_m": 1500,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.6
     },
     {
       "id": "n1622092649",
@@ -1656,9 +1662,9 @@
       "lat": 48.18758,
       "lon": 24.48759,
       "ele_m": 1286,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 13.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.6
     },
     {
       "id": "n1622092683",
@@ -1668,9 +1674,9 @@
       "lat": 48.18721,
       "lon": 24.48717,
       "ele_m": 1285,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 13.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.5
     },
     {
       "id": "n1622092688",
@@ -1680,9 +1686,9 @@
       "lat": 48.18713,
       "lon": 24.48709,
       "ele_m": 1286,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 13.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.5
     },
     {
       "id": "n1622092776",
@@ -1692,9 +1698,9 @@
       "lat": 48.18503,
       "lon": 24.4864,
       "ele_m": 1323,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 13.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.3
     },
     {
       "id": "n1622149321",
@@ -1740,9 +1746,9 @@
       "lat": 48.18096,
       "lon": 24.49912,
       "ele_m": 1253,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 13.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.1
     },
     {
       "id": "n1622208725",
@@ -1752,9 +1758,9 @@
       "lat": 48.18078,
       "lon": 24.49911,
       "ele_m": 1256,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 13.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.1
     },
     {
       "id": "n1622208818",
@@ -1803,9 +1809,9 @@
       "lat": 47.9618,
       "lon": 24.46403,
       "ele_m": 1793,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 21.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.9
     },
     {
       "id": "n1757332551",
@@ -1818,9 +1824,9 @@
       "lat": 47.96017,
       "lon": 24.41612,
       "ele_m": 1542,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.3
     },
     {
       "id": "n1760723783",
@@ -1833,9 +1839,9 @@
       "lat": 48.03677,
       "lon": 24.61176,
       "ele_m": 1717,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.9
     },
     {
       "id": "n1760803815",
@@ -1962,9 +1968,9 @@
       "lat": 48.07731,
       "lon": 24.6454,
       "ele_m": 1443,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 16.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.6
     },
     {
       "id": "n1776171256",
@@ -1974,9 +1980,9 @@
       "lat": 48.07873,
       "lon": 24.6446,
       "ele_m": 1455,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 16.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.5
     },
     {
       "id": "n1776171450",
@@ -1986,9 +1992,9 @@
       "lat": 48.07499,
       "lon": 24.63215,
       "ele_m": 1801,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 17.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.6
     },
     {
       "id": "n1776171452",
@@ -1998,9 +2004,9 @@
       "lat": 48.07494,
       "lon": 24.63222,
       "ele_m": 1802,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 17.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.6
     },
     {
       "id": "n1776171493",
@@ -2010,9 +2016,9 @@
       "lat": 48.06618,
       "lon": 24.62444,
       "ele_m": 1792,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.1
     },
     {
       "id": "n1776171528",
@@ -2022,9 +2028,9 @@
       "lat": 48.0612,
       "lon": 24.62285,
       "ele_m": 1818,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.0
     },
     {
       "id": "n1776171536",
@@ -2034,9 +2040,9 @@
       "lat": 48.05929,
       "lon": 24.62325,
       "ele_m": 1827,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.1
     },
     {
       "id": "n1776171566",
@@ -2046,9 +2052,9 @@
       "lat": 48.06808,
       "lon": 24.62831,
       "ele_m": 1755,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 17.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.3
     },
     {
       "id": "n1776171615",
@@ -2058,9 +2064,9 @@
       "lat": 48.06928,
       "lon": 24.63645,
       "ele_m": 1850,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 17.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.9
     },
     {
       "id": "n1776171696",
@@ -2070,9 +2076,9 @@
       "lat": 48.06915,
       "lon": 24.64226,
       "ele_m": 1868,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 16.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.4
     },
     {
       "id": "n1776171702",
@@ -2082,9 +2088,9 @@
       "lat": 48.06929,
       "lon": 24.64415,
       "ele_m": 1880,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 16.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.5
     },
     {
       "id": "n1776171703",
@@ -2094,9 +2100,9 @@
       "lat": 48.0693,
       "lon": 24.64427,
       "ele_m": 1880,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 16.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.5
     },
     {
       "id": "n1776171726",
@@ -2106,9 +2112,9 @@
       "lat": 48.07054,
       "lon": 24.64602,
       "ele_m": 1824,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 16.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.6
     },
     {
       "id": "n1776171890",
@@ -2231,9 +2237,9 @@
       "lat": 48.04239,
       "lon": 24.33871,
       "ele_m": 528,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 10.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.1
     },
     {
       "id": "n1839850975",
@@ -2243,9 +2249,9 @@
       "lat": 48.13243,
       "lon": 24.5434,
       "ele_m": 1543,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.3
     },
     {
       "id": "n1839850994",
@@ -2255,9 +2261,9 @@
       "lat": 48.1343,
       "lon": 24.54709,
       "ele_m": 1479,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.6
     },
     {
       "id": "n1839851015",
@@ -2267,9 +2273,9 @@
       "lat": 48.13624,
       "lon": 24.54856,
       "ele_m": 1432,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.8
     },
     {
       "id": "n1839851073",
@@ -2279,9 +2285,9 @@
       "lat": 48.14282,
       "lon": 24.54884,
       "ele_m": 1344,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.4
     },
     {
       "id": "n1839851101",
@@ -2291,9 +2297,9 @@
       "lat": 48.14798,
       "lon": 24.53822,
       "ele_m": 1387,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.2
     },
     {
       "id": "n1839851114",
@@ -2303,9 +2309,9 @@
       "lat": 48.14867,
       "lon": 24.53723,
       "ele_m": 1380,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.3
     },
     {
       "id": "n1839851127",
@@ -2315,9 +2321,9 @@
       "lat": 48.15247,
       "lon": 24.5373,
       "ele_m": 1385,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.6
     },
     {
       "id": "n1839851144",
@@ -2327,9 +2333,9 @@
       "lat": 48.15598,
       "lon": 24.53881,
       "ele_m": 1378,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.0
     },
     {
       "id": "n1839851150",
@@ -2339,9 +2345,9 @@
       "lat": 48.16277,
       "lon": 24.55453,
       "ele_m": 1137,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.3
     },
     {
       "id": "n1839851337",
@@ -2375,9 +2381,9 @@
       "lat": 48.06741,
       "lon": 24.45423,
       "ele_m": 646,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 1.2
     },
     {
       "id": "n1839920002",
@@ -2387,9 +2393,9 @@
       "lat": 48.07739,
       "lon": 24.44972,
       "ele_m": 670,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 0.0
     },
     {
       "id": "n1839920016",
@@ -2399,9 +2405,9 @@
       "lat": 48.08823,
       "lon": 24.4536,
       "ele_m": 717,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 1.2
     },
     {
       "id": "n1839920027",
@@ -2411,9 +2417,9 @@
       "lat": 48.09383,
       "lon": 24.46174,
       "ele_m": 739,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 19.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 2.0
     },
     {
       "id": "n1839920028",
@@ -2423,9 +2429,9 @@
       "lat": 48.09408,
       "lon": 24.4614,
       "ele_m": 745,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 19.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 2.0
     },
     {
       "id": "n1839920035",
@@ -2435,9 +2441,9 @@
       "lat": 48.09634,
       "lon": 24.46507,
       "ele_m": 750,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 19.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 2.4
     },
     {
       "id": "n1840005733",
@@ -2447,9 +2453,9 @@
       "lat": 48.096,
       "lon": 24.46454,
       "ele_m": 748,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 19.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 2.3
     },
     {
       "id": "n1872990537",
@@ -2471,9 +2477,9 @@
       "lat": 48.14739,
       "lon": 24.32076,
       "ele_m": 1217,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 13.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.3
     },
     {
       "id": "n1872991463",
@@ -2483,9 +2489,9 @@
       "lat": 48.16011,
       "lon": 24.39211,
       "ele_m": 1586,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.1
     },
     {
       "id": "n1872991483",
@@ -2495,9 +2501,9 @@
       "lat": 48.16295,
       "lon": 24.39374,
       "ele_m": 1685,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.4
     },
     {
       "id": "n1873010970",
@@ -2507,9 +2513,9 @@
       "lat": 48.1849,
       "lon": 24.48639,
       "ele_m": 1324,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 13.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.2
     },
     {
       "id": "n1873011033",
@@ -2531,9 +2537,9 @@
       "lat": 47.95488,
       "lon": 24.50145,
       "ele_m": 1604,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 24.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.2
     },
     {
       "id": "n1873107259",
@@ -2543,9 +2549,9 @@
       "lat": 47.95696,
       "lon": 24.51662,
       "ele_m": 1571,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 25.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.3
     },
     {
       "id": "n1873107281",
@@ -2555,9 +2561,9 @@
       "lat": 47.95817,
       "lon": 24.48769,
       "ele_m": 1678,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 23.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.6
     },
     {
       "id": "n1873107317",
@@ -2567,9 +2573,9 @@
       "lat": 47.96129,
       "lon": 24.55593,
       "ele_m": 1576,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 28.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 15.2
     },
     {
       "id": "n1873107357",
@@ -2579,9 +2585,9 @@
       "lat": 47.96431,
       "lon": 24.47902,
       "ele_m": 1652,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 22.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.8
     },
     {
       "id": "n1873107512",
@@ -2591,9 +2597,9 @@
       "lat": 47.99354,
       "lon": 24.5672,
       "ele_m": 1452,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 26.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.8
     },
     {
       "id": "n1873107517",
@@ -2603,9 +2609,9 @@
       "lat": 47.99682,
       "lon": 24.56789,
       "ele_m": 1402,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 26.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.6
     },
     {
       "id": "n1873107520",
@@ -2615,9 +2621,9 @@
       "lat": 47.99819,
       "lon": 24.57098,
       "ele_m": 1390,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 25.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.6
     },
     {
       "id": "n1873107527",
@@ -2627,9 +2633,9 @@
       "lat": 48.0015,
       "lon": 24.57142,
       "ele_m": 1368,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 25.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.4
     },
     {
       "id": "n1873107546",
@@ -2639,9 +2645,9 @@
       "lat": 48.01627,
       "lon": 24.57615,
       "ele_m": 1433,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 24.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.6
     },
     {
       "id": "n1873107568",
@@ -2651,9 +2657,9 @@
       "lat": 48.0248,
       "lon": 24.58755,
       "ele_m": 1405,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 22.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.8
     },
     {
       "id": "n1873107576",
@@ -2663,9 +2669,9 @@
       "lat": 48.03084,
       "lon": 24.59277,
       "ele_m": 1391,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 22.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.9
     },
     {
       "id": "n1873107584",
@@ -2675,9 +2681,9 @@
       "lat": 48.03377,
       "lon": 24.59506,
       "ele_m": 1464,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 21.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.9
     },
     {
       "id": "n1873107600",
@@ -2687,9 +2693,9 @@
       "lat": 48.05386,
       "lon": 24.57281,
       "ele_m": 1113,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 22.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.5
     },
     {
       "id": "n1873107602",
@@ -2699,9 +2705,9 @@
       "lat": 48.05656,
       "lon": 24.57242,
       "ele_m": 1029,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 21.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.4
     },
     {
       "id": "n1877310831",
@@ -2879,9 +2885,9 @@
       "lat": 48.14942,
       "lon": 24.31713,
       "ele_m": 1158,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 13.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.7
     },
     {
       "id": "n2013440115",
@@ -2903,8 +2909,8 @@
       "lat": 48.1505,
       "lon": 24.31091,
       "ele_m": 1054,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
       "forecast_city_km": 13.1
     },
     {
@@ -3527,9 +3533,9 @@
       "lat": 48.0915,
       "lon": 24.63184,
       "ele_m": 1383,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 16.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.6
     },
     {
       "id": "n2039659250",
@@ -3539,9 +3545,9 @@
       "lat": 48.0964,
       "lon": 24.63763,
       "ele_m": 1358,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 15.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.1
     },
     {
       "id": "n2039659257",
@@ -3551,9 +3557,9 @@
       "lat": 48.09661,
       "lon": 24.64474,
       "ele_m": 1212,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 15.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.7
     },
     {
       "id": "n2039659332",
@@ -3575,9 +3581,9 @@
       "lat": 48.09926,
       "lon": 24.47175,
       "ele_m": 770,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 20.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 2.9
     },
     {
       "id": "n2039659611",
@@ -3671,9 +3677,9 @@
       "lat": 48.11541,
       "lon": 24.50226,
       "ele_m": 1420,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 20.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 5.8
     },
     {
       "id": "n2039660289",
@@ -3683,9 +3689,9 @@
       "lat": 48.11771,
       "lon": 24.50666,
       "ele_m": 1503,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 19.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 6.2
     },
     {
       "id": "n2039660301",
@@ -3695,9 +3701,9 @@
       "lat": 48.11813,
       "lon": 24.55523,
       "ele_m": 1922,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 19.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.1
     },
     {
       "id": "n2039660330",
@@ -3707,9 +3713,9 @@
       "lat": 48.11915,
       "lon": 24.50789,
       "ele_m": 1535,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 19.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 6.3
     },
     {
       "id": "n2039660342",
@@ -3719,9 +3725,9 @@
       "lat": 48.11954,
       "lon": 24.55664,
       "ele_m": 1891,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 19.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.2
     },
     {
       "id": "n2039660404",
@@ -3731,9 +3737,9 @@
       "lat": 48.12038,
       "lon": 24.54286,
       "ele_m": 1827,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 19.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.4
     },
     {
       "id": "n2039660553",
@@ -3743,9 +3749,9 @@
       "lat": 48.12312,
       "lon": 24.53905,
       "ele_m": 1736,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 19.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.4
     },
     {
       "id": "n2039660581",
@@ -3755,9 +3761,9 @@
       "lat": 48.12375,
       "lon": 24.56179,
       "ele_m": 1821,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 18.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.8
     },
     {
       "id": "n2039660607",
@@ -3815,9 +3821,9 @@
       "lat": 48.12794,
       "lon": 24.53078,
       "ele_m": 1837,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 18.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.2
     },
     {
       "id": "n2039660916",
@@ -3827,8 +3833,8 @@
       "lat": 48.13467,
       "lon": 24.62989,
       "ele_m": 883,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
       "forecast_city_km": 14.8
     },
     {
@@ -3839,9 +3845,9 @@
       "lat": 48.14024,
       "lon": 24.5784,
       "ele_m": 1417,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.8
     },
     {
       "id": "n2039660990",
@@ -3851,9 +3857,9 @@
       "lat": 48.14191,
       "lon": 24.5478,
       "ele_m": 1351,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.2
     },
     {
       "id": "n2039661023",
@@ -3863,9 +3869,9 @@
       "lat": 48.14546,
       "lon": 24.57085,
       "ele_m": 1375,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.8
     },
     {
       "id": "n2039661106",
@@ -3875,9 +3881,9 @@
       "lat": 48.15087,
       "lon": 24.56443,
       "ele_m": 1392,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.8
     },
     {
       "id": "n2074304900",
@@ -3986,9 +3992,9 @@
       "lat": 48.01768,
       "lon": 24.57723,
       "ele_m": 1464,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 24.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.6
     },
     {
       "id": "n2164246499",
@@ -4034,9 +4040,9 @@
       "lat": 47.96423,
       "lon": 24.42225,
       "ele_m": 1530,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 19.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.8
     },
     {
       "id": "n2323008322",
@@ -4046,9 +4052,9 @@
       "lat": 47.96866,
       "lon": 24.42292,
       "ele_m": 1535,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.3
     },
     {
       "id": "n2323008325",
@@ -4058,9 +4064,9 @@
       "lat": 47.96871,
       "lon": 24.42236,
       "ele_m": 1529,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.3
     },
     {
       "id": "n2323008449",
@@ -4070,9 +4076,9 @@
       "lat": 48.04009,
       "lon": 24.34113,
       "ele_m": 534,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 10.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.1
     },
     {
       "id": "n2323008451",
@@ -4082,9 +4088,9 @@
       "lat": 48.0401,
       "lon": 24.34147,
       "ele_m": 533,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 10.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.0
     },
     {
       "id": "n2323008453",
@@ -4094,9 +4100,9 @@
       "lat": 48.04004,
       "lon": 24.34252,
       "ele_m": 537,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 10.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.0
     },
     {
       "id": "n2374609850",
@@ -4106,9 +4112,9 @@
       "lat": 48.03319,
       "lon": 24.53478,
       "ele_m": 816,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 24.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.0
     },
     {
       "id": "n2374609857",
@@ -4118,9 +4124,9 @@
       "lat": 48.03581,
       "lon": 24.54071,
       "ele_m": 830,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 25.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.2
     },
     {
       "id": "n2374609861",
@@ -4130,9 +4136,9 @@
       "lat": 48.0385,
       "lon": 24.51179,
       "ele_m": 755,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 22.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 6.4
     },
     {
       "id": "n2374935014",
@@ -4142,9 +4148,9 @@
       "lat": 48.05746,
       "lon": 24.62262,
       "ele_m": 1844,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.1
     },
     {
       "id": "n2374935040",
@@ -4154,9 +4160,9 @@
       "lat": 48.0661,
       "lon": 24.62437,
       "ele_m": 1793,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.1
     },
     {
       "id": "n2374935278",
@@ -4166,9 +4172,9 @@
       "lat": 48.17539,
       "lon": 24.50704,
       "ele_m": 1393,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 13.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.7
     },
     {
       "id": "n2375853866",
@@ -4421,9 +4427,9 @@
       "lat": 48.15864,
       "lon": 24.47188,
       "ele_m": 1577,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 15.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.2
     },
     {
       "id": "n2392357993",
@@ -4637,9 +4643,9 @@
       "lat": 48.15543,
       "lon": 24.35838,
       "ele_m": 1404,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.0
     },
     {
       "id": "n2420895524",
@@ -4829,9 +4835,9 @@
       "lat": 48.10621,
       "lon": 24.55782,
       "ele_m": 1946,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.7
     },
     {
       "id": "n2435762635",
@@ -4841,9 +4847,9 @@
       "lat": 48.12246,
       "lon": 24.53623,
       "ele_m": 1772,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 19.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.2
     },
     {
       "id": "n262290472",
@@ -4872,9 +4878,9 @@
       "lat": 48.04697,
       "lon": 24.62751,
       "ele_m": 2006,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.7
     },
     {
       "id": "n262307452",
@@ -4887,9 +4893,9 @@
       "lat": 48.06921,
       "lon": 24.64405,
       "ele_m": 1882,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 16.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.5
     },
     {
       "id": "n2640903656",
@@ -4899,9 +4905,9 @@
       "lat": 48.08592,
       "lon": 24.50609,
       "ele_m": 941,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 22.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 4.3
     },
     {
       "id": "n2640903661",
@@ -4911,9 +4917,9 @@
       "lat": 48.08613,
       "lon": 24.51259,
       "ele_m": 984,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 23.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 4.8
     },
     {
       "id": "n2640903759",
@@ -4923,9 +4929,9 @@
       "lat": 48.09416,
       "lon": 24.48809,
       "ele_m": 830,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 21.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 3.4
     },
     {
       "id": "n2640903792",
@@ -4935,9 +4941,9 @@
       "lat": 48.08325,
       "lon": 24.56341,
       "ele_m": 1478,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 21.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.5
     },
     {
       "id": "n2640903799",
@@ -4947,9 +4953,9 @@
       "lat": 48.09172,
       "lon": 24.567,
       "ele_m": 1584,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.9
     },
     {
       "id": "n2640906786",
@@ -4959,9 +4965,9 @@
       "lat": 48.09844,
       "lon": 24.5657,
       "ele_m": 1720,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.9
     },
     {
       "id": "n2640906797",
@@ -4971,9 +4977,9 @@
       "lat": 48.10164,
       "lon": 24.5629,
       "ele_m": 1792,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.8
     },
     {
       "id": "n2640906801",
@@ -4983,9 +4989,9 @@
       "lat": 48.10162,
       "lon": 24.56242,
       "ele_m": 1783,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.8
     },
     {
       "id": "n2640906811",
@@ -4995,9 +5001,9 @@
       "lat": 48.09533,
       "lon": 24.56798,
       "ele_m": 1678,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.0
     },
     {
       "id": "n2820056275",
@@ -5007,9 +5013,9 @@
       "lat": 48.16843,
       "lon": 24.43661,
       "ele_m": 1534,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.2
     },
     {
       "id": "n2820065156",
@@ -5043,9 +5049,9 @@
       "lat": 48.15991,
       "lon": 24.46774,
       "ele_m": 1534,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 14.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.3
     },
     {
       "id": "n2835884355",
@@ -5079,9 +5085,9 @@
       "lat": 48.13865,
       "lon": 24.59013,
       "ele_m": 1343,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.5
     },
     {
       "id": "n2837640777",
@@ -5091,9 +5097,9 @@
       "lat": 48.13907,
       "lon": 24.58909,
       "ele_m": 1344,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.4
     },
     {
       "id": "n2837640799",
@@ -5103,9 +5109,9 @@
       "lat": 48.13919,
       "lon": 24.58878,
       "ele_m": 1347,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.4
     },
     {
       "id": "n2837679475",
@@ -5247,9 +5253,9 @@
       "lat": 48.10453,
       "lon": 24.64225,
       "ele_m": 1152,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 14.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.6
     },
     {
       "id": "n2841639773",
@@ -5343,9 +5349,9 @@
       "lat": 48.1638,
       "lon": 24.55749,
       "ele_m": 1115,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.5
     },
     {
       "id": "n284960339",
@@ -5391,9 +5397,9 @@
       "lat": 48.16434,
       "lon": 24.53581,
       "ele_m": 1264,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.6
     },
     {
       "id": "n285889627",
@@ -5403,9 +5409,9 @@
       "lat": 48.16545,
       "lon": 24.53527,
       "ele_m": 1281,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.7
     },
     {
       "id": "n285889631",
@@ -5415,9 +5421,9 @@
       "lat": 48.1672,
       "lon": 24.53068,
       "ele_m": 1306,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.7
     },
     {
       "id": "n285890111",
@@ -5427,9 +5433,9 @@
       "lat": 48.1713,
       "lon": 24.51477,
       "ele_m": 1499,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.5
     },
     {
       "id": "n285890866",
@@ -5439,9 +5445,9 @@
       "lat": 48.1611,
       "lon": 24.50328,
       "ele_m": 1947,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.1
     },
     {
       "id": "n285890874",
@@ -5451,9 +5457,9 @@
       "lat": 48.16207,
       "lon": 24.5057,
       "ele_m": 1872,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.3
     },
     {
       "id": "n285890911",
@@ -5463,9 +5469,9 @@
       "lat": 48.16243,
       "lon": 24.51195,
       "ele_m": 1728,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.5
     },
     {
       "id": "n285890920",
@@ -5475,9 +5481,9 @@
       "lat": 48.16401,
       "lon": 24.51437,
       "ele_m": 1601,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.8
     },
     {
       "id": "n285890958",
@@ -5487,9 +5493,9 @@
       "lat": 48.16611,
       "lon": 24.52772,
       "ele_m": 1354,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.4
     },
     {
       "id": "n285890961",
@@ -5499,9 +5505,9 @@
       "lat": 48.1664,
       "lon": 24.52868,
       "ele_m": 1338,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.5
     },
     {
       "id": "n2891581861",
@@ -5511,9 +5517,9 @@
       "lat": 47.99834,
       "lon": 24.53036,
       "ele_m": 912,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 25.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.7
     },
     {
       "id": "n2891584264",
@@ -5523,9 +5529,9 @@
       "lat": 48.02935,
       "lon": 24.51698,
       "ele_m": 785,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 23.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 7.3
     },
     {
       "id": "n2896663934",
@@ -5703,9 +5709,9 @@
       "lat": 48.15628,
       "lon": 24.36804,
       "ele_m": 1470,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.6
     },
     {
       "id": "n2937416656",
@@ -5727,9 +5733,9 @@
       "lat": 47.96726,
       "lon": 24.55925,
       "ele_m": 1513,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 28.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.7
     },
     {
       "id": "n2937597526",
@@ -6207,9 +6213,9 @@
       "lat": 48.15995,
       "lon": 24.52189,
       "ele_m": 1429,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.6
     },
     {
       "id": "n3235779210",
@@ -6219,9 +6225,9 @@
       "lat": 48.16032,
       "lon": 24.51935,
       "ele_m": 1443,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.6
     },
     {
       "id": "n3239119335",
@@ -6498,9 +6504,9 @@
       "lat": 47.96124,
       "lon": 24.55609,
       "ele_m": 1578,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 28.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 15.2
     },
     {
       "id": "n337604448",
@@ -6558,9 +6564,9 @@
       "lat": 48.07754,
       "lon": 24.44939,
       "ele_m": 671,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 0.0
     },
     {
       "id": "n337661501",
@@ -6573,9 +6579,9 @@
       "lat": 48.04054,
       "lon": 24.36092,
       "ele_m": 548,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 11.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 7.8
     },
     {
       "id": "n337662229",
@@ -6612,9 +6618,9 @@
       "lat": 48.15694,
       "lon": 24.3409,
       "ele_m": 1268,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.0
     },
     {
       "id": "n3513580225",
@@ -6624,9 +6630,9 @@
       "lat": 48.00092,
       "lon": 24.57143,
       "ele_m": 1379,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 25.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.4
     },
     {
       "id": "n3517386441",
@@ -6636,9 +6642,9 @@
       "lat": 48.1514,
       "lon": 24.33717,
       "ele_m": 1277,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.7
     },
     {
       "id": "n3530827917",
@@ -6672,9 +6678,9 @@
       "lat": 47.96317,
       "lon": 24.52628,
       "ele_m": 1649,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 26.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.9
     },
     {
       "id": "n3709804827",
@@ -6696,9 +6702,9 @@
       "lat": 48.16498,
       "lon": 24.51626,
       "ele_m": 1551,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.9
     },
     {
       "id": "n3741692542",
@@ -6756,9 +6762,9 @@
       "lat": 48.05238,
       "lon": 24.55665,
       "ele_m": 951,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 23.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.4
     },
     {
       "id": "n3801003856",
@@ -6768,9 +6774,9 @@
       "lat": 48.02096,
       "lon": 24.58083,
       "ele_m": 1439,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 23.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.6
     },
     {
       "id": "n3801007960",
@@ -6780,9 +6786,9 @@
       "lat": 48.01748,
       "lon": 24.57757,
       "ele_m": 1461,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 24.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.6
     },
     {
       "id": "n3801016414",
@@ -6792,9 +6798,9 @@
       "lat": 47.99854,
       "lon": 24.57119,
       "ele_m": 1395,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 25.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.6
     },
     {
       "id": "n3801067521",
@@ -6804,9 +6810,9 @@
       "lat": 48.08305,
       "lon": 24.56363,
       "ele_m": 1470,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 21.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.5
     },
     {
       "id": "n3920435928",
@@ -6816,9 +6822,9 @@
       "lat": 48.07749,
       "lon": 24.55297,
       "ele_m": 1363,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 22.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 7.7
     },
     {
       "id": "n3992330551",
@@ -6828,9 +6834,9 @@
       "lat": 48.15563,
       "lon": 24.35896,
       "ele_m": 1383,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.0
     },
     {
       "id": "n405230536",
@@ -7121,9 +7127,9 @@
       "lat": 48.07339,
       "lon": 24.63483,
       "ele_m": 1838,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 16.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.8
     },
     {
       "id": "n4338727235",
@@ -7315,9 +7321,9 @@
       "lat": 48.0983,
       "lon": 24.63702,
       "ele_m": 1359,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 15.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.1
     },
     {
       "id": "n4366041815",
@@ -7339,9 +7345,9 @@
       "lat": 48.07877,
       "lon": 24.6447,
       "ele_m": 1451,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 16.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.5
     },
     {
       "id": "n4369535124",
@@ -7483,9 +7489,9 @@
       "lat": 48.04088,
       "lon": 24.59448,
       "ele_m": 1450,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 21.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.5
     },
     {
       "id": "n4383664282",
@@ -7495,9 +7501,9 @@
       "lat": 48.12252,
       "lon": 24.53613,
       "ele_m": 1774,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 19.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.2
     },
     {
       "id": "n4384836270",
@@ -7519,9 +7525,9 @@
       "lat": 48.0674,
       "lon": 24.45467,
       "ele_m": 652,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 1.2
     },
     {
       "id": "n4420833706",
@@ -7531,9 +7537,9 @@
       "lat": 48.06236,
       "lon": 24.38009,
       "ele_m": 626,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 13.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 5.4
     },
     {
       "id": "n4420833707",
@@ -7543,9 +7549,9 @@
       "lat": 48.06256,
       "lon": 24.38006,
       "ele_m": 626,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 13.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 5.4
     },
     {
       "id": "n4464431289",
@@ -7555,9 +7561,9 @@
       "lat": 48.12291,
       "lon": 24.5391,
       "ele_m": 1737,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 19.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.4
     },
     {
       "id": "n4464431389",
@@ -7567,9 +7573,9 @@
       "lat": 48.1014,
       "lon": 24.56212,
       "ele_m": 1779,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.8
     },
     {
       "id": "n4472227792",
@@ -7593,9 +7599,9 @@
       "lat": 48.08185,
       "lon": 24.5266,
       "ele_m": 1179,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 23.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 5.8
     },
     {
       "id": "n4483342550",
@@ -7605,9 +7611,9 @@
       "lat": 48.08092,
       "lon": 24.52746,
       "ele_m": 1179,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 23.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 5.8
     },
     {
       "id": "n4483388762",
@@ -7617,9 +7623,9 @@
       "lat": 48.05516,
       "lon": 24.56221,
       "ele_m": 985,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 22.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.7
     },
     {
       "id": "n4483388763",
@@ -7629,9 +7635,9 @@
       "lat": 48.05525,
       "lon": 24.5624,
       "ele_m": 987,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 22.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.8
     },
     {
       "id": "n4483389194",
@@ -7641,9 +7647,9 @@
       "lat": 48.04646,
       "lon": 24.55075,
       "ele_m": 900,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 23.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.3
     },
     {
       "id": "n4483389195",
@@ -7653,9 +7659,9 @@
       "lat": 48.04638,
       "lon": 24.55059,
       "ele_m": 899,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 23.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.3
     },
     {
       "id": "n4483389196",
@@ -7665,9 +7671,9 @@
       "lat": 48.04309,
       "lon": 24.5473,
       "ele_m": 873,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 24.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.2
     },
     {
       "id": "n4483389197",
@@ -7677,9 +7683,9 @@
       "lat": 48.04293,
       "lon": 24.54718,
       "ele_m": 871,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 24.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.2
     },
     {
       "id": "n4483389201",
@@ -7689,9 +7695,9 @@
       "lat": 48.03316,
       "lon": 24.53456,
       "ele_m": 815,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 24.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.0
     },
     {
       "id": "n4566548952",
@@ -7761,9 +7767,9 @@
       "lat": 48.08709,
       "lon": 24.45183,
       "ele_m": 718,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 1.1
     },
     {
       "id": "n466859894",
@@ -7773,9 +7779,9 @@
       "lat": 48.09407,
       "lon": 24.46203,
       "ele_m": 735,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 19.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 2.1
     },
     {
       "id": "n466859987",
@@ -7785,9 +7791,9 @@
       "lat": 48.09988,
       "lon": 24.47082,
       "ele_m": 769,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 20.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 3.0
     },
     {
       "id": "n466862748",
@@ -7797,9 +7803,9 @@
       "lat": 48.1673,
       "lon": 24.4381,
       "ele_m": 1537,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.0
     },
     {
       "id": "n466863309",
@@ -7809,9 +7815,9 @@
       "lat": 48.18117,
       "lon": 24.44737,
       "ele_m": 1283,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.5
     },
     {
       "id": "n466863462",
@@ -7929,9 +7935,9 @@
       "lat": 48.16217,
       "lon": 24.49145,
       "ele_m": 1835,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.9
     },
     {
       "id": "n466909860",
@@ -8013,9 +8019,9 @@
       "lat": 47.99824,
       "lon": 24.57143,
       "ele_m": 1394,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 25.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.7
     },
     {
       "id": "n4839469527",
@@ -8198,9 +8204,9 @@
       "lat": 48.04674,
       "lon": 24.62769,
       "ele_m": 2003,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.7
     },
     {
       "id": "n4936465741",
@@ -8210,9 +8216,9 @@
       "lat": 48.1641,
       "lon": 24.53593,
       "ele_m": 1263,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.6
     },
     {
       "id": "n4986480906",
@@ -8222,9 +8228,9 @@
       "lat": 48.15931,
       "lon": 24.51698,
       "ele_m": 1541,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.4
     },
     {
       "id": "n4986480912",
@@ -8234,9 +8240,9 @@
       "lat": 48.1593,
       "lon": 24.51647,
       "ele_m": 1552,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.4
     },
     {
       "id": "n4986480914",
@@ -8246,9 +8252,9 @@
       "lat": 48.15912,
       "lon": 24.51517,
       "ele_m": 1563,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.3
     },
     {
       "id": "n4987284379",
@@ -8258,9 +8264,9 @@
       "lat": 48.03565,
       "lon": 24.65727,
       "ele_m": 1509,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 16.1
     },
     {
       "id": "n4987284513",
@@ -8282,9 +8288,9 @@
       "lat": 47.98557,
       "lon": 24.56602,
       "ele_m": 1479,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 27.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.4
     },
     {
       "id": "n4990259109",
@@ -8330,9 +8336,9 @@
       "lat": 48.10401,
       "lon": 24.63863,
       "ele_m": 1172,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 15.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.4
     },
     {
       "id": "n4990676762",
@@ -8342,9 +8348,9 @@
       "lat": 48.10328,
       "lon": 24.6374,
       "ele_m": 1198,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 15.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.3
     },
     {
       "id": "n4994033824",
@@ -8357,9 +8363,9 @@
       "lat": 48.14431,
       "lon": 24.52355,
       "ele_m": 1806,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.2
     },
     {
       "id": "n4994033838",
@@ -8381,9 +8387,9 @@
       "lat": 48.00109,
       "lon": 24.57166,
       "ele_m": 1378,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 25.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.4
     },
     {
       "id": "n4999667132",
@@ -8393,9 +8399,9 @@
       "lat": 48.14309,
       "lon": 24.54935,
       "ele_m": 1338,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.4
     },
     {
       "id": "n4999667133",
@@ -8405,9 +8411,9 @@
       "lat": 48.14308,
       "lon": 24.549,
       "ele_m": 1342,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.4
     },
     {
       "id": "n5000705531",
@@ -8429,9 +8435,9 @@
       "lat": 48.13849,
       "lon": 24.62622,
       "ele_m": 914,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 15.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.8
     },
     {
       "id": "n5000705551",
@@ -8441,9 +8447,9 @@
       "lat": 48.13894,
       "lon": 24.62307,
       "ele_m": 935,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 15.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.6
     },
     {
       "id": "n5022822743",
@@ -8453,9 +8459,9 @@
       "lat": 48.04774,
       "lon": 24.50026,
       "ele_m": 718,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 21.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 5.0
     },
     {
       "id": "n5022822748",
@@ -8465,9 +8471,9 @@
       "lat": 48.04251,
       "lon": 24.50889,
       "ele_m": 730,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 22.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 5.9
     },
     {
       "id": "n5022822749",
@@ -8477,9 +8483,9 @@
       "lat": 48.04255,
       "lon": 24.50874,
       "ele_m": 730,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 22.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 5.9
     },
     {
       "id": "n5022822753",
@@ -8489,9 +8495,9 @@
       "lat": 48.02919,
       "lon": 24.5186,
       "ele_m": 803,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 23.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 7.4
     },
     {
       "id": "n5022822796",
@@ -8501,9 +8507,9 @@
       "lat": 48.05589,
       "lon": 24.57009,
       "ele_m": 1028,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 22.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.3
     },
     {
       "id": "n5022827864",
@@ -8513,9 +8519,9 @@
       "lat": 48.03535,
       "lon": 24.65796,
       "ele_m": 1505,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 16.2
     },
     {
       "id": "n5022827865",
@@ -8525,9 +8531,9 @@
       "lat": 48.03619,
       "lon": 24.65593,
       "ele_m": 1522,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 16.0
     },
     {
       "id": "n5022827890",
@@ -8539,9 +8545,9 @@
       "lat": 47.95506,
       "lon": 24.50181,
       "ele_m": 1597,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 24.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.2
     },
     {
       "id": "n5022827891",
@@ -8551,9 +8557,9 @@
       "lat": 47.96915,
       "lon": 24.42233,
       "ele_m": 1530,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.2
     },
     {
       "id": "n5031631721",
@@ -8563,9 +8569,9 @@
       "lat": 48.17658,
       "lon": 24.51837,
       "ele_m": 1538,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 13.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.1
     },
     {
       "id": "n5040479520",
@@ -8587,9 +8593,9 @@
       "lat": 48.08088,
       "lon": 24.63745,
       "ele_m": 1577,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 16.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.0
     },
     {
       "id": "n5072175380",
@@ -8623,9 +8629,9 @@
       "lat": 48.15648,
       "lon": 24.5501,
       "ele_m": 1177,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.5
     },
     {
       "id": "n5110434446",
@@ -8635,9 +8641,9 @@
       "lat": 48.16108,
       "lon": 24.5538,
       "ele_m": 1140,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.1
     },
     {
       "id": "n5121213872",
@@ -8661,9 +8667,9 @@
       "lat": 48.02537,
       "lon": 24.6604,
       "ele_m": 1486,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 16.7
     },
     {
       "id": "n5135980000",
@@ -8673,9 +8679,9 @@
       "lat": 48.16053,
       "lon": 24.39179,
       "ele_m": 1587,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.2
     },
     {
       "id": "n5135998268",
@@ -8685,9 +8691,9 @@
       "lat": 48.16044,
       "lon": 24.39122,
       "ele_m": 1574,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.2
     },
     {
       "id": "n5139897902",
@@ -8697,9 +8703,9 @@
       "lat": 48.16069,
       "lon": 24.39209,
       "ele_m": 1598,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.2
     },
     {
       "id": "n5225453886",
@@ -8793,9 +8799,9 @@
       "lat": 48.0912,
       "lon": 24.58881,
       "ele_m": 1910,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.5
     },
     {
       "id": "n5594594710",
@@ -8805,9 +8811,9 @@
       "lat": 48.07449,
       "lon": 24.63353,
       "ele_m": 1828,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 16.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.7
     },
     {
       "id": "n5594594716",
@@ -8817,9 +8823,9 @@
       "lat": 48.0741,
       "lon": 24.63401,
       "ele_m": 1836,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 16.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.7
     },
     {
       "id": "n5622450794",
@@ -8841,9 +8847,9 @@
       "lat": 48.16569,
       "lon": 24.52763,
       "ele_m": 1346,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.4
     },
     {
       "id": "n5681812921",
@@ -8853,9 +8859,9 @@
       "lat": 48.15925,
       "lon": 24.51695,
       "ele_m": 1543,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.4
     },
     {
       "id": "n5713882104",
@@ -8865,9 +8871,9 @@
       "lat": 48.0734,
       "lon": 24.63462,
       "ele_m": 1839,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 16.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.8
     },
     {
       "id": "n5736165142",
@@ -8877,9 +8883,9 @@
       "lat": 48.10491,
       "lon": 24.56316,
       "ele_m": 1913,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.0
     },
     {
       "id": "n5802188778",
@@ -8889,9 +8895,9 @@
       "lat": 48.03701,
       "lon": 24.60078,
       "ele_m": 1562,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 21.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.1
     },
     {
       "id": "n5856197753",
@@ -8901,9 +8907,9 @@
       "lat": 48.1012,
       "lon": 24.56355,
       "ele_m": 1785,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.9
     },
     {
       "id": "n5866143485",
@@ -8913,9 +8919,9 @@
       "lat": 48.10139,
       "lon": 24.56265,
       "ele_m": 1782,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.8
     },
     {
       "id": "n5866217313",
@@ -8925,9 +8931,9 @@
       "lat": 48.02911,
       "lon": 24.51752,
       "ele_m": 781,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 23.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 7.4
     },
     {
       "id": "n5866217346",
@@ -8937,9 +8943,9 @@
       "lat": 48.05113,
       "lon": 24.49621,
       "ele_m": 705,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 21.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 4.6
     },
     {
       "id": "n5866217349",
@@ -8949,9 +8955,9 @@
       "lat": 48.05135,
       "lon": 24.49662,
       "ele_m": 709,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 21.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 4.6
     },
     {
       "id": "n5866231984",
@@ -8961,9 +8967,9 @@
       "lat": 48.0539,
       "lon": 24.57276,
       "ele_m": 1112,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 22.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.5
     },
     {
       "id": "n5870897154",
@@ -8973,9 +8979,9 @@
       "lat": 48.09419,
       "lon": 24.56769,
       "ele_m": 1651,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.0
     },
     {
       "id": "n5870954640",
@@ -8997,9 +9003,9 @@
       "lat": 48.05926,
       "lon": 24.62318,
       "ele_m": 1828,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.1
     },
     {
       "id": "n5936985285",
@@ -9024,9 +9030,9 @@
       "lat": 48.04691,
       "lon": 24.62841,
       "ele_m": 1996,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.7
     },
     {
       "id": "n5940635517",
@@ -9036,9 +9042,9 @@
       "lat": 48.06225,
       "lon": 24.62092,
       "ele_m": 1812,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.9
     },
     {
       "id": "n5940635587",
@@ -9048,9 +9054,9 @@
       "lat": 48.06516,
       "lon": 24.61917,
       "ele_m": 1803,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.7
     },
     {
       "id": "n5942380186",
@@ -9060,9 +9066,9 @@
       "lat": 48.09092,
       "lon": 24.58412,
       "ele_m": 1896,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.1
     },
     {
       "id": "n5942571085",
@@ -9072,9 +9078,9 @@
       "lat": 48.10155,
       "lon": 24.56297,
       "ele_m": 1790,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.8
     },
     {
       "id": "n5950622889",
@@ -9084,9 +9090,9 @@
       "lat": 48.13251,
       "lon": 24.54581,
       "ele_m": 1508,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.4
     },
     {
       "id": "n5950623186",
@@ -9096,9 +9102,9 @@
       "lat": 48.1343,
       "lon": 24.54718,
       "ele_m": 1478,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.6
     },
     {
       "id": "n5950638492",
@@ -9108,9 +9114,9 @@
       "lat": 48.14858,
       "lon": 24.53736,
       "ele_m": 1384,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.2
     },
     {
       "id": "n5950639291",
@@ -9120,9 +9126,9 @@
       "lat": 48.13258,
       "lon": 24.54349,
       "ele_m": 1541,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.3
     },
     {
       "id": "n5950655485",
@@ -9132,9 +9138,9 @@
       "lat": 48.14193,
       "lon": 24.54771,
       "ele_m": 1352,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.2
     },
     {
       "id": "n6051619587",
@@ -9156,9 +9162,9 @@
       "lat": 48.15998,
       "lon": 24.5343,
       "ele_m": 1331,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.1
     },
     {
       "id": "n608105336",
@@ -9168,9 +9174,9 @@
       "lat": 48.1598,
       "lon": 24.53281,
       "ele_m": 1347,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.0
     },
     {
       "id": "n608105385",
@@ -9180,9 +9186,9 @@
       "lat": 48.15687,
       "lon": 24.53581,
       "ele_m": 1377,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.9
     },
     {
       "id": "n608105431",
@@ -9192,9 +9198,9 @@
       "lat": 48.15689,
       "lon": 24.53862,
       "ele_m": 1380,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.0
     },
     {
       "id": "n6195410267",
@@ -9204,9 +9210,9 @@
       "lat": 48.16001,
       "lon": 24.46799,
       "ele_m": 1534,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 14.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.3
     },
     {
       "id": "n6200395496",
@@ -9216,9 +9222,9 @@
       "lat": 48.14278,
       "lon": 24.55098,
       "ele_m": 1327,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.5
     },
     {
       "id": "n6200395551",
@@ -9228,9 +9234,9 @@
       "lat": 48.1564,
       "lon": 24.55,
       "ele_m": 1178,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.5
     },
     {
       "id": "n6272560649",
@@ -9264,9 +9270,9 @@
       "lat": 47.99885,
       "lon": 24.67197,
       "ele_m": 902,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 18.7
     },
     {
       "id": "n6314111040",
@@ -9324,9 +9330,9 @@
       "lat": 48.09958,
       "lon": 24.57637,
       "ele_m": 1964,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.7
     },
     {
       "id": "n6389836625",
@@ -9336,9 +9342,9 @@
       "lat": 48.07734,
       "lon": 24.55299,
       "ele_m": 1368,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 22.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 7.7
     },
     {
       "id": "n6398466773",
@@ -9444,9 +9450,9 @@
       "lat": 48.16542,
       "lon": 24.53593,
       "ele_m": 1283,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.7
     },
     {
       "id": "n6579128795",
@@ -9504,9 +9510,9 @@
       "lat": 48.10459,
       "lon": 24.56307,
       "ele_m": 1912,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.0
     },
     {
       "id": "n6695093285",
@@ -9576,9 +9582,9 @@
       "lat": 48.06085,
       "lon": 24.62213,
       "ele_m": 1814,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.0
     },
     {
       "id": "n6742756450",
@@ -9615,9 +9621,9 @@
       "lat": 48.13879,
       "lon": 24.6232,
       "ele_m": 934,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 15.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.6
     },
     {
       "id": "n6779977988",
@@ -9627,9 +9633,9 @@
       "lat": 48.03556,
       "lon": 24.65817,
       "ele_m": 1503,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 16.2
     },
     {
       "id": "n6779978006",
@@ -9639,9 +9645,9 @@
       "lat": 48.02573,
       "lon": 24.66027,
       "ele_m": 1497,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 16.7
     },
     {
       "id": "n6779978049",
@@ -9651,9 +9657,9 @@
       "lat": 47.99976,
       "lon": 24.67172,
       "ele_m": 908,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 18.7
     },
     {
       "id": "n6779978055",
@@ -9663,9 +9669,9 @@
       "lat": 47.99928,
       "lon": 24.67203,
       "ele_m": 903,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 18.7
     },
     {
       "id": "n6791310178",
@@ -9689,9 +9695,9 @@
       "lat": 48.08115,
       "lon": 24.63721,
       "ele_m": 1575,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 16.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.0
     },
     {
       "id": "n6801938554",
@@ -9737,9 +9743,9 @@
       "lat": 48.18184,
       "lon": 24.48224,
       "ele_m": 1465,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.9
     },
     {
       "id": "n6802017089",
@@ -9749,9 +9755,9 @@
       "lat": 48.10107,
       "lon": 24.56365,
       "ele_m": 1781,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.9
     },
     {
       "id": "n6802043985",
@@ -9761,9 +9767,9 @@
       "lat": 48.13618,
       "lon": 24.54852,
       "ele_m": 1432,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.8
     },
     {
       "id": "n6806525707",
@@ -9869,9 +9875,9 @@
       "lat": 48.16814,
       "lon": 24.43623,
       "ele_m": 1533,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.1
     },
     {
       "id": "n6944743959",
@@ -9881,9 +9887,9 @@
       "lat": 48.15637,
       "lon": 24.36828,
       "ele_m": 1475,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.6
     },
     {
       "id": "n6944800312",
@@ -9893,9 +9899,9 @@
       "lat": 48.16062,
       "lon": 24.48917,
       "ele_m": 1775,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 15.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.7
     },
     {
       "id": "n6944800314",
@@ -9905,9 +9911,9 @@
       "lat": 48.16057,
       "lon": 24.4887,
       "ele_m": 1773,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 15.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.7
     },
     {
       "id": "n7006561928",
@@ -10028,9 +10034,9 @@
       "lat": 48.16021,
       "lon": 24.49994,
       "ele_m": 2044,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.9
     },
     {
       "id": "n7065703686",
@@ -10067,9 +10073,9 @@
       "lat": 48.16807,
       "lon": 24.43744,
       "ele_m": 1540,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.1
     },
     {
       "id": "n7173767104",
@@ -10079,9 +10085,9 @@
       "lat": 48.13437,
       "lon": 24.54698,
       "ele_m": 1479,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.6
     },
     {
       "id": "n7176233653",
@@ -10091,9 +10097,9 @@
       "lat": 48.15994,
       "lon": 24.46796,
       "ele_m": 1533,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 14.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.3
     },
     {
       "id": "n7178156025",
@@ -10127,9 +10133,9 @@
       "lat": 48.15654,
       "lon": 24.33938,
       "ele_m": 1237,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.0
     },
     {
       "id": "n7360305944",
@@ -10415,9 +10421,9 @@
       "lat": 48.09529,
       "lon": 24.46335,
       "ele_m": 743,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 19.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 2.2
     },
     {
       "id": "n7607507302",
@@ -10427,9 +10433,9 @@
       "lat": 48.08817,
       "lon": 24.45359,
       "ele_m": 717,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 1.2
     },
     {
       "id": "n7607507307",
@@ -10439,9 +10445,9 @@
       "lat": 48.08736,
       "lon": 24.4528,
       "ele_m": 725,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 1.1
     },
     {
       "id": "n7607507308",
@@ -10451,9 +10457,9 @@
       "lat": 48.06772,
       "lon": 24.45645,
       "ele_m": 656,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 1.2
     },
     {
       "id": "n7607507309",
@@ -10463,9 +10469,9 @@
       "lat": 48.06771,
       "lon": 24.45631,
       "ele_m": 656,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 1.2
     },
     {
       "id": "n7607949584",
@@ -10475,9 +10481,9 @@
       "lat": 48.02913,
       "lon": 24.51701,
       "ele_m": 779,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 23.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 7.4
     },
     {
       "id": "n7607967985",
@@ -10487,9 +10493,9 @@
       "lat": 48.02899,
       "lon": 24.51705,
       "ele_m": 777,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 23.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 7.4
     },
     {
       "id": "n7607968129",
@@ -10499,9 +10505,9 @@
       "lat": 48.03882,
       "lon": 24.51164,
       "ele_m": 751,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 22.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 6.3
     },
     {
       "id": "n7607968133",
@@ -10511,9 +10517,9 @@
       "lat": 48.0248,
       "lon": 24.51781,
       "ele_m": 810,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 23.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 7.8
     },
     {
       "id": "n7607968134",
@@ -10523,9 +10529,9 @@
       "lat": 48.0249,
       "lon": 24.51784,
       "ele_m": 807,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 23.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 7.8
     },
     {
       "id": "n7607968178",
@@ -10535,9 +10541,9 @@
       "lat": 48.04184,
       "lon": 24.51071,
       "ele_m": 738,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 22.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 6.0
     },
     {
       "id": "n7607968179",
@@ -10547,9 +10553,9 @@
       "lat": 48.04171,
       "lon": 24.5108,
       "ele_m": 738,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 22.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 6.1
     },
     {
       "id": "n7607968204",
@@ -10559,9 +10565,9 @@
       "lat": 48.04835,
       "lon": 24.49961,
       "ele_m": 712,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 21.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 4.9
     },
     {
       "id": "n7607968288",
@@ -10571,9 +10577,9 @@
       "lat": 48.05885,
       "lon": 24.47146,
       "ele_m": 671,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 19.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 2.6
     },
     {
       "id": "n7607968289",
@@ -10583,9 +10589,9 @@
       "lat": 48.05891,
       "lon": 24.47138,
       "ele_m": 671,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 19.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 2.6
     },
     {
       "id": "n7631413853",
@@ -10595,9 +10601,9 @@
       "lat": 48.07611,
       "lon": 24.45009,
       "ele_m": 666,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 0.2
     },
     {
       "id": "n7631435876",
@@ -10607,9 +10613,9 @@
       "lat": 48.03989,
       "lon": 24.54285,
       "ele_m": 850,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 24.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.1
     },
     {
       "id": "n7631514525",
@@ -10619,9 +10625,9 @@
       "lat": 48.04,
       "lon": 24.54281,
       "ele_m": 848,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 24.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.1
     },
     {
       "id": "n7631550105",
@@ -10631,9 +10637,9 @@
       "lat": 48.09417,
       "lon": 24.48795,
       "ele_m": 831,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 21.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 3.4
     },
     {
       "id": "n7631617975",
@@ -10643,9 +10649,9 @@
       "lat": 47.95736,
       "lon": 24.51944,
       "ele_m": 1547,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 25.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.3
     },
     {
       "id": "n7631634066",
@@ -10655,9 +10661,9 @@
       "lat": 47.95733,
       "lon": 24.49878,
       "ele_m": 1618,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 24.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.9
     },
     {
       "id": "n7631669700",
@@ -10667,9 +10673,9 @@
       "lat": 48.06235,
       "lon": 24.62108,
       "ele_m": 1814,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.9
     },
     {
       "id": "n7631676447",
@@ -10679,9 +10685,9 @@
       "lat": 48.04604,
       "lon": 24.62416,
       "ele_m": 1931,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.5
     },
     {
       "id": "n7631676455",
@@ -10691,9 +10697,9 @@
       "lat": 48.0444,
       "lon": 24.62147,
       "ele_m": 1837,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.3
     },
     {
       "id": "n7631676460",
@@ -10703,9 +10709,9 @@
       "lat": 48.04381,
       "lon": 24.61999,
       "ele_m": 1805,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.2
     },
     {
       "id": "n7631692351",
@@ -10715,9 +10721,9 @@
       "lat": 48.04709,
       "lon": 24.62737,
       "ele_m": 2003,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.7
     },
     {
       "id": "n7631692354",
@@ -10727,9 +10733,9 @@
       "lat": 48.04655,
       "lon": 24.62596,
       "ele_m": 1985,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.6
     },
     {
       "id": "n7631727708",
@@ -10787,9 +10793,9 @@
       "lat": 48.05048,
       "lon": 24.36447,
       "ele_m": 585,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 11.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 7.0
     },
     {
       "id": "n7634347968",
@@ -10799,9 +10805,9 @@
       "lat": 48.0401,
       "lon": 24.3417,
       "ele_m": 532,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 10.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.0
     },
     {
       "id": "n7689627598",
@@ -10886,9 +10892,9 @@
       "lat": 48.0677,
       "lon": 24.62666,
       "ele_m": 1757,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 17.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.2
     },
     {
       "id": "n7725953214",
@@ -10922,9 +10928,9 @@
       "lat": 47.95695,
       "lon": 24.51649,
       "ele_m": 1570,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 25.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.3
     },
     {
       "id": "n7744466485",
@@ -10934,9 +10940,9 @@
       "lat": 48.06563,
       "lon": 24.61844,
       "ele_m": 1803,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.6
     },
     {
       "id": "n7750283786",
@@ -10946,9 +10952,9 @@
       "lat": 48.1585,
       "lon": 24.47231,
       "ele_m": 1572,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 15.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.2
     },
     {
       "id": "n7761630594",
@@ -11006,9 +11012,9 @@
       "lat": 48.17465,
       "lon": 24.51879,
       "ele_m": 1526,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 13.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.0
     },
     {
       "id": "n7766375170",
@@ -11018,9 +11024,9 @@
       "lat": 48.17656,
       "lon": 24.51813,
       "ele_m": 1534,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 13.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.1
     },
     {
       "id": "n7766379727",
@@ -11054,9 +11060,9 @@
       "lat": 48.04673,
       "lon": 24.62798,
       "ele_m": 2000,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.7
     },
     {
       "id": "n7770857920",
@@ -11066,9 +11072,9 @@
       "lat": 48.0467,
       "lon": 24.62714,
       "ele_m": 2002,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.6
     },
     {
       "id": "n7799014769",
@@ -11078,9 +11084,9 @@
       "lat": 48.16404,
       "lon": 24.53576,
       "ele_m": 1267,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.6
     },
     {
       "id": "n7799014770",
@@ -11090,9 +11096,9 @@
       "lat": 48.16408,
       "lon": 24.53589,
       "ele_m": 1264,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.6
     },
     {
       "id": "n7803188138",
@@ -11164,9 +11170,9 @@
       "lat": 48.10139,
       "lon": 24.56237,
       "ele_m": 1779,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.8
     },
     {
       "id": "n7820816197",
@@ -11176,9 +11182,9 @@
       "lat": 48.10043,
       "lon": 24.56873,
       "ele_m": 1853,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.2
     },
     {
       "id": "n7820816218",
@@ -11188,9 +11194,9 @@
       "lat": 48.09837,
       "lon": 24.57741,
       "ele_m": 1972,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.8
     },
     {
       "id": "n7820882357",
@@ -11202,9 +11208,9 @@
       "lat": 47.96453,
       "lon": 24.47949,
       "ele_m": 1640,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 22.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.8
     },
     {
       "id": "n7822405415",
@@ -11240,9 +11246,9 @@
       "lat": 47.95827,
       "lon": 24.48759,
       "ele_m": 1681,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 23.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.6
     },
     {
       "id": "n7846164310",
@@ -11252,9 +11258,9 @@
       "lat": 47.95321,
       "lon": 24.39135,
       "ele_m": 1459,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 17.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.5
     },
     {
       "id": "n7856757364",
@@ -11291,9 +11297,9 @@
       "lat": 48.07502,
       "lon": 24.6321,
       "ele_m": 1799,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 17.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.6
     },
     {
       "id": "n7911392629",
@@ -11303,9 +11309,9 @@
       "lat": 48.16221,
       "lon": 24.50779,
       "ele_m": 1824,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.4
     },
     {
       "id": "n7911392630",
@@ -11315,9 +11321,9 @@
       "lat": 48.16212,
       "lon": 24.50787,
       "ele_m": 1822,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.4
     },
     {
       "id": "n7911392660",
@@ -11327,9 +11333,9 @@
       "lat": 48.15864,
       "lon": 24.5123,
       "ele_m": 1608,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.2
     },
     {
       "id": "n7978349020",
@@ -11363,9 +11369,9 @@
       "lat": 48.1552,
       "lon": 24.50321,
       "ele_m": 1849,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.5
     },
     {
       "id": "n7996056198",
@@ -11375,9 +11381,9 @@
       "lat": 48.04424,
       "lon": 24.5055,
       "ele_m": 725,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 22.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 5.6
     },
     {
       "id": "n7996056200",
@@ -11387,9 +11393,9 @@
       "lat": 48.04426,
       "lon": 24.50546,
       "ele_m": 726,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 22.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 5.6
     },
     {
       "id": "n8001338112",
@@ -11399,9 +11405,9 @@
       "lat": 48.13932,
       "lon": 24.58905,
       "ele_m": 1349,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.4
     },
     {
       "id": "n8005468823",
@@ -11435,9 +11441,9 @@
       "lat": 48.17543,
       "lon": 24.5072,
       "ele_m": 1389,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 13.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.7
     },
     {
       "id": "n8040883010",
@@ -11531,9 +11537,9 @@
       "lat": 48.1841,
       "lon": 24.48366,
       "ele_m": 1388,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.1
     },
     {
       "id": "n8089526257",
@@ -11543,9 +11549,9 @@
       "lat": 48.17959,
       "lon": 24.48328,
       "ele_m": 1499,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.6
     },
     {
       "id": "n8089526320",
@@ -11555,9 +11561,9 @@
       "lat": 48.16216,
       "lon": 24.48847,
       "ele_m": 1827,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 15.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.8
     },
     {
       "id": "n8117072294",
@@ -11642,9 +11648,9 @@
       "lat": 48.15622,
       "lon": 24.33868,
       "ele_m": 1228,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.0
     },
     {
       "id": "n8672926997",
@@ -11693,9 +11699,9 @@
       "lat": 47.99982,
       "lon": 24.67214,
       "ele_m": 906,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 18.7
     },
     {
       "id": "n8743666535",
@@ -11729,9 +11735,9 @@
       "lat": 48.03521,
       "lon": 24.6592,
       "ele_m": 1500,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 16.3
     },
     {
       "id": "n8746794461",
@@ -11753,9 +11759,9 @@
       "lat": 48.16555,
       "lon": 24.52955,
       "ele_m": 1339,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.5
     },
     {
       "id": "n8788687273",
@@ -11765,9 +11771,9 @@
       "lat": 48.16634,
       "lon": 24.53241,
       "ele_m": 1304,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.6
     },
     {
       "id": "n8788687276",
@@ -11777,9 +11783,9 @@
       "lat": 48.16585,
       "lon": 24.53495,
       "ele_m": 1286,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.7
     },
     {
       "id": "n8828134521",
@@ -11825,9 +11831,9 @@
       "lat": 47.9935,
       "lon": 24.56691,
       "ele_m": 1452,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 26.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.8
     },
     {
       "id": "n8849679385",
@@ -11837,9 +11843,9 @@
       "lat": 47.95745,
       "lon": 24.49873,
       "ele_m": 1618,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 24.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.8
     },
     {
       "id": "n8849679386",
@@ -11849,9 +11855,9 @@
       "lat": 47.99846,
       "lon": 24.57139,
       "ele_m": 1396,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 25.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.6
     },
     {
       "id": "n8849679387",
@@ -11861,9 +11867,9 @@
       "lat": 48.03384,
       "lon": 24.59517,
       "ele_m": 1465,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 21.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.9
     },
     {
       "id": "n8849687798",
@@ -11873,9 +11879,9 @@
       "lat": 47.96966,
       "lon": 24.43299,
       "ele_m": 1688,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 19.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.1
     },
     {
       "id": "n8849697850",
@@ -11897,9 +11903,9 @@
       "lat": 47.98552,
       "lon": 24.56597,
       "ele_m": 1480,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 27.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.4
     },
     {
       "id": "n8849719879",
@@ -11933,9 +11939,9 @@
       "lat": 48.02489,
       "lon": 24.58765,
       "ele_m": 1405,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 22.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.8
     },
     {
       "id": "n8849747298",
@@ -11957,9 +11963,9 @@
       "lat": 47.96545,
       "lon": 24.42452,
       "ele_m": 1570,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 19.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.6
     },
     {
       "id": "n8849750742",
@@ -11969,9 +11975,9 @@
       "lat": 47.95743,
       "lon": 24.51972,
       "ele_m": 1546,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 25.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.3
     },
     {
       "id": "n8849910448",
@@ -11981,9 +11987,9 @@
       "lat": 47.95507,
       "lon": 24.50183,
       "ele_m": 1597,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 24.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.2
     },
     {
       "id": "n8850237685",
@@ -11993,9 +11999,9 @@
       "lat": 47.96944,
       "lon": 24.42194,
       "ele_m": 1524,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.2
     },
     {
       "id": "n8850237689",
@@ -12005,9 +12011,9 @@
       "lat": 47.96049,
       "lon": 24.41619,
       "ele_m": 1531,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.2
     },
     {
       "id": "n8850757019",
@@ -12017,9 +12023,9 @@
       "lat": 48.14118,
       "lon": 24.52394,
       "ele_m": 1721,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.0
     },
     {
       "id": "n8860935158",
@@ -12113,9 +12119,9 @@
       "lat": 48.16582,
       "lon": 24.53337,
       "ele_m": 1297,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.6
     },
     {
       "id": "n8920635505",
@@ -12221,9 +12227,9 @@
       "lat": 48.15487,
       "lon": 24.37131,
       "ele_m": 1575,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.4
     },
     {
       "id": "n8957931463",
@@ -12341,9 +12347,9 @@
       "lat": 48.10044,
       "lon": 24.56899,
       "ele_m": 1856,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.2
     },
     {
       "id": "n9004892344",
@@ -12365,9 +12371,9 @@
       "lat": 48.07638,
       "lon": 24.60517,
       "ele_m": 1869,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.6
     },
     {
       "id": "n9008087744",
@@ -12377,9 +12383,9 @@
       "lat": 48.15034,
       "lon": 24.51038,
       "ele_m": 1891,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.3
     },
     {
       "id": "n9008556227",
@@ -12389,9 +12395,9 @@
       "lat": 48.1566,
       "lon": 24.33892,
       "ele_m": 1229,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.0
     },
     {
       "id": "n9014469024",
@@ -12512,9 +12518,9 @@
       "lat": 48.14652,
       "lon": 24.51786,
       "ele_m": 1756,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.2
     },
     {
       "id": "n9042488310",
@@ -12550,9 +12556,9 @@
       "lat": 48.13573,
       "lon": 24.57514,
       "ele_m": 1523,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.4
     },
     {
       "id": "n9044166295",
@@ -12562,9 +12568,9 @@
       "lat": 48.16791,
       "lon": 24.43315,
       "ele_m": 1552,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.1
     },
     {
       "id": "n9044166299",
@@ -12574,9 +12580,9 @@
       "lat": 48.15841,
       "lon": 24.37831,
       "ele_m": 1639,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.4
     },
     {
       "id": "n907807210",
@@ -12586,9 +12592,9 @@
       "lat": 47.95021,
       "lon": 24.39112,
       "ele_m": 1442,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.8
     },
     {
       "id": "n907807221",
@@ -12598,9 +12604,9 @@
       "lat": 47.95319,
       "lon": 24.39135,
       "ele_m": 1459,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 17.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.5
     },
     {
       "id": "n907807234",
@@ -12610,9 +12616,9 @@
       "lat": 47.9561,
       "lon": 24.3988,
       "ele_m": 1391,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.0
     },
     {
       "id": "n907807498",
@@ -12622,9 +12628,9 @@
       "lat": 47.96547,
       "lon": 24.42422,
       "ele_m": 1567,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 19.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.6
     },
     {
       "id": "n907807513",
@@ -12634,9 +12640,9 @@
       "lat": 47.96944,
       "lon": 24.43247,
       "ele_m": 1688,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 19.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.1
     },
     {
       "id": "n907807541",
@@ -12649,9 +12655,9 @@
       "lat": 47.97031,
       "lon": 24.4368,
       "ele_m": 1709,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 19.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.0
     },
     {
       "id": "n907807561",
@@ -12661,9 +12667,9 @@
       "lat": 47.96327,
       "lon": 24.45056,
       "ele_m": 1778,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 20.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.7
     },
     {
       "id": "n907807628",
@@ -12673,9 +12679,9 @@
       "lat": 47.96193,
       "lon": 24.46392,
       "ele_m": 1795,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 21.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.9
     },
     {
       "id": "n9094865161",
@@ -12685,9 +12691,9 @@
       "lat": 48.03512,
       "lon": 24.6593,
       "ele_m": 1499,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 16.3
     },
     {
       "id": "n9094865162",
@@ -12697,9 +12703,9 @@
       "lat": 48.03471,
       "lon": 24.65917,
       "ele_m": 1498,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 16.3
     },
     {
       "id": "n9105096506",
@@ -12709,9 +12715,9 @@
       "lat": 48.16767,
       "lon": 24.43354,
       "ele_m": 1550,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.1
     },
     {
       "id": "n9105096516",
@@ -12721,9 +12727,9 @@
       "lat": 48.1678,
       "lon": 24.4373,
       "ele_m": 1536,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.1
     },
     {
       "id": "n9105121887",
@@ -12733,9 +12739,9 @@
       "lat": 48.16134,
       "lon": 24.49098,
       "ele_m": 1808,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.8
     },
     {
       "id": "n9105146549",
@@ -12745,9 +12751,9 @@
       "lat": 48.1231,
       "lon": 24.53265,
       "ele_m": 1859,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 19.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.0
     },
     {
       "id": "n9105146569",
@@ -12757,9 +12763,9 @@
       "lat": 48.11838,
       "lon": 24.55538,
       "ele_m": 1919,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 19.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.1
     },
     {
       "id": "n9105492819",
@@ -12769,9 +12775,9 @@
       "lat": 48.02078,
       "lon": 24.58104,
       "ele_m": 1437,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 23.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.6
     },
     {
       "id": "n9124643687",
@@ -12853,9 +12859,9 @@
       "lat": 48.06729,
       "lon": 24.45435,
       "ele_m": 645,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 1.2
     },
     {
       "id": "n918640994",
@@ -12865,9 +12871,9 @@
       "lat": 48.05749,
       "lon": 24.47546,
       "ele_m": 673,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 20.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 3.0
     },
     {
       "id": "n918641046",
@@ -12877,9 +12883,9 @@
       "lat": 48.05428,
       "lon": 24.48974,
       "ele_m": 700,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 21.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 4.0
     },
     {
       "id": "n918707967",
@@ -12889,9 +12895,9 @@
       "lat": 48.03088,
       "lon": 24.52748,
       "ele_m": 815,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 24.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 7.8
     },
     {
       "id": "n918708002",
@@ -12901,9 +12907,9 @@
       "lat": 48.03568,
       "lon": 24.54066,
       "ele_m": 829,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 25.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.2
     },
     {
       "id": "n918708175",
@@ -12913,9 +12919,9 @@
       "lat": 48.05678,
       "lon": 24.56726,
       "ele_m": 1018,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 22.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.1
     },
     {
       "id": "n918708184",
@@ -12925,9 +12931,9 @@
       "lat": 48.05608,
       "lon": 24.57015,
       "ele_m": 1019,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 22.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.3
     },
     {
       "id": "n918708393",
@@ -12937,9 +12943,9 @@
       "lat": 48.04096,
       "lon": 24.59458,
       "ele_m": 1451,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 21.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.5
     },
     {
       "id": "n918795127",
@@ -12949,9 +12955,9 @@
       "lat": 48.03698,
       "lon": 24.60602,
       "ele_m": 1623,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 21.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.5
     },
     {
       "id": "n918795156",
@@ -12961,9 +12967,9 @@
       "lat": 48.03703,
       "lon": 24.6115,
       "ele_m": 1717,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.9
     },
     {
       "id": "n918795223",
@@ -12973,9 +12979,9 @@
       "lat": 48.04722,
       "lon": 24.62747,
       "ele_m": 2003,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.7
     },
     {
       "id": "n918795277",
@@ -12985,9 +12991,9 @@
       "lat": 48.06081,
       "lon": 24.6218,
       "ele_m": 1814,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.9
     },
     {
       "id": "n918795289",
@@ -12997,9 +13003,9 @@
       "lat": 48.06498,
       "lon": 24.61931,
       "ele_m": 1803,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.7
     },
     {
       "id": "n918795292",
@@ -13009,9 +13015,9 @@
       "lat": 48.0656,
       "lon": 24.61805,
       "ele_m": 1802,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 18.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.6
     },
     {
       "id": "n918795417",
@@ -13021,9 +13027,9 @@
       "lat": 48.09078,
       "lon": 24.58931,
       "ele_m": 1899,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.5
     },
     {
       "id": "n918795496",
@@ -13033,9 +13039,9 @@
       "lat": 48.10294,
       "lon": 24.57175,
       "ele_m": 1938,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 19.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.5
     },
     {
       "id": "n918795517",
@@ -13045,9 +13051,9 @@
       "lat": 48.10425,
       "lon": 24.56499,
       "ele_m": 1927,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.1
     },
     {
       "id": "n918795528",
@@ -13057,9 +13063,9 @@
       "lat": 48.10529,
       "lon": 24.56134,
       "ele_m": 1924,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.9
     },
     {
       "id": "n918795533",
@@ -13069,9 +13075,9 @@
       "lat": 48.10528,
       "lon": 24.55905,
       "ele_m": 1952,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.7
     },
     {
       "id": "n918795570",
@@ -13081,9 +13087,9 @@
       "lat": 48.11659,
       "lon": 24.55443,
       "ele_m": 1901,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 19.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.9
     },
     {
       "id": "n918795603",
@@ -13093,9 +13099,9 @@
       "lat": 48.12088,
       "lon": 24.54117,
       "ele_m": 1796,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 19.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.3
     },
     {
       "id": "n918795745",
@@ -13105,9 +13111,9 @@
       "lat": 48.13298,
       "lon": 24.53116,
       "ele_m": 1805,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 18.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.7
     },
     {
       "id": "n918795756",
@@ -13117,9 +13123,9 @@
       "lat": 48.13648,
       "lon": 24.52844,
       "ele_m": 1760,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.8
     },
     {
       "id": "n918795767",
@@ -13129,9 +13135,9 @@
       "lat": 48.14049,
       "lon": 24.52454,
       "ele_m": 1721,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.0
     },
     {
       "id": "n918795769",
@@ -13141,9 +13147,9 @@
       "lat": 48.14107,
       "lon": 24.52454,
       "ele_m": 1725,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.0
     },
     {
       "id": "n918795953",
@@ -13153,9 +13159,9 @@
       "lat": 48.15518,
       "lon": 24.50318,
       "ele_m": 1849,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 16.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.5
     },
     {
       "id": "n918812313",
@@ -13165,9 +13171,9 @@
       "lat": 48.16165,
       "lon": 24.491,
       "ele_m": 1821,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.8
     },
     {
       "id": "n918812471",
@@ -13177,9 +13183,9 @@
       "lat": 48.16086,
       "lon": 24.48899,
       "ele_m": 1782,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 15.6
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.7
     },
     {
       "id": "n918851948",
@@ -13189,9 +13195,9 @@
       "lat": 48.16221,
       "lon": 24.49379,
       "ele_m": 1880,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.0
     },
     {
       "id": "n918852018",
@@ -13201,9 +13207,9 @@
       "lat": 48.15996,
       "lon": 24.48557,
       "ele_m": 1737,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 15.5
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.6
     },
     {
       "id": "n918852094",
@@ -13213,9 +13219,9 @@
       "lat": 48.15862,
       "lon": 24.47171,
       "ele_m": 1577,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 15.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.2
     },
     {
       "id": "n918852180",
@@ -13225,9 +13231,9 @@
       "lat": 48.16299,
       "lon": 24.45549,
       "ele_m": 1523,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 14.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.5
     },
     {
       "id": "n918903014",
@@ -13240,9 +13246,9 @@
       "lat": 48.17201,
       "lon": 24.42147,
       "ele_m": 2007,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.7
     },
     {
       "id": "n918903398",
@@ -13252,9 +13258,9 @@
       "lat": 48.15594,
       "lon": 24.37165,
       "ele_m": 1575,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.5
     },
     {
       "id": "n918903602",
@@ -13264,9 +13270,9 @@
       "lat": 48.15582,
       "lon": 24.34043,
       "ele_m": 1255,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.9
     },
     {
       "id": "n918903632",
@@ -13276,9 +13282,9 @@
       "lat": 48.1562,
       "lon": 24.33907,
       "ele_m": 1234,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 13.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.0
     },
     {
       "id": "n918903814",
@@ -13372,9 +13378,9 @@
       "lat": 48.15624,
       "lon": 24.36835,
       "ele_m": 1477,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.6
     },
     {
       "id": "n918992182",
@@ -13384,9 +13390,9 @@
       "lat": 48.14701,
       "lon": 24.40284,
       "ele_m": 1480,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 14.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.5
     },
     {
       "id": "n918992703",
@@ -13396,9 +13402,9 @@
       "lat": 48.10454,
       "lon": 24.40647,
       "ele_m": 732,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 15.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 4.4
     },
     {
       "id": "n918992727",
@@ -13408,9 +13414,9 @@
       "lat": 48.09651,
       "lon": 24.40734,
       "ele_m": 735,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 15.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 3.8
     },
     {
       "id": "n918992887",
@@ -13420,9 +13426,9 @@
       "lat": 48.0409,
       "lon": 24.36104,
       "ele_m": 550,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 11.7
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 7.7
     },
     {
       "id": "n919034353",
@@ -13495,9 +13501,9 @@
       "lat": 48.15779,
       "lon": 24.33865,
       "ele_m": 1217,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.1
     },
     {
       "id": "n9258558958",
@@ -13507,9 +13513,9 @@
       "lat": 48.17198,
       "lon": 24.42135,
       "ele_m": 2008,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 12.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.7
     },
     {
       "id": "n9258558960",
@@ -13519,9 +13525,9 @@
       "lat": 48.12287,
       "lon": 24.53372,
       "ele_m": 1820,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 19.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.0
     },
     {
       "id": "n9331981382",
@@ -13531,9 +13537,9 @@
       "lat": 48.14008,
       "lon": 24.57811,
       "ele_m": 1419,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.8
     },
     {
       "id": "n943670515",
@@ -13591,9 +13597,9 @@
       "lat": 48.09973,
       "lon": 24.56516,
       "ele_m": 1749,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.9
     },
     {
       "id": "n9645540198",
@@ -13699,9 +13705,9 @@
       "lat": 48.05674,
       "lon": 24.56754,
       "ele_m": 1019,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 22.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.1
     },
     {
       "id": "n9931002221",
@@ -13711,9 +13717,9 @@
       "lat": 48.0996,
       "lon": 24.56495,
       "ele_m": 1746,
-      "forecast_city": "Verkhovyna,UA",
-      "forecast_city_ele_m": 599,
-      "forecast_city_km": 20.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.9
     },
     {
       "id": "n9937041664",
@@ -13735,9 +13741,9 @@
       "lat": 48.16598,
       "lon": 24.53346,
       "ele_m": 1294,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.6
     },
     {
       "id": "n9970612047",
@@ -13747,9 +13753,9 @@
       "lat": 48.16596,
       "lon": 24.53336,
       "ele_m": 1295,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.6
     },
     {
       "id": "n9990502849",
@@ -13783,9 +13789,9 @@
       "lat": 48.13907,
       "lon": 24.58932,
       "ele_m": 1345,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.4
     },
     {
       "id": "n9990538637",
@@ -13795,9 +13801,9 @@
       "lat": 48.1386,
       "lon": 24.58994,
       "ele_m": 1342,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 12.4
     },
     {
       "id": "n9990641552",
@@ -13807,9 +13813,9 @@
       "lat": 48.15999,
       "lon": 24.51905,
       "ele_m": 1450,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.5
     },
     {
       "id": "n9990641569",
@@ -13819,9 +13825,9 @@
       "lat": 48.16001,
       "lon": 24.52214,
       "ele_m": 1429,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 15.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 10.6
     },
     {
       "id": "n9990641585",
@@ -13831,9 +13837,9 @@
       "lat": 48.16634,
       "lon": 24.53021,
       "ele_m": 1322,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.6
     },
     {
       "id": "n9990641596",
@@ -13843,9 +13849,9 @@
       "lat": 48.16633,
       "lon": 24.53228,
       "ele_m": 1307,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.6
     },
     {
       "id": "n9992528108",
@@ -13867,9 +13873,9 @@
       "lat": 48.11847,
       "lon": 24.55549,
       "ele_m": 1917,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 19.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.1
     },
     {
       "id": "n9994814330",
@@ -13879,9 +13885,9 @@
       "lat": 48.14006,
       "lon": 24.57842,
       "ele_m": 1415,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.8
     },
     {
       "id": "n9994814405",
@@ -13891,9 +13897,9 @@
       "lat": 48.12997,
       "lon": 24.5396,
       "ele_m": 1668,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 18.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 8.9
     },
     {
       "id": "n9994814408",
@@ -13903,9 +13909,9 @@
       "lat": 48.13103,
       "lon": 24.54114,
       "ele_m": 1588,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 18.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.0
     },
     {
       "id": "n9994814416",
@@ -13915,9 +13921,9 @@
       "lat": 48.13247,
       "lon": 24.54582,
       "ele_m": 1508,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 17.9
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.4
     },
     {
       "id": "n9994819943",
@@ -13927,9 +13933,9 @@
       "lat": 48.16254,
       "lon": 24.48857,
       "ele_m": 1832,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 15.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.9
     },
     {
       "id": "n9994819946",
@@ -13939,9 +13945,9 @@
       "lat": 48.16028,
       "lon": 24.46914,
       "ele_m": 1541,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 14.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.3
     },
     {
       "id": "n9994958762",
@@ -13981,9 +13987,9 @@
       "lat": 48.07629,
       "lon": 24.45068,
       "ele_m": 667,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 18.3
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 0.2
     },
     {
       "id": "w144275342",
@@ -13996,9 +14002,9 @@
       "lat": 48.16431,
       "lon": 24.53804,
       "ele_m": 1280,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 14.4
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 11.7
     },
     {
       "id": "w1553702715",
@@ -14022,9 +14028,9 @@
       "lat": 48.11555,
       "lon": 24.50225,
       "ele_m": 1422,
-      "forecast_city": "Vorokhta,UA",
-      "forecast_city_ele_m": 746,
-      "forecast_city_km": 20.2
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 5.8
     },
     {
       "id": "w322658490",
@@ -14036,9 +14042,9 @@
       "lat": 48.15998,
       "lon": 24.46872,
       "ele_m": 1533,
-      "forecast_city": "Yasinia,UA",
-      "forecast_city_ele_m": 651,
-      "forecast_city_km": 14.8
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 9.3
     },
     {
       "id": "w363020119",
@@ -14048,9 +14054,9 @@
       "lat": 47.96721,
       "lon": 24.55944,
       "ele_m": 1516,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 28.1
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 14.7
     },
     {
       "id": "w363021567",
@@ -14060,9 +14066,9 @@
       "lat": 47.96331,
       "lon": 24.52633,
       "ele_m": 1648,
-      "forecast_city": "Rakhiv,UA",
-      "forecast_city_ele_m": 440,
-      "forecast_city_km": 26.0
+      "forecast_city": "Hoverla,UA",
+      "forecast_city_ele_m": 671,
+      "forecast_city_km": 13.9
     },
     {
       "id": "w461108873",

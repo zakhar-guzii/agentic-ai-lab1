@@ -306,8 +306,8 @@ def test_full_mocked_build_writes_dataset_and_source(tmp_path, no_manual_lists):
     assert ds["dataset_version"] == bd.dataset_version(ds["built_at"], ds["forecast_cities"], ds["nodes"], ds["segments"])
     kinds = {n["id"]: n["kind"] for n in ds["nodes"]}
     assert kinds == {"n1": "junction", "n500": "peak", "n3": "junction", "w600": "village"}
-    src = (tmp_path / "SOURCE.md").read_text()
-    for needle in ("ODbL", "srtm30m", "How to rebuild", ds["dataset_version"]):
+    src = (tmp_path / "DATASET_CARD.md").read_text()
+    for needle in ("ODbL", "srtm30m", "How it was built", "Limitations", "How to rebuild", ds["dataset_version"]):
         assert needle in src
 
 
@@ -323,4 +323,4 @@ def test_overpass_remark_fails_and_keeps_the_previous_dataset(tmp_path, capsys, 
     err = capsys.readouterr().err
     assert rc != 0 and "Overpass" in err and remark in err
     assert previous.read_text() == '{"dataset_version": "previous"}\n'
-    assert not (tmp_path / "SOURCE.md").exists()
+    assert not (tmp_path / "DATASET_CARD.md").exists()
