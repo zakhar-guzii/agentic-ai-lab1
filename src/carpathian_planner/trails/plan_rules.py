@@ -144,21 +144,22 @@ def join_legs(graph: Graph, waypoints, forbid: str | None) -> Route | None:
     return Route(node_ids, segment_ids)
 
 
-def build_stage(
-    graph: Graph, waypoints, day: int, date: datetime.date, forbid: str | None, last: bool
-) -> BuiltStage | None:
-    """Routes a day by shortest paths between adjacent waypoints; None if any leg is missing (R-CONN)."""
-    route = join_legs(graph, waypoints, forbid)
-    if route is None:
-        return None
-    node_ids, segment_ids = route
+def _route_totals(graph: Graph, route: Route) -> tuple[int, int, int, int]:
+    """Minutes, meters, ascent and descent of a route in its direction of travel."""
     minutes = meters = ascent = descent = 0
-    for frm, sid in zip(node_ids, segment_ids):
+    for frm, sid in zip(route.node_ids, route.segment_ids):
         t = traverse(graph.segments[sid], frm)
         minutes += segment_minutes(t.km, t.ascent_m, t.descent_m, graph.fitness)
         meters += km_to_m(t.km)
         ascent += t.ascent_m
         descent += t.descent_m
+    return minutes, meters, ascent, descent
+
+
+def build_stage(graph: Graph, route: Route, day: int, date: datetime.date, last: bool) -> BuiltStage:
+    """The stage of one day walked along `route`."""
+    node_ids, segment_ids = route
+    minutes, meters, ascent, descent = _route_totals(graph, route)
     segs = [graph.segments[sid] for sid in segment_ids]
     start, end = graph.nodes[node_ids[0]], graph.nodes[node_ids[-1]]
     highest = max(node_ids, key=lambda n: graph.nodes[n].ele_m)  # max takes the first on a tie
@@ -199,53 +200,45 @@ class Evaluation(NamedTuple):
     minutes: list[int]  # minutes of the same stages
 
 
-def _violation(day: int, rule_id: str, message: str, actual, limit) -> dict[str, Any]:
-    return {"day": day, "rule_id": rule_id, "message": message, "actual": actual, "limit": limit}
-
-
 def check_plan(
     graph: Graph, day_waypoints, start_date: datetime.date, overnight_mode: str, forbids
 ) -> Evaluation:
     """R-* rules for a day-by-day route; violations by day, then R-CONN, R-CONTINUITY, R-DAY-LIMIT, R-OVERNIGHT, R-MOVE."""
     violations, stages, minutes = [], [], []
     allowed = "|".join(OVERNIGHT_BY_MODE[overnight_mode])
-    days = len(day_waypoints)
     for i, wps in enumerate(day_waypoints):
-        day, last = i + 1, i + 1 == days
-        built = build_stage(graph, wps, day, start_date + datetime.timedelta(days=i), forbids[i], last)
-        if built is None:
-            for a, b in itertools.pairwise(wps):
-                if graph.path(a, b, forbids[i]) is None:
-                    why = f" without {forbids[i]} segments" if forbids[i] else ""
-                    violations.append(_violation(day, "R-CONN", f"No trail path from {a} to {b}{why}.", f"{a}->{b}", None))
-        if i > 0 and wps[0] != day_waypoints[i - 1][-1]:
-            prev = day_waypoints[i - 1][-1]
-            violations.append(
-                _violation(day, "R-CONTINUITY", f"Day {day} starts at {wps[0]}, but day {i} ended at {prev}.", wps[0], prev)
-            )
-        if built is not None:
-            stage, mins, limit_minutes = built
+        day, last, forbid = i + 1, i + 1 == len(day_waypoints), forbids[i]
+
+        def add(rule_id: str, message: str, actual, limit) -> None:
+            violations.append({"day": day, "rule_id": rule_id, "message": message, "actual": actual, "limit": limit})
+
+        broken = [(a, b) for a, b in itertools.pairwise(wps) if graph.path(a, b, forbid) is None]
+        for a, b in broken:
+            why = f" without {forbid} segments" if forbid else ""
+            add("R-CONN", f"No trail path from {a} to {b}{why}.", f"{a}->{b}", None)
+
+        prev = day_waypoints[i - 1][-1] if i > 0 else wps[0]
+        if wps[0] != prev:
+            add("R-CONTINUITY", f"Day {day} starts at {wps[0]}, but day {i} ended at {prev}.", wps[0], prev)
+
+        stage = None
+        route = None if broken else join_legs(graph, wps, forbid)
+        if route is not None:
+            stage, mins, limit_minutes = build_stage(graph, route, day, start_date + datetime.timedelta(days=i), last)
             stages.append(stage)
             minutes.append(mins)
             if not fits_limit(mins, limit_minutes):
-                violations.append(
-                    _violation(
-                        day, "R-DAY-LIMIT",
-                        f"Day {day} takes {stage['est_hours']} h, over its {stage['limit_kind']} limit of {stage['limit_hours']} h.",
-                        stage["est_hours"], stage["limit_hours"],
-                    )
-                )
+                hours, limit_hours = stage["est_hours"], stage["limit_hours"]
+                add("R-DAY-LIMIT", f"Day {day} takes {hours} h, over its {stage['limit_kind']} limit of {limit_hours} h.",
+                    hours, limit_hours)  # fmt: skip
+
         kind = graph.nodes[wps[-1]].kind
         if not last and not can_overnight(kind, overnight_mode):
-            violations.append(
-                _violation(
-                    day, "R-OVERNIGHT",
-                    f"Day {day} ends at {wps[-1]} ({kind}); in {overnight_mode} mode a night needs {allowed}.",
-                    kind, allowed,
-                )
-            )
-        if built is not None and not moves(stage["km"]):
-            violations.append(_violation(day, "R-MOVE", f"Day {day} does not move (0 km); rest days are not allowed.", stage["km"], 0))
+            add("R-OVERNIGHT", f"Day {day} ends at {wps[-1]} ({kind}); in {overnight_mode} mode a night needs {allowed}.",
+                kind, allowed)  # fmt: skip
+
+        if stage is not None and not moves(stage["km"]):
+            add("R-MOVE", f"Day {day} does not move (0 km); rest days are not allowed.", stage["km"], 0)
     return Evaluation(violations, stages, minutes)
 
 
