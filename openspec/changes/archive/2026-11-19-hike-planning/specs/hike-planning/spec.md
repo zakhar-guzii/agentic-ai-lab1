@@ -143,7 +143,7 @@
 - **THEN** результат містить `R-OVERNIGHT` з `actual="peak"` і `limit="hut|village"` для режиму `hut`
 
 #### Scenario: Кемпінг залежить від режиму
-- **WHEN** граф S (`junction`) – C (`camp_site`) – E (`junction`) має два рівнинні сегменти по 20 км (300 хв кожен при `medium`) і `plan_hike` просить `days=2`
+- **WHEN** граф S (`junction`) – C (`camp_site`) – E (`junction`) має два рівнинні сегменти по 20 км (300 хв кожен при `medium`) і `plan_hike` просить `end_node_id=E`, `days=2`
 - **THEN** у режимі `tent` план `ok` з ночівлею в C, а в режимі `hut` — `infeasible` з `reason_code="NO_FEASIBLE_PLAN"` і `feasible_days=[]`
 
 #### Scenario: Останній день на вершині
@@ -165,7 +165,7 @@
 - **THEN** результат містить `R-MOVE` для дня 2 з `actual=0`
 
 #### Scenario: Планувальник не вставляє днювок
-- **WHEN** граф S (`junction`) – H (`hut`) – E (`junction`) має рівнинні сегменти 16 км (240 хв) і прямий сегмент S–E 20 км (300 хв), `fitness="medium"`, `days=3`
+- **WHEN** граф S (`junction`) – H (`hut`) – E (`junction`) має рівнинні сегменти 16 км (240 хв) і прямий сегмент S–E 20 км (300 хв), `end_node_id=E`, `fitness="medium"`, `days=3`
 - **THEN** `status="infeasible"`, `reason_code="TOO_MANY_DAYS"`, `feasible_days=[1, 2]`
 
 ### Requirement: Вхід plan_hike

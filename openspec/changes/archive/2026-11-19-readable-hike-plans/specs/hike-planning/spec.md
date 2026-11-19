@@ -3,7 +3,7 @@
 ## ADDED Requirements
 
 ### Requirement: Вибір фінішу без end_node_id
-Якщо `end_node_id` не задано, `plan_hike` SHALL шукати план до кожного вузла `village`, крім старту, і обирати план з мінімальним сумарним часом, за рівності — з меншим найдовшим днем, далі детерміновано. Якщо жоден такий план не існує, а `must_visit` непорожній, `plan_hike` SHALL будувати кільце до `start_node_id`. `feasible_days` для `infeasible` SHALL рахуватися за тим самим правилом.
+Якщо `end_node_id` не задано, `plan_hike` SHALL шукати план до кожного вузла `village`, крім старту й вузлів з `must_visit`, і обирати план з мінімальним сумарним часом, за рівності — з меншим найдовшим днем, далі детерміновано. Якщо жоден такий план не існує, а `must_visit` непорожній, `plan_hike` SHALL будувати кільце до `start_node_id`. `feasible_days` для `infeasible` SHALL рахуватися за тим самим правилом.
 
 #### Scenario: Найближче село за часом походу
 - **WHEN** граф: S (`junction`) – P (`peak`) рівнинний 8 км (120 хв), P – V1 (`village`) рівнинний 12 км (180 хв), P – V2 (`village`) рівнинний 4 км (60 хв), V2 – V1 рівнинний 20 км; `end_node_id` не задано, `must_visit=[P]`, `days=1`, `fitness="medium"`
@@ -22,7 +22,7 @@
 - **THEN** відповідь `infeasible`, а `feasible_days` містить 3
 
 ### Requirement: Автоматичний фініш без обов'язкових точок
-Запит без `end_node_id` і з порожнім `must_visit` SHALL бути допустимим: `plan_hike` SHALL шукати план до сіл за вимогою «Вибір фінішу без end_node_id», без кільця як запасного варіанта. Якщо зі старту стежками не досяжне жодне село, відповідь SHALL бути `infeasible` з `reason_code="NO_ROUTE"`, `feasible_days=[]` і `reason`, що радить задати `must_visit` або `end_node_id`.
+Запит без `end_node_id` і з порожнім `must_visit` SHALL бути допустимим: `plan_hike` SHALL шукати план до сіл за вимогою «Вибір фінішу без end_node_id», без кільця як запасного варіанта. Якщо зі старту стежками не досяжне жодне село, крім самого старту, відповідь SHALL бути `infeasible` з `reason_code="NO_ROUTE"`, `feasible_days=[]` і `reason`, що радить задати `must_visit` або `end_node_id`.
 
 #### Scenario: Без обов'язкових точок
 - **WHEN** граф: A (`village`) – B (`village`) рівнинний 4 км; `start_node_id=A`, `end_node_id` не задано, `must_visit=[]`, `days=1`, `fitness="medium"`
@@ -33,7 +33,7 @@
 - **THEN** відповідь `infeasible` з `reason_code="NO_ROUTE"` і `feasible_days=[]`, а `reason` згадує `must_visit` і `end_node_id`
 
 ### Requirement: Мітка вузла
-Мітка вузла SHALL бути його назвою (`name`), якщо вона є. Для безіменного вузла мітка SHALL мати вигляд `unnamed <тип> near <назва найближчого названого вузла>, <ele_m> m`, де тип — `kind` з пробілом замість `_`, а найближчий названий вузол обирається за відстанню по великому колу, за рівності — за меншим `id`.
+Мітка вузла SHALL бути його назвою (`name`), якщо вона є. Для безіменного вузла мітка SHALL мати вигляд `unnamed <тип> near <назва найближчого названого вузла>, <ele_m> m`, де тип — `kind` з пробілом замість `_`, а найближчий названий вузол (інший, ніж сам вузол) обирається за відстанню по великому колу, за рівності — за меншим `id`; якщо в датасеті немає жодного названого вузла, частина ` near <назва>` пропускається.
 
 #### Scenario: Названий вузол
 - **WHEN** вузол має `name="Заросляк"`
@@ -44,7 +44,7 @@
 - **THEN** мітка `unnamed camp site near Туркул, 1450 m`
 
 ### Requirement: Попередження DETOUR
-Якщо `applied_day_constraints` непорожній, `plan_hike` SHALL будувати план для того самого запиту без `day_constraints`. Коли такий план існує, а `est_hours` отриманого плану щонайменше в 1,5 раза більший, `warnings` SHALL містити запис `code="DETOUR"` з `days` — днями з обмеженнями, `segment_ids=[]`, `baseline_plan_id`, `baseline_est_hours`, `baseline_km` і повідомленням з обома числами.
+Якщо `applied_day_constraints` непорожній, `plan_hike` SHALL будувати план для того самого запиту без `day_constraints`. Коли такий план існує, а сумарні хвилини отриманого плану щонайменше в 1,5 раза більші за сумарні хвилини плану без обмежень, `warnings` SHALL містити запис `code="DETOUR"` з `days` — днями з обмеженнями, `segment_ids=[]`, `baseline_plan_id`, `baseline_est_hours`, `baseline_km` і повідомленням з обома числами.
 
 #### Scenario: Обхід хребта коштує майже вдвічі більше
 - **WHEN** граф зі сценарію «Перенесення хребта на інший день» і `day_constraints=[{day: 2, forbid: "above_treeline"}]`, `days=2`
@@ -99,11 +99,11 @@
 План зі `status="ok"` SHALL мати рівно `days` етапів з датами `start_date + (day − 1)`. Етап 1 SHALL починатися в `start_node_id`, останній етап SHALL закінчуватися в `end_node_id`, а без `end_node_id` — у фініші, обраному за вимогою «Вибір фінішу без end_node_id». Кожен вузол `must_visit` SHALL бути в `path_node_ids` хоча б одного етапу.
 
 #### Scenario: Маршрут від точки до точки без обов'язкових точок
-- **WHEN** граф S (`junction`) – H (`hut`) – E (`junction`) з рівнинними сегментами S–H і H–E по 16 км (240 хв) і прямим S–E 20 км (300 хв), `fitness="medium"`, `days=1`
+- **WHEN** граф S (`junction`) – H (`hut`) – E (`junction`) з рівнинними сегментами S–H і H–E по 16 км (240 хв) і прямим S–E 20 км (300 хв), `end_node_id=E`, `fitness="medium"`, `days=1`
 - **THEN** план має 1 етап прямим сегментом S–E з `est_hours = 5.0`
 
 #### Scenario: П'ять днів
-- **WHEN** лінійний граф S (`junction`) – H1 – H2 – H3 – H4 (`hut`) – E (`junction`) з рівнинними сегментами по 12 км (180 хв), `fitness="medium"`, `days=5`
+- **WHEN** лінійний граф S (`junction`) – H1 – H2 – H3 – H4 (`hut`) – E (`junction`) з рівнинними сегментами по 12 км (180 хв), `end_node_id=E`, `fitness="medium"`, `days=5`
 - **THEN** план має 5 етапів по 3.0 год з ночівлями в H1, H2, H3, H4 і `totals.est_hours = 15.0`
 
 #### Scenario: Кільце
@@ -186,7 +186,7 @@
 - **THEN** `validate_hike_plan` повертає порушення `R-DAY-LIMIT` з `actual=6.02` і `limit=6.0`, а `plan_hike` від A (`junction`) до B (`hut`) повертає `infeasible` з `reason_code="NO_FEASIBLE_PLAN"` і порожнім `feasible_days`
 
 #### Scenario: Довгий день з великим набором допустимий для низької підготовки
-- **WHEN** `plan_hike` отримує граф з одного сегмента A (`junction`) → B (`hut`) 10 км, `ascent_m=900`, `descent_m=0`, `days=1`, `fitness="low"`, `start_date="2026-07-01"`
+- **WHEN** `plan_hike` отримує граф з одного сегмента A (`junction`) → B (`hut`) 10 км, `ascent_m=900`, `descent_m=0`, `end_node_id=B`, `days=1`, `fitness="low"`, `start_date="2026-07-01"`
 - **THEN** `status="ok"`, етап має `est_hours = 5.32` (319 хв), `limit_hours = 6.0`, `limit_kind = "fitness"`, а `validate_hike_plan` для `[[A, B]]` повертає `valid=true` з тим самим `plan_id`: окремого обмеження за складністю немає
 
 
@@ -194,7 +194,7 @@
 `day_constraints` SHALL забороняти в указаний день сегменти з `above_treeline=true` (`forbid="above_treeline"`) або з `exposed_ridge=true` (`forbid="exposed_ridge"`); інші дні SHALL NOT обмежуватися. `applied_day_constraints` плану SHALL містити обмеження без повторів, впорядковані за `day`, далі за `forbid`.
 
 #### Scenario: Перенесення хребта на інший день
-- **WHEN** граф: S (`junction`) –a– H (`hut`) –b– R (`peak`) –c– E (`village`) і H –d– E, де a — рівнинний 8 км (120 хв), b — H→R 4 км `ascent_m=600` (150 хв; R→H 102 хв), c — R→E 4 км `descent_m=600` (102 хв), d — рівнинний 20 км (300 хв); b і c мають `above_treeline=true` і `exposed_ridge=true`; `must_visit=[R]`, `days=2`, `fitness="medium"`, дата 2026-07-01
+- **WHEN** граф: S (`junction`) –a– H (`hut`) –b– R (`peak`) –c– E (`village`) і H –d– E, де a — рівнинний 8 км (120 хв), b — H→R 4 км `ascent_m=600` (150 хв; R→H 102 хв), c — R→E 4 км `descent_m=600` (102 хв), d — рівнинний 20 км (300 хв); b і c мають `above_treeline=true` і `exposed_ridge=true`; `end_node_id=E`, `must_visit=[R]`, `days=2`, `fitness="medium"`, дата 2026-07-01
 - **THEN** без обмежень план S→H, H→R→E (372 хв, найдовший день 252); з `[{day: 2, forbid: "above_treeline"}]` план S→R→H (`path_node_ids=[S, H, R, H]`, 372 хв), H→E сегментом d (300 хв), `totals.est_hours = 11.2`
 
 #### Scenario: Заборона відкритого хребта не забороняє ліс вище межі
