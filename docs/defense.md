@@ -26,7 +26,7 @@
 
 | Відрізок | Що показати | Команди (термінал 2) | Кроки лаби |
 |---|---|---|---|
-| Старт і архітектура, 2 хв | обидва сервери й шість інструментів; граф агента (`docs/design.md`, рис. 2) | `uv run carpathian-agent --list-tools` | 1, 2, 7 |
+| Старт і архітектура, 2 хв | обидва сервери й шість інструментів; граф агента (`docs/design.md`, рис. 3) | `uv run carpathian-agent --list-tools` | 1, 2, 7 |
 | Готовий сервер у ході, 2–3 хв | контракт `weather` (`docs/contracts.md`, 3.1); прогноз впливає на наступний крок агента | `uv run carpathian-weather-probe "Vorokhta,UA"`, потім `uv run carpathian-agent -v "Похід із Заросляка на Піп Іван на три дні з наметом, старт завтра"` | 3, 4, 5 |
 | Власний сервер наскрізно, 3–4 хв | `validate_hike_plan` знаходить порушення `R-DAY-LIMIT`, модель переходить до `plan_hike`; контракт `plan_hike` (`docs/contracts.md`, 2.3): `infeasible` — успішний результат з `reason_code` і `feasible_days`, `plan_id` — хеш вмісту | `uv run carpathian-agent -v "Ось мій маршрут по днях. День 1: Заросляк, Говерла, Піп Іван. Старт завтра. Перевір, чи він реальний."` | 6, 8 |
 | Збій і офлайн, 2 хв | Weather MCP недоступний: `weather: UNAVAILABLE (…)`, у журналі `skipped`, оцінка `unknown`, код виходу 0; окремо — сервер відповідає без прогнозу; датасет закомічений, тож фікстури для власного сервера не потрібні (Part D) | `WEATHER_MCP_COMMAND="docker run -i --rm --pull=never -e OWM_API_KEY mcp-weather-missing" uv run carpathian-agent -v "Похід із Заросляка на Піп Іван на три дні з наметом, старт завтра"; echo "exit=$?"`, потім `uv run carpathian-weather-probe Chornohora` (`WEATHER_INVALID_RESPONSE`, код 3) | 9 |

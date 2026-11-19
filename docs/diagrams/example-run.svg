@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" width="1000" height="640" font-family="system-ui, -apple-system, 'Noto Sans', 'Segoe UI', sans-serif">
+  <style>
+    .model { fill: #EEF3FC; stroke: #2F55B5; stroke-width: 1.2; }
+    .code { fill: #F1F2F4; stroke: #6B7280; stroke-width: 1.2; }
+    .bad { fill: #FDECEC; stroke: #C62828; stroke-width: 1.6; }
+    .good { fill: #E8F5E9; stroke: #2E7D32; stroke-width: 1.6; }
+    .bm { fill: #2F55B5; }
+    .bc { fill: #6B7280; }
+    .badge { font-size: 9.5px; font-weight: 700; fill: #fff; letter-spacing: 0.5px; text-anchor: middle; }
+    .q { font-size: 13px; fill: #111827; text-anchor: middle; }
+    .h { font-size: 12px; font-weight: 700; fill: #1E3A8A; letter-spacing: 0.5px; }
+    .ct { font-size: 13px; font-weight: 700; fill: #0F1B3D; }
+    .t { font-size: 11.5px; fill: #374151; }
+    .vb { font-size: 12.5px; font-weight: 700; fill: #C62828; }
+    .vg { font-size: 12.5px; font-weight: 700; fill: #2E7D32; }
+    .red { font-size: 10px; font-weight: 700; fill: #C62828; letter-spacing: 0.5px; }
+    .note { font-size: 11px; fill: #4B5563; text-anchor: middle; }
+    .mono { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 11px; }
+    .arr { stroke: #1E2A5A; stroke-width: 1.4; fill: none; marker-end: url(#a); }
+    .replan { stroke: #C62828; stroke-width: 2.4; fill: none; marker-end: url(#r); }
+    .num { fill: #2F55B5; }
+    .numt { font-size: 11px; font-weight: 700; fill: #fff; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1E2A5A"/>
+    </marker>
+    <marker id="r" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#C62828"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="640" fill="#fff"/>
+
+  <!-- legend -->
+  <rect class="model" x="830" y="14" width="14" height="14" rx="3"/>
+  <text class="t" x="850" y="25">модель</text>
+  <rect class="code" x="910" y="14" width="14" height="14" rx="3"/>
+  <text class="t" x="930" y="25">код</text>
+
+  <!-- request -->
+  <text class="q" x="500" y="34">Запит: «із Заросляка на Піп Іван на вихідні»</text>
+  <path class="arr" d="M500,44 V68"/>
+
+  <!-- 1. find places -->
+  <circle class="num" cx="282" cy="96" r="10"/><text class="numt" x="282" y="100">1</text>
+  <rect class="model" x="300" y="68" width="400" height="56" rx="6"/>
+  <rect class="bm" x="638" y="76" width="54" height="16" rx="3"/><text class="badge" x="665" y="88">МОДЕЛЬ</text>
+  <text class="ct" x="314" y="90">Знаходить названі місця</text>
+  <text class="mono" x="314" y="111" fill="#374151">find_place("Заросляк"), find_place("Піп Іван")</text>
+  <path class="arr" d="M500,124 V146 H210 V176"/>
+
+  <!-- column titles -->
+  <text class="h" x="40" y="166">СПРОБА 1</text>
+  <text class="h" x="620" y="166">СПРОБА 2</text>
+
+  <!-- 2. plan p_a -->
+  <circle class="num" cx="22" cy="206" r="10"/><text class="numt" x="22" y="210">2</text>
+  <rect class="model" x="40" y="176" width="340" height="60" rx="6"/>
+  <rect class="bm" x="318" y="184" width="54" height="16" rx="3"/><text class="badge" x="345" y="196">МОДЕЛЬ</text>
+  <text class="ct" x="54" y="199">Будує план <tspan class="mono">p_a</tspan></text>
+  <text class="mono" x="54" y="221" fill="#374151">plan_hike(Піп Іван, 2 дні, субота)</text>
+  <path class="arr" d="M210,236 V262"/>
+
+  <!-- 3. weather check p_a -->
+  <circle class="num" cx="22" cy="292" r="10"/><text class="numt" x="22" y="296">3</text>
+  <rect class="code" x="40" y="262" width="340" height="60" rx="6"/>
+  <rect class="bc" x="338" y="270" width="34" height="16" rx="3"/><text class="badge" x="355" y="282">КОД</text>
+  <text class="ct" x="54" y="285">Перевіряє погоду</text>
+  <text class="t" x="54" y="307">прогноз → слоти → <tspan class="mono">check_weather_warnings</tspan></text>
+  <path class="arr" d="M210,322 V348"/>
+
+  <!-- verdict 1 -->
+  <rect class="bad" x="40" y="348" width="340" height="56" rx="6"/>
+  <text class="vb" x="54" y="371">critical: гроза на хребті в день 2</text>
+  <text class="t" x="54" y="392">правило <tspan class="mono">W-STORM</tspan> пропонує заборону</text>
+
+  <!-- replan arrow -->
+  <path class="replan" d="M380,376 H500 V220 H618"/>
+  <text class="red" x="492" y="282" text-anchor="end">КОД ЗАПУСКАЄ</text>
+  <text class="red" x="492" y="297" text-anchor="end">ПЕРЕПЛАНУВАННЯ</text>
+
+  <!-- 4. plan p_b -->
+  <circle class="num" cx="602" cy="192" r="10"/><text class="numt" x="602" y="196">4</text>
+  <rect class="model" x="620" y="176" width="340" height="60" rx="6"/>
+  <rect class="bm" x="898" y="184" width="54" height="16" rx="3"/><text class="badge" x="925" y="196">МОДЕЛЬ</text>
+  <text class="ct" x="634" y="199">Будує план <tspan class="mono">p_b</tspan> із забороною</text>
+  <text class="t" x="634" y="221">день 2: не вище межі лісу (<tspan class="mono">above_treeline</tspan>)</text>
+  <path class="arr" d="M790,236 V262"/>
+
+  <!-- 5. weather check p_b -->
+  <circle class="num" cx="602" cy="292" r="10"/><text class="numt" x="602" y="296">5</text>
+  <rect class="code" x="620" y="262" width="340" height="60" rx="6"/>
+  <rect class="bc" x="918" y="270" width="34" height="16" rx="3"/><text class="badge" x="935" y="282">КОД</text>
+  <text class="ct" x="634" y="285">Перевіряє погоду</text>
+  <text class="t" x="634" y="307">прогноз з пам'яті → <tspan class="mono">check_weather_warnings</tspan></text>
+  <path class="arr" d="M790,322 V348"/>
+
+  <!-- verdict 2 -->
+  <rect class="good" x="620" y="348" width="340" height="56" rx="6"/>
+  <text class="vg" x="634" y="371">critical немає</text>
+  <text class="t" x="634" y="392">план <tspan class="mono">p_b</tspan> перевірено, цикл зупиняє код</text>
+  <path class="arr" d="M790,404 V428 H500 V452"/>
+
+  <!-- 6. answer -->
+  <circle class="num" cx="282" cy="480" r="10"/><text class="numt" x="282" y="484">6</text>
+  <rect class="model" x="300" y="452" width="400" height="56" rx="6"/>
+  <rect class="bm" x="638" y="460" width="54" height="16" rx="3"/><text class="badge" x="665" y="472">МОДЕЛЬ</text>
+  <text class="ct" x="314" y="474">Пише відповідь (<tspan class="mono">finalize</tspan>)</text>
+  <text class="t" x="314" y="495">лише з перевірених планів, без інструментів</text>
+  <path class="arr" d="M500,508 V532"/>
+
+  <!-- map files -->
+  <rect class="code" x="300" y="532" width="400" height="56" rx="6"/>
+  <rect class="bc" x="658" y="540" width="34" height="16" rx="3"/><text class="badge" x="675" y="552">КОД</text>
+  <text class="ct" x="314" y="554">Записує карту й GPX</text>
+  <text class="t" x="314" y="575"><tspan class="mono">export_plan(p_b)</tspan>; з <tspan class="mono">-v</tspan> — блок «Weather check»</text>
+
+  <text class="note" x="500" y="620">Значення умовні. Виклики моделі виконує planner_tools; погодних інструментів модель не бачить.</text>
+</svg>
